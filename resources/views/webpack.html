@@ -1,0 +1,14 @@
+Em webpack.html
+mix.
+styles([
+'resources/views/css/bootstrap.css',
+'resources/views/css/fonts.css',
+'resources/views/css/styles.css'
+],'public/css/style.css')
+.version();
+
+npm run dev
+
+OBS.: opcao .version() Para nao ter problema de cache.
+https://laracasts.com/discuss/channels/laravel/load-custom-fonts-in-laravel-mix
+Put your fonts folder in resources/assets/fonts and in webpack.mix.js write this code mix.copyDirectory('resources/fonts', 'public/fonts'); or whatever your folder structure will be
