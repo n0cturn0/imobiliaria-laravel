@@ -21,6 +21,9 @@ class CreateLancamentosTable extends Migration
             $table->integer('lancamento_status')->comment('0 = Planta 1 = Pronto');
             $table->string('estado');
             $table->string('cidade');
+            $table->string('bairro');
+            $table->string('rua');
+            $table->integer('numero');
             $table->integer('ruapavimentada')->comment('0 = Sim 1 = Não');
             $table->integer('tipo')->comment('0 = Apartamento 1 = Casa Térrea 2 = Sobrado 3 = Casa condominio 4 = Sobrado Condominio 5 Terreno');
             $table->integer('banheiro');

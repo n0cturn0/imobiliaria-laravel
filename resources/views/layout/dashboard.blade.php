@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="pt-br">
+@livewireStyles
 <head>
     <title></title>
     <meta name="format-detection" content="telephone=no">
@@ -225,5 +226,9 @@
 <script src="{{ asset('js/core.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 <script src="{{ asset('js/3ts2ksMwXvKRuG480KNifJ2_JNM.js')}}"></script>
+
+</script>
+@livewireScripts
+</body>
 </body>
 </html>
