@@ -14,7 +14,7 @@ class CreateLancamentosTable extends Migration
     public function up()
     {
         Schema::create('lancamentos', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->timestamps();
             $table->integer('status');
             $table->integer('lancamento_status')->comment('0 = Planta 1 = Pronto');
@@ -32,7 +32,7 @@ class CreateLancamentosTable extends Migration
         });
 
         Schema::create('lancamentos_fotos', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->integer('id_lancamento');
             $table->text('foto_name');
             $table->text('foto_descricao');
