@@ -8,6 +8,7 @@ class PrincipalController extends Controller
 {
     public function index()
     {
-        return view('itshome');
+        return view('itshome');// PAGINA PRINCIPAL
+
     }
 }
