@@ -10,4 +10,6 @@ class ControllerDashboard extends Controller
    {
        return view('layout.dashboard');
    }
+
+
 }

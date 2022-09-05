@@ -16,6 +16,7 @@ class CreateLancamentosTable extends Migration
         Schema::create('lancamentos', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->timestamps();
+            $table->text('nome');
             $table->integer('status');
             $table->integer('lancamento_status')->comment('0 = Planta 1 = Pronto');
             $table->string('estado');

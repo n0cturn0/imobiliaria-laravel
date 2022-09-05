@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/index', [\App\Http\Controllers\PrincipalController::class,'index'])->name('index');
 Route::get('/dashboard', [\App\Http\Controllers\ControllerDashboard::class,'index'])->name('index');
+Route::get('/lancamento-create', [\App\Http\Controllers\LancamentosController::class,'create'])->name('lancamento-create');
 Route::get('/', function () {
     return view('welcome');
 });

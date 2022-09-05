@@ -160,6 +160,7 @@
         </div>
     </section>
     <div class="divider-section"></div>
+    @yield('lancamento-create');
 {{--    <section class="section section-md bg-gray-12">--}}
 {{--        <div class="container">--}}
 {{--            <!-- RD Mailform-->--}}

@@ -24,7 +24,7 @@ class LancamentosController extends Controller
      */
     public function create()
     {
-        //
+        return view('lancamento.create');
     }
 
     /**
