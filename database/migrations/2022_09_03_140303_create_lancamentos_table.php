@@ -13,8 +13,15 @@ class CreateLancamentosTable extends Migration
      */
     public function up()
     {
+        Schema::create('lancamentos_etiqueta', function (Blueprint $table) {
+            $table->id()->autoIncrement();
+            $table->timestamps();
+            $table->text('nome_lancamento');
+            $table->integer('status')->comment('0 = ativo 1 = desativado');
+        });
         Schema::create('lancamentos', function (Blueprint $table) {
             $table->id()->autoIncrement();
+            $table->integer('etiqueta_id');
             $table->timestamps();
             $table->text('nome');
             $table->integer('status');
