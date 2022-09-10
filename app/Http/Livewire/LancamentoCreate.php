@@ -20,7 +20,10 @@ class LancamentoCreate extends Component
         $etiqueta = new LancamentoEtiquetaModel;
         $etiqueta->nome_lancamento = $this->nomedoempreendimento;
         $etiqueta->save();
-//
+        session()->flash('success_message', 'Lançamento Inserido com Sucesso');
+        $this->reset();
+
+
 
     }
 }
