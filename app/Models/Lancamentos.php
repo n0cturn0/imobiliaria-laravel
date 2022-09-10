@@ -28,8 +28,6 @@ class Lancamentos extends Model
         'metrosconst',
         'valor',
         'descricao'
-
-
-
-            ];
+        ];
+    public $timestamps = true;
 }
