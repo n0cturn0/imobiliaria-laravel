@@ -7,5 +7,29 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lancamentos extends Model
 {
-    use HasFactory;
+//    use HasFactory;
+    protected $table = 'lancamentos';
+    protected $fillable = [
+        'etiqueta_id',
+        'nome',
+        'status',
+        'lancamento_status',
+        'estado',
+        'cidade',
+        'bairro',
+        'rua',
+        'numero',
+        'ruapavimentada',
+        'tipo',
+        'banheiro',
+        'suite',
+        'garagem',
+        'quarto',
+        'metrosconst',
+        'valor',
+        'descricao'
+
+
+
+            ];
 }
