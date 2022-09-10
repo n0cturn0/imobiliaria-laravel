@@ -1,7 +1,10 @@
 <?php
 
-namespace App\Http\Livewire;
 
+namespace App\Http\Livewire;
+use App\models\LancamentoEtiquetaModel;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class LancamentoCreate extends Component
@@ -14,7 +17,10 @@ class LancamentoCreate extends Component
 
     public function save()
     {
+        $etiqueta = new LancamentoEtiquetaModel;
+        $etiqueta->nome_lancamento = $this->nomedoempreendimento;
+        $etiqueta->save();
+//
 
-        dd($this->nomedoempreendimento);
     }
 }

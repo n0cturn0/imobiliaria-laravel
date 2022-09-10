@@ -12,7 +12,7 @@
                             <div class="col-12">
                                 <div class="form-wrap">
                                     <input class="form-input" id="contact-name" placeholder="Digite o nome do empreedimento" type="text" wire:model="nomedoempreendimento" data-constraints="@Required">
-
+                                    @csrf
                                 </div>
                             </div>
 
