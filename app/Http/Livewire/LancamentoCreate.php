@@ -12,9 +12,15 @@ class LancamentoCreate extends Component
     public $nomedoempreendimento;
 
     protected $rules = [
-        'nomedoempreendimento' => 'required|min:6',
-
+        'nomedoempreendimento' => 'required|min:2',
     ];
+    protected $messages = [
+        'nomedoempreendimento.required' => 'O campo com o nome do empreedimento não pode ficar em branco.'
+    ];
+//    protected $validationAttributes = [
+//        'nomedoempreendimento' => 'O campo'
+//    ];
+
 
 
 
