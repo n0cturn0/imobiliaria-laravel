@@ -8,12 +8,20 @@
                     <form method="POST" class="rd-form" wire:submit.prevent="save">
                         <div class="row row-20">
 
-                            <div><span class="text-danger"> {{ session('success_message') }}</span></div>
+                            @if(session()->has('message'))
+                                <div class="alert alert-success">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    {{ session('message') }}
+                                </div>
+                            @endif
+
+
                             <div class="col-12">
                                 <div class="form-wrap">
                                     <input class="form-input" id="contact-name" placeholder="Digite o nome do empreedimento" type="text" wire:model="nomedoempreendimento" data-constraints="@Required">
                                     @csrf
                                 </div>
+                                @error('nomedoempreendimento') <span class="error">{{ $message }}</span> @enderror
                             </div>
 
 
@@ -211,8 +219,9 @@
 
 
                             <div class="col-12">
-                                <input type="submit">
-{{--                                <button class="button button-secondary" type="submit">Cadastrar Imóvel</button>--}}
+
+                                <button class="button button-secondary" type="submit">Cadastrar Imóvel</button>
+
                             </div>
                         </div>
                     </form>
@@ -221,4 +230,5 @@
         </div>
     </section>
     <!-- Pre footer section-->
+
 </div>

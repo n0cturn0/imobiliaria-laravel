@@ -10,6 +10,14 @@ use Livewire\Component;
 class LancamentoCreate extends Component
 {
     public $nomedoempreendimento;
+
+    protected $rules = [
+        'nomedoempreendimento' => 'required|min:6',
+
+    ];
+
+
+
     public function render()
     {
         return view('livewire.lancamento-create');
@@ -17,11 +25,16 @@ class LancamentoCreate extends Component
 
     public function save()
     {
+        $this->validate();
+
         $etiqueta = new LancamentoEtiquetaModel;
         $etiqueta->nome_lancamento = $this->nomedoempreendimento;
         $etiqueta->save();
-        session()->flash('success_message', 'Lançamento Inserido com Sucesso');
+        session()->flash('message', 'Lançamento Inserido com Sucesso');
         $this->reset();
+        $this->emit('alert_remove');
+        return;
+
 
 
 

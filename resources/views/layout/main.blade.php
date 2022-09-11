@@ -213,5 +213,8 @@
 <script src="{{ asset('js/core.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 <script src="{{ asset('js/3ts2ksMwXvKRuG480KNifJ2_JNM.js')}}"></script>
+<script>
+    document.addEventListener("livewire:load", function(event) { window.livewire.hook('afterDomUpdate', () => { setTimeout(function() { $('#alert').fadeOut('fast'); }, 300); }); });
+</script>
 </body>
 </html>
