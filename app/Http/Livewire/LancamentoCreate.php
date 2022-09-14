@@ -17,9 +17,6 @@ class LancamentoCreate extends Component
     protected $messages = [
         'nomedoempreendimento.required' => 'O campo com o nome do empreedimento não pode ficar em branco.'
     ];
-//    protected $validationAttributes = [
-//        'nomedoempreendimento' => 'O campo'
-//    ];
 
 
 
@@ -32,7 +29,6 @@ class LancamentoCreate extends Component
     public function save()
     {
         $this->validate();
-
         $etiqueta = new LancamentoEtiquetaModel;
         $etiqueta->nome_lancamento = $this->nomedoempreendimento;
         $etiqueta->save();
@@ -40,9 +36,18 @@ class LancamentoCreate extends Component
         $this->reset();
         $this->emit('alert_remove');
         return;
+    }
+    public function lista()
+    {
+       echo 'oi';
+    }
+
+
+
+
+
 
 
 
 
     }
-}

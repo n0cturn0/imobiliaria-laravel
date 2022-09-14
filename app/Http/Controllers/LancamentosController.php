@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Lancamentos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LancamentosController extends Controller
 {
@@ -25,6 +26,19 @@ class LancamentosController extends Controller
     public function create()
     {
         return view('lancamento.create');
+    }
+
+    public function list()
+    {
+        $etiquetas = DB::table('lancamentos_etiqueta')->distinct()->get();
+        return view('lancamento.list' , ['etiquetas' => $etiquetas]);
+
+
+    }
+
+    public function lancamento($id)
+    {
+
     }
 
     /**
