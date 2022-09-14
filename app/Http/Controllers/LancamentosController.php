@@ -36,10 +36,15 @@ class LancamentosController extends Controller
 
     }
 
-    public function lancamento($id)
+    public function crialancamento()
     {
 
+//    return view('lancamento.crialancamento');
+        return 'oi';
+
     }
+
+
 
     /**
      * Store a newly created resource in storage.

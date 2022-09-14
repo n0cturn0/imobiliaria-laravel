@@ -3,14 +3,16 @@
         <div class="container">
 
             <div class="row row-30">
+               @foreach($etiquetas as $etiqueta)
                 <div class="col-md-6 col-lg-4">
                     <!-- Box Modern-->
                     <article class="box-modern"><span  class="icon box-modern-icon fl-bigmug-line-circular220"></span>
                         <div class="box-modern-main">
-                            <h4 class="box-modern-title">Various Locations</h4>
+                            <h4 class="box-modern-title">{{ $etiqueta->nome_lancamento }}</h4>
                         </div>
                     </article>
                 </div>
+                @endforeach
             </div>
 
         </div>
