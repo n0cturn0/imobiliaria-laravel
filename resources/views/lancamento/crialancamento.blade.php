@@ -1,4 +1,4 @@
 @extends('layout.dashboard')
 @section('lancamentocriacao')
-    @livewire('crialancamento')
+@livewire('livewire.crialancamento')
 @endsection

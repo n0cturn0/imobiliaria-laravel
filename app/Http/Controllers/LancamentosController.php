@@ -36,11 +36,11 @@ class LancamentosController extends Controller
 
     }
 
-    public function crialancamento()
+    public function crialancamento($id=NULL)
     {
 
-//    return view('lancamento.crialancamento');
-        return 'oi';
+    return view('crialancamento');
+
 
     }
 
