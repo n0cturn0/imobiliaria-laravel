@@ -39,7 +39,7 @@ class LancamentosController extends Controller
     public function crialancamento($id=NULL)
     {
 
-    return view('crialancamento');
+    return view('lancamento.crialancamento');
 
 
     }

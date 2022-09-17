@@ -14,8 +14,5 @@ class EtiquetaList extends Component
         return view('livewire.etiqueta-list' , ['etiquetas' => $etiquetas = DB::table('lancamentos_etiqueta')->distinct()->get()]);
     }
 
-    public function createlancamento()
-    {
-    return view('livewire.lancamento-create');
-    }
+
 }
