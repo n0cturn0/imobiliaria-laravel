@@ -12,7 +12,7 @@ class Lancamentos extends Model
     protected $fillable = [
         'etiqueta_id',
         'nome',
-        'status',
+        'status' => 1,
         'lancamento_status',
         'estado',
         'cidade',

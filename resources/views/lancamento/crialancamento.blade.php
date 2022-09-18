@@ -1,6 +1,6 @@
 @extends('layout.dashboard')
 @section('lancamentocriacao')
-<title>{{$title}}</title>
+<title>{{$titulo}}</title>
 <section class="section section-lg bg-default text-center">
     <div class="container">
       <div class="row justify-content-md-center">
@@ -9,6 +9,7 @@
           <!-- RD Mailform-->
           <form class="rd-form rd-mailform" data-form-output="form-output-global"  method="post" action="{{url('novo-lancamento')}}">
            @csrf
+           <input type="hidden" name="id" value="{{$id}}">
             <div class="row row-20">
 
               
@@ -32,7 +33,7 @@
 
               <div class="col-12">
                 <div class="form-wrap">
-                  <select class="form-input" name="estado" id="instrumento">
+                  <select class="form-input" name="tipo" id="instrumento">
                     <option value="" disabled selected>Tipo</option>
                     <option value="0">Apartamento</option>
                     <option value="1">Casa Térrea</option>
@@ -146,7 +147,7 @@
                 <div class="form-wrap">
                   <label class="form-label" for="contact-email">Quantos quartos</label>
                   <select class="form-input" name="quarto" id="instrumento">
-                    <option value="trp"></option>
+                    <option value=""></option>
                     <option value="1">01</option>
                   <option value="2">02</option>
                   <option value="3">03</option>
@@ -159,7 +160,7 @@
                 <div class="form-wrap">
                   <label class="form-label" for="contact-email">Quantos banheiros?</label>
                   <select class="form-input" name="banheiro" id="instrumento">
-                    <option value="trp"></option>
+                    <option value=""></option>
                     <option value="1">01</option>
                   <option value="2">02</option>
                   <option value="3">03</option>
@@ -198,14 +199,14 @@
 
               <div class="col-4">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Mts Construídos" id="contact-name" type="text" name="titulo" data-constraints="@Required">
+                  <input class="form-input" placeholder="Mts Construídos" id="contact-name" type="text" name="mtsconst" data-constraints="@Required">
                  
                 </div>
               </div>
 
               <div class="col-4">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Valor" id="contact-name" type="text" name="titulo" data-constraints="@Required">
+                  <input class="form-input" placeholder="Valor" id="contact-name" type="text" name="valor" data-constraints="@Required">
                  
                 </div>
               </div>

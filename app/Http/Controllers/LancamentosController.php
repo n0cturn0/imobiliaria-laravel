@@ -38,12 +38,18 @@ class LancamentosController extends Controller
 
     public function crialancamento($id=NULL)
     {
-    return view('lancamento.crialancamento', ['title' => 'Cadastro de Lançamento']);
+    return view('lancamento.crialancamento',
+     ['titulo' => 'Cadastro de Lançamento'],
+     ['id' => $id]
+    );
     }
 
-    public function novolancamento()
+    public function novolancamento(Request $request)
     {
-        dd($_POST);
+        $lancamento = new Lancamentos();
+        $lancamento->etiqueta_id = $request->input('id');
+        $lancamento->save();
+            
     }
 
 
