@@ -18,7 +18,8 @@ Route::get('/dashboard', [\App\Http\Controllers\ControllerDashboard::class,'inde
 Route::get('/lancamento-create', [\App\Http\Controllers\LancamentosController::class,'create'])->name('lancamento-create');
 Route::get('/lancamento-list', [\App\Http\Controllers\LancamentosController::class,'list'])->name('lancamento-list');
 Route::get('/lancamento-novo/{id}', [\App\Http\Controllers\LancamentosController::class,'crialancamento'])->name('lancamento-novo');
-Route::get('/lancamento/{id}', [\App\Http\Controllers\LancamentosController::class,'lancamento'])->name('lancamento');
+Route::post('/novo-lancamento', [\App\Http\Controllers\LancamentosController::class,'novolancamento'])->name('novo-lancamento');
+
 Route::get('/', function () {
     return view('welcome');
 });
