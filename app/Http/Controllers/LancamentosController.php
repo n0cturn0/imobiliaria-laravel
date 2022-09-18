@@ -48,7 +48,24 @@ class LancamentosController extends Controller
     {
         $lancamento = new Lancamentos();
         $lancamento->etiqueta_id = $request->input('id');
-        $lancamento->save();
+        $lancamento->nome = $request->input('nome');
+        $lancamento->lancamento_status = $request->input('lancamento_status');
+        $lancamento->estado = $request->input('estado');
+        $lancamento->cidade = $request->input('cidade');
+        $lancamento->bairro = $request->input('bairro');
+        $lancamento->rua = $request->input('rua');
+        $lancamento->numero = $request->input('numero');
+        $lancamento->ruapavimentada = $request->input('ruapavimentada');
+        $lancamento->tipo = $request->input('tipo');
+        $lancamento->quarto = $request->input('quarto');
+        $lancamento->banheiro = $request->input('banheiro');
+        $lancamento->suite = $request->input('suite');
+        $lancamento->garagem = $request->input('garagem');
+        $lancamento->metrosconst = $request->input('mtsconst');
+        $lancamento->valor = $request->input('valor');
+        $lancamento->descricao = $request->input('descricao');
+
+         $lancamento->save();
             
     }
 

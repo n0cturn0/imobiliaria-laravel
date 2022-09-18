@@ -24,7 +24,7 @@ class CreateLancamentosTable extends Migration
             $table->integer('etiqueta_id');
             $table->timestamps();
             $table->text('nome');
-            $table->integer('status');
+            $table->integer('status')->default('1');
             $table->integer('lancamento_status')->comment('0 = Planta 1 = Pronto');
             $table->string('estado');
             $table->string('cidade');

@@ -50,7 +50,7 @@
 
                <div class="col-12">
                 <div class="form-wrap">
-                  <select class="form-input" name="estado" id="instrumento">
+                  <select class="form-input" name="lancamento_status" id="instrumento">
                     <option value="" disabled selected>Modalidade</option>
                     <option value="0">Na Planta</option>
                     <option value="1">Pronto</option>
@@ -115,21 +115,21 @@
               </div>
               <div class="col-6">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Número" id="contact-name" type="text" name="número" data-constraints="@Required">
+                  <input class="form-input" placeholder="Número" id="contact-name" type="text" name="numero" data-constraints="@Required">
                  
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-wrap">
-                  <input class="form-input" id="contact-name" type="text" name="cep" data-constraints="@Required">
-                  <label class="form-label" for="contact-name">Cep</label>
+                  <input class="form-input" placeholder="Cep" id="contact-name" type="text" name="cep" data-constraints="@Required">
+                  
                 </div>
               </div>
               
              
               <div class="col-12">
                 <div class="form-wrap">
-                  <select class="form-input" name="estado" id="instrumento">
+                  <select class="form-input" name="ruapavimentada" id="instrumento">
                     <option value="" disabled selected>Rua Pavimentada?</option>
                     <option value="0">Sim</option>
                     <option value="1">Não</option>
@@ -213,8 +213,8 @@
 
               <div class="col-12">
                 <div class="form-wrap">
-                  <label class="form-label" for="contact-message">Texto com outras informações do imóvel</label>
-                  <textarea class="form-input" id="contact-message" name="titulo" data-constraints="@Required"></textarea>
+                 
+                  <textarea placeholder="Texto com outras informações do imóvel" class="form-input" id="contact-message" name="descricao" data-constraints="@Required"></textarea>
                 </div>
               </div>
             
