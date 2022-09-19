@@ -1,6 +1,7 @@
 @extends('layout.dashboard')
 @section('lancamentocriacao')
-<title>{{$titulo}}</title>
+
+<title>Cadastrando Lançamento</title>
 <section class="section section-lg bg-default text-center">
     <div class="container">
       <div class="row justify-content-md-center">
@@ -9,9 +10,11 @@
           <!-- RD Mailform-->
           <form class="rd-form rd-mailform" data-form-output="form-output-global"  method="post" action="{{url('novo-lancamento')}}">
            @csrf
-           <input type="hidden" name="id" value="{{$id}}">
+          
             <div class="row row-20">
-
+           
+                 <input type="hidden" name="id" value="{{$id}}">
+            
               
               
               {{-- <div class="col-12">
@@ -27,7 +30,7 @@
 
               <div class="col-12">
                 <div class="form-wrap">
-                  <input class="form-input" id="contact-name" placeholder="Nome do lançamento" type="text" name="nome" data-constraints="@Required">
+                  <input class="form-input" value="{{$lancamento}}" id="contact-name" placeholder="Nome do lançamento" type="text" name="nome" data-constraints="@Required">
                 </div>
               </div>
 
@@ -50,8 +53,9 @@
 
                <div class="col-12">
                 <div class="form-wrap">
+                  {{-- <label>Modalidade</label> --}}
                   <select class="form-input" name="lancamento_status" id="instrumento">
-                    <option value="" disabled selected>Modalidade</option>
+                    <option value=""  selected disabled>Modalidade</option>
                     <option value="0">Na Planta</option>
                     <option value="1">Pronto</option>
                   </select>
@@ -60,9 +64,9 @@
 
                 <div class="col-12">
                 <div class="form-wrap">
-                  <label class="form-label" for="contact-email">Selecione o estado</label>
+                  
                   <select class="form-input" name="estado" id="instrumento">
-                    <option value="trp"></option>
+                    <option value="" disabled selected>Selecione um estado</option>
                     <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
                     <option value="AC">Acre</option>
                     <option value="AL">Alagoas</option>
@@ -96,26 +100,26 @@
               </div>
               <div class="col-12">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Cidade" id="contact-name" type="text" name="cidade" data-constraints="@Required">
+                  <input class="form-input" placeholder="Cidade" id="contact-name" type="text" name="cidade" required>
                   
                 </div>
               </div>
             
               <div class="col-12">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Bairro" id="contact-name" type="text" name="bairro" data-constraints="@Required">
+                  <input class="form-input" placeholder="Bairro" id="contact-name" type="text" name="bairro" required>
                   
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Rua" id="contact-name" type="text" name="rua" data-constraints="@Required">
+                  <input class="form-input" placeholder="Rua" id="contact-name" type="text" name="rua" required>
                 
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Número" id="contact-name" type="text" name="numero" data-constraints="@Required">
+                  <input class="form-input" placeholder="Número" id="contact-name" type="text" name="numero" required>
                  
                 </div>
               </div>
@@ -145,9 +149,9 @@
 
               <div class="col-12">
                 <div class="form-wrap">
-                  <label class="form-label" for="contact-email">Quantos quartos</label>
-                  <select class="form-input" name="quarto" id="instrumento">
-                    <option value=""></option>
+                  <label class="form-label"></label>
+                  <select class="form-input" name="quarto">
+                    <option value="" disabled selected>Quantos quartos</option>
                     <option value="1">01</option>
                   <option value="2">02</option>
                   <option value="3">03</option>
@@ -156,11 +160,17 @@
                   </select>
                 </div>
               </div>
+
+
+
+
+
+              
               <div class="col-12">
                 <div class="form-wrap">
-                  <label class="form-label" for="contact-email">Quantos banheiros?</label>
+                  {{-- <label class="form-label" for="contact-email">Quantos banheiros?</label> --}}
                   <select class="form-input" name="banheiro" id="instrumento">
-                    <option value=""></option>
+                    <option value="" disabled selected>Quantos banheiros?</option>
                     <option value="1">01</option>
                   <option value="2">02</option>
                   <option value="3">03</option>
@@ -171,9 +181,9 @@
               </div>
               <div class="col-12">
                 <div class="form-wrap">
-                  <label class="form-label" for="contact-email">Quantas suítes?</label>
+                  {{-- <label class="form-label" for="contact-email">Quantas suítes?</label> --}}
                   <select class="form-input" name="suite" id="instrumento">
-                    <option value=""></option>
+                    <option value="" disabled selected>Quantas suítes?</option>
                     <option value="1">01</option>
                     <option value="2">02</option>
                     <option value="3">03</option>
@@ -184,9 +194,9 @@
               </div>
               <div class="col-12">
                 <div class="form-wrap">
-                  <label class="form-label" for="contact-email">Quantas vagas na garagem</label>
+                  {{-- <label class="form-label" for="contact-email">Quantas vagas na garagem</label> --}}
                   <select class="form-input" name="garagem" id="instrumento">
-                    <option value=""></option>
+                    <option value="" disabled selected>Quantas vagas na garagem?</option>
                     <option value="1">01</option>
                     <option value="2">02</option>
                     <option value="3">03</option>
@@ -199,14 +209,14 @@
 
               <div class="col-4">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Mts Construídos" id="contact-name" type="text" name="mtsconst" data-constraints="@Required">
+                  <input class="form-input" placeholder="Mts Construídos" id="contact-name" type="text" name="mtsconst" required>
                  
                 </div>
               </div>
 
               <div class="col-4">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Valor" id="contact-name" type="text" name="valor" data-constraints="@Required">
+                  <input class="form-input form-control" placeholder="Valor"  type="text" name="valor" onkeypress="$(this).mask('R$ #.##0,00', {reverse: true});">
                  
                 </div>
               </div>
@@ -231,4 +241,6 @@
       </div>
     </div>
   </section>
+  <script>$('.valor').mask('#.##0,00', {reverse: true});</script>
 @endsection
+

@@ -38,10 +38,40 @@ class LancamentosController extends Controller
 
     public function crialancamento($id=NULL)
     {
-    return view('lancamento.crialancamento',
-     ['titulo' => 'Cadastro de Lançamento'],
-     ['id' => $id]
-    );
+        //Verifica se ja esta configurado
+        $lancamentoconfig = $users = DB::table('lancamentos')->where('etiqueta_id', '=', $id)->get();
+        
+        // //Pega informações para etiqueta
+        $lancamento = $users = DB::table('lancamentos_etiqueta')->where('id', '=', $id)->get();
+        
+        switch ($lancamentoconfig->count()) {
+            case 0:
+                foreach ($lancamento as  $value) {
+                    $lancamento = $value->nome_lancamento;
+                    $id =$value->id;
+                }
+                return view('lancamento.crialancamento',
+                ['lancamento' => $lancamento], ['id' => $id]
+                );
+                break;
+            
+            default:
+            foreach ($lancamento as  $value) {
+                $lancamento = $value->nome_lancamento;
+                $id =$value->id;
+            }
+            dd($id);
+                break;
+        }
+
+
+
+
+
+
+
+
+        
     }
 
     public function novolancamento(Request $request)
