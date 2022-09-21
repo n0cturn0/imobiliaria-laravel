@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Lancamentos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Stmt\TryCatch;
+use Illuminate\Support\Facades\Redirect ;
 
 class LancamentosController extends Controller
 {
@@ -60,18 +62,33 @@ class LancamentosController extends Controller
                 $lancamento = $value->nome_lancamento;
                 $id =$value->id;
             }
-            dd($id);
+            return view('lancamento.image-lancamento',
+                ['lancamento' => $lancamento], ['id' => $id]
+                );
                 break;
         }
 
+      
+    }
 
 
+    public function upload(Request $request)
+    {
+       
+      $valida = $request->validate([
+            'arquivo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]); 
+           if(!$valida){
+            return Redirect::back()->withErrors(['msg', 'The Message']);
+           }
 
-
-
-
-
-        
+        for($i=0; $i < count($request->allFiles()['arquivo']); $i++){
+            $file = $request->file('arquivo')[$i]->store('lancamentos');
+            DB::table('lancamentos_fotos')->insert([
+                'id_lancamento'     => $request->id,
+                'foto_name'         =>  $file = $request->file('arquivo')[$i]->store('lancamentos'),
+            ]);
+        }
     }
 
     public function novolancamento(Request $request)
