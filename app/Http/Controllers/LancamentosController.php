@@ -89,6 +89,7 @@ class LancamentosController extends Controller
                 'foto_name'         =>  $file = $request->file('arquivo')[$i]->store('lancamentos'),
             ]);
         }
+        return Redirect::back()->with('success', 'Imagens enviadas com sucesso!');
     }
 
     public function novolancamento(Request $request)

@@ -188,16 +188,13 @@
                 </div>
                 @error('arquivo')
                 <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-                {{-- @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif --}}
+                @enderror
+                
+                @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+                @endif
                 
               </div>
             </div>
