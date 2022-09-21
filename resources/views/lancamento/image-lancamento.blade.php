@@ -179,22 +179,32 @@
                       @csrf
                       <div class="form-button">
                         <input type="hidden" name="id" value="{{$id}}">
-                        <input type="file" class="button button-block button-secondary @error('arquivo') is-invalid @enderror"   name="arquivo[]" multiple>
+                        <input type="file" class="button button-block button-secondary @error('arquivo') is-invalid @enderror" required  name="arquivo[]" multiple>
                         {{-- <input type="submit" class="button button-block button-secondary" > --}}
                         <button class="button button-block button-secondary" type="submit">Enviar imagens</button>
+                        <br>
+                       
+        
+                        @if(session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session()->get('message') }}
+                        </div>
+                        @endif
                       </div>
                     </form>
                   </div>
                 </div>
-                @error('arquivo')
-                <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
                 
-                @if(session()->has('message'))
-                <div class="alert alert-success">
-                    {{ session()->get('message') }}
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
-                @endif
+            @endif
+               
                 
               </div>
             </div>

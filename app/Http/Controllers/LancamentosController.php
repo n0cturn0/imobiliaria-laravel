@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Stmt\TryCatch;
 use Illuminate\Support\Facades\Redirect ;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 class LancamentosController extends Controller
 {
@@ -44,7 +46,7 @@ class LancamentosController extends Controller
         $lancamentoconfig = $users = DB::table('lancamentos')->where('etiqueta_id', '=', $id)->get();
         
         // //Pega informações para etiqueta
-        $lancamento = $users = DB::table('lancamentos_etiqueta')->where('id', '=', $id)->get();
+        $lancamento =  DB::table('lancamentos_etiqueta')->where('id', '=', $id)->get();
         
         switch ($lancamentoconfig->count()) {
             case 0:
@@ -52,20 +54,13 @@ class LancamentosController extends Controller
                     $lancamento = $value->nome_lancamento;
                     $id =$value->id;
                 }
-                return view('lancamento.crialancamento',
-                ['lancamento' => $lancamento], ['id' => $id]
-                );
+                return view('lancamento.crialancamento',['lancamento' => $lancamento], ['id' => $id]);
                 break;
             
             default:
-            foreach ($lancamento as  $value) {
-                $lancamento = $value->nome_lancamento;
-                $id =$value->id;
-            }
-            return view('lancamento.image-lancamento',
-                ['lancamento' => $lancamento], ['id' => $id]
-                );
-                break;
+            foreach ($lancamento as  $value) { $lancamento = $value->nome_lancamento; $id =$value->id; }
+            return view('lancamento.image-lancamento',['lancamento' => $lancamento], ['id' => $id]);
+            break;
         }
 
       
@@ -74,14 +69,8 @@ class LancamentosController extends Controller
 
     public function upload(Request $request)
     {
+        $validated = $request->validate(['arquivo.*' =>'required|mimes:jpeg,png,jpg,gif']);
        
-      $valida = $request->validate([
-            'arquivo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]); 
-           if(!$valida){
-            return Redirect::back()->withErrors(['msg', 'The Message']);
-           }
-
         for($i=0; $i < count($request->allFiles()['arquivo']); $i++){
             $file = $request->file('arquivo')[$i]->store('lancamentos');
             DB::table('lancamentos_fotos')->insert([
@@ -89,7 +78,7 @@ class LancamentosController extends Controller
                 'foto_name'         =>  $file = $request->file('arquivo')[$i]->store('lancamentos'),
             ]);
         }
-        return Redirect::back()->with('success', 'Imagens enviadas com sucesso!');
+        return redirect()->back()->with('message',"Imagem enviada com sucesso");
     }
 
     public function novolancamento(Request $request)
