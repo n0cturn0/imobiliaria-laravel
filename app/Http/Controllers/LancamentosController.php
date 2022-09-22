@@ -42,25 +42,39 @@ class LancamentosController extends Controller
 
     public function crialancamento($id=NULL)
     {
-        //Verifica se ja esta configurado
-        $lancamentoconfig = $users = DB::table('lancamentos')->where('etiqueta_id', '=', $id)->get();
+                //Verifica se ja esta configurado
+                $lancamentoconfig  = DB::table('lancamentos')->where('etiqueta_id', '=', $id)->get();
+                
+                //Pega informações para etiqueta
+                $lancamento =  DB::table('lancamentos_etiqueta')->where('id', '=', $id)->get();
         
-        // //Pega informações para etiqueta
-        $lancamento =  DB::table('lancamentos_etiqueta')->where('id', '=', $id)->get();
-        
-        switch ($lancamentoconfig->count()) {
-            case 0:
+                switch ($lancamentoconfig->count()) {
+                case 0:
                 foreach ($lancamento as  $value) {
-                    $lancamento = $value->nome_lancamento;
-                    $id =$value->id;
+                $lancamento = $value->nome_lancamento;
+                $id =$value->id;
                 }
                 return view('lancamento.crialancamento',['lancamento' => $lancamento], ['id' => $id]);
                 break;
             
-            default:
-            foreach ($lancamento as  $value) { $lancamento = $value->nome_lancamento; $id =$value->id; }
-            return view('lancamento.image-lancamento',['lancamento' => $lancamento], ['id' => $id]);
-            break;
+                default:
+                $fotos =  DB::table('lancamentos_fotos')->where('id_lancamento', '=', $id)->get();
+                $etiqueta =  DB::table('lancamentos_etiqueta')->where('id', '=', $id)->get();
+                $informacao = DB::table('lancamentos')->where('etiqueta_id', '=', $id)->get();
+                $data = [
+                    'fotos' => $fotos,
+                    'etiqueta' => $etiqueta,
+                    'informa'   => $informacao
+                ];
+                foreach ($lancamento as  $value) { $lancamento = $value->nome_lancamento; $id =$value->id; }
+            
+                if($fotos->count() > 0){
+                    return view('lancamento.image-lancamento',['data' => $data]);
+                } else {
+                    return view('lancamento.image-lancamento',['data' => $data]);
+                }
+                
+                break;
         }
 
       

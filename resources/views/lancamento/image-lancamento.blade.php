@@ -17,6 +17,10 @@
             <div class="col-lg-7 col-xl-8">
               <!-- Slick Carousel-->
               <div class="slick-slider-1">
+               
+              {{ dd($data)}}
+                    
+               
                 <div class="slick-slider-price">$5000\mo</div>
                 <div class="slick-slider carousel-parent" id="parent-carousel" data-arrows="true" data-loop="true" data-dots="false" data-swipe="true" data-fade="true" data-items="1" data-child="#child-carousel" data-for="#child-carousel">
                   <div class="item"><img src="{{asset('images/imagem_indisponivel.png')}}" alt="" width="763" height="443"/>
