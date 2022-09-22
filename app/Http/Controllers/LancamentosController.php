@@ -69,9 +69,9 @@ class LancamentosController extends Controller
                 foreach ($lancamento as  $value) { $lancamento = $value->nome_lancamento; $id =$value->id; }
             
                 if($fotos->count() > 0){
-                    return view('lancamento.image-lancamento',['data' => $data]);
+                    return view('lancamento.image-lancamento',['data' => $data], ['id' => $id]);
                 } else {
-                    return view('lancamento.image-lancamento',['data' => $data]);
+                    return view('lancamento.image-lancamento',['data' => $data],['id' => $id]);
                 }
                 
                 break;
@@ -86,10 +86,12 @@ class LancamentosController extends Controller
         $validated = $request->validate(['arquivo.*' =>'required|mimes:jpeg,png,jpg,gif']);
        
         for($i=0; $i < count($request->allFiles()['arquivo']); $i++){
-            $file = $request->file('arquivo')[$i]->store('lancamentos');
+            $file = $request->file()['arquivo'][$i];
+            $filename = $file->hashName();
+            $file->storeAs('lancamentos', $filename);
             DB::table('lancamentos_fotos')->insert([
                 'id_lancamento'     => $request->id,
-                'foto_name'         =>  $file = $request->file('arquivo')[$i]->store('lancamentos'),
+                'foto_name'         =>  $filename
             ]);
         }
         return redirect()->back()->with('message',"Imagem enviada com sucesso");
