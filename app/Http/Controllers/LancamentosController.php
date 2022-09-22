@@ -60,7 +60,7 @@ class LancamentosController extends Controller
                 default:
                 $fotos =  DB::table('lancamentos_fotos')->where('id_lancamento', '=', $id)->get();
                 $etiqueta =  DB::table('lancamentos_etiqueta')->where('id', '=', $id)->get();
-                $informacao = DB::table('lancamentos')->where('etiqueta_id', '=', $id)->get();
+                $informacao = DB::table('lancamentos')->where('etiqueta_id', '=', $id)->first();
                 $data = [
                     'fotos' => $fotos,
                     'etiqueta' => $etiqueta,
@@ -88,7 +88,7 @@ class LancamentosController extends Controller
         for($i=0; $i < count($request->allFiles()['arquivo']); $i++){
             $file = $request->file()['arquivo'][$i];
             $filename = $file->hashName();
-            $file->storeAs('lancamentos', $filename);
+            $file->storeAs('public/lancamentos', $filename);
             DB::table('lancamentos_fotos')->insert([
                 'id_lancamento'     => $request->id,
                 'foto_name'         =>  $filename

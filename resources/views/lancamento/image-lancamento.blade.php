@@ -4,11 +4,13 @@
     <section class="section-xs bg-white">
         <div class="container">
           <ul class="breadcrumbs-custom-path">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Properties</a></li>
-            <li class="active">Single Property</li>
+            <h2>
+            <li class="active">@foreach ($data['etiqueta'] as $item)
+                {{$item->nome_lancamento}}
+            @endforeach</li></h2>
           </ul>
         </div>
+       
       </section>
       <div class="divider-section"></div>
       <section class="section section-md bg-gray-12">
@@ -18,11 +20,16 @@
               <!-- Slick Carousel-->
               <div class="slick-slider-1">
                
-              {{ dd($data)}}
-                    
                
-                <div class="slick-slider-price">$5000\mo</div>
+                   
+               
+                <div class="slick-slider-price"><h3>R$ {{$data['informa']->valor}}</h3></div>
                 <div class="slick-slider carousel-parent" id="parent-carousel" data-arrows="true" data-loop="true" data-dots="false" data-swipe="true" data-fade="true" data-items="1" data-child="#child-carousel" data-for="#child-carousel">
+                 @foreach ($data['fotos'] as $item)
+                 <div class="item"><img src="{{asset('storage/lancamentos/'.$item->foto_name)}}" alt="" width="763" height="443"/>
+                 </div>
+                 @endforeach
+                 
                   <div class="item"><img src="{{asset('images/imagem_indisponivel.png')}}" alt="" width="763" height="443"/>
                   </div>
                   {{-- <div class="item"><img src="images/single-property-2-763x443.jpg" alt="" width="763" height="443"/>
@@ -37,9 +44,11 @@
                   </div> --}}
                 </div>
                 <div class="slick-slider carousel-child" id="child-carousel" data-arrows="true" data-loop="true" data-dots="false" data-swipe="true" data-items="1" data-sm-items="3" data-md-items="4" data-lg-items="4" data-xl-items="5" data-slide-to-scroll="1" data-for="#parent-carousel">
+                  @foreach ($data['fotos'] as $item)
                   <div>
-                    <div class="slick-slide-inner" style="background-image: url(images/single-property-1-763x443.jpg);"></div>
+                    <div class="slick-slide-inner" style="background-image: url({{asset('storage/lancamentos/'.$item->foto_name)}});"></div>
                   </div>
+                  @endforeach
                   {{-- <div>
                     <div class="slick-slide-inner" style="background-image: url(images/single-property-2-763x443.jpg);"></div>
                   </div>
@@ -61,17 +70,18 @@
                 <div class="features-block-inner">
                   <div class="features-block-item">
                     <ul class="features-block-list">
-                      <li><span class="icon hotel-icon-10"></span><span>2 Bathrooms</span></li>
-                      <li><span class="icon hotel-icon-05"></span><span>2 Bedrooms</span></li>
-                      <li><span class="icon mdi mdi-vector-square"></span><span>480 Sq Ft</span></li>
-                      <li><span class="icon hotel-icon-26"></span><span>1 Garage</span></li>
+                      <li><span class="icon hotel-icon-10"></span><span>{{$data['informa']->banheiro}} Banheiro(s)</span></li>
+                      <li><span class="icon hotel-icon-05"></span><span>{{$data['informa']->quarto}} Quarto(s)</span></li>
+                      <li><span class="icon hotel-icon-05"></span>{{$data['informa']->suite}} Suíte(s)</span></li>
+                      <li><span class="icon mdi mdi-vector-square"></span><span>{{$data['informa']->metrosconst}} Metros construídos</span></li>
+                      <li><span class="icon hotel-icon-26"></span><span>{{$data['informa']->garagem}} Vagas na garagem</span></li>
                     </ul>
                   </div>
-                  <div class="features-block-item"><a class="link link-1" href="#"><span class="icon mdi mdi-heart-outline"></span>Add to Favorites</a></div>
+               
                 </div>
               </div>
-              <p>Choose this property if you are looking for a modern house near the ocean shore. With 2 bathrooms and 2 bedrooms as well as a single garage, it is a perfect option for a small family.</p>
-              <p>This home has been completely renovated within the past year and features amazing views and sunsets of the local lake, solid wood cabinets (and loads of them), granite counters with colored glass backsplash,  sliding glass doors across the entire family room allowing beautiful views of the lake etc. Its affordable price serves as a great bonus for a family looking for an opportunity to save money on Miami real estate.</p>
+              <p>{{$data['informa']->descricao}}</p>
+             
               <!-- Bootstrap collapse-->
               <div class="card-group-custom card-group-corporate" id="accordion1" role="tablist" aria-multiselectable="false">
                 <!-- Bootstrap card-->
