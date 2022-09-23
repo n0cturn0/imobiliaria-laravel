@@ -132,7 +132,7 @@
                         <div class="rd-navbar-nav-wrap">
                             <!-- RD Navbar Nav-->
                             <ul class="rd-navbar-nav">
-                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url("./index") }}">Lançamentos</a>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('lancamento-list') }}">Lançamentos</a>
                                 </li>
                                 <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Imóveis</a>
                                 </li>
@@ -231,7 +231,24 @@
 <script src="{{ asset('js/core.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 {{-- <script src="{{ asset('js/3ts2ksMwXvKRuG480KNifJ2_JNM.js')}}"></script> --}}
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    window.addEventListener('show-delete-confirmation', event => {
+    Swal.fire({
+      title: 'Você tem certeza?',
+      text: "Impossível restaurar depois de apagado!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim, deletar esse empreendimento!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Livewire.emit('deleteConfirmed')
+      }
+    })
+    })
+</script>
 
 @livewireScripts
 </body>
