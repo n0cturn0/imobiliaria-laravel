@@ -118,7 +118,9 @@ class LancamentosController extends Controller
         $lancamento->valor = $request->input('valor');
         $lancamento->descricao = $request->input('descricao');
 
-         $lancamento->save();
+        if ($lancamento->save()){
+        return redirect()->back();
+        }
             
     }
 
