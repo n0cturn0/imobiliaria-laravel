@@ -23,9 +23,12 @@
                                 </div>
                                 @error('nomedoempreendimento') <span class="error">{{ $message }}</span> @enderror
                             </div>
-
-
-
+                            <div class="col-12">
+                                <label><h3>Envie um Banner</h3></label>
+                                <div class="form-wrap">
+                            <input type="file" class="button button-block button-secondary " required  wire:model="photo">
+                            </div>
+                        </div>
 {{--                            <div class="col-12">--}}
 
 {{--                                <div class="form-wrap">--}}

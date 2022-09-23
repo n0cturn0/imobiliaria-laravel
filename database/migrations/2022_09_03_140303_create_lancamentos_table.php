@@ -17,6 +17,7 @@ class CreateLancamentosTable extends Migration
             $table->id()->autoIncrement();
             $table->timestamps();
             $table->text('nome_lancamento');
+            $table->text('banner_lancamento');
             $table->integer('status')->comment('0 = ativo 1 = desativado');
         });
         Schema::create('lancamentos', function (Blueprint $table) {
@@ -37,8 +38,8 @@ class CreateLancamentosTable extends Migration
             $table->integer('suite');
             $table->integer('garagem');
             $table->integer('quarto');
-            $table->float('metrosconst');
-            $table->float('valor');
+            $table->string('metrosconst');
+            $table->string('valor');
             $table->text('descricao');
         });
 
@@ -46,8 +47,8 @@ class CreateLancamentosTable extends Migration
             $table->id()->autoIncrement();
             $table->integer('id_lancamento');
             $table->text('foto_name');
-            $table->text('foto_descricao');
-            $table->integer('destaque')->comment('0 = Sim 1 = não');
+            $table->text('foto_descricao')->nullable();
+            $table->integer('destaque')->comment('0 = Sim 1 = não')->nullable();
 
         });
     }

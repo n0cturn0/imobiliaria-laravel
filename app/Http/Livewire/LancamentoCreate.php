@@ -6,10 +6,13 @@ use App\models\LancamentoEtiquetaModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use Illuminate\Http\Request;
+use Livewire\WithFileUploads;
 
 class LancamentoCreate extends Component
 {
-    public $nomedoempreendimento;
+    use WithFileUploads;
+    public $nomedoempreendimento, $photo;
 
     protected $rules = [
         'nomedoempreendimento' => 'required|min:2',
@@ -28,19 +31,25 @@ class LancamentoCreate extends Component
 
     public function save()
     {
-        $this->validate();
+        $this->validate([
+            'photo' => 'image|max:1024', // 1MB Max
+        ]);
+        $file =$this->photo;
+        $filename = $file->hashName();
+        $this->photo->store('public/banner');
+        
+       
         $etiqueta = new LancamentoEtiquetaModel;
+       
         $etiqueta->nome_lancamento = $this->nomedoempreendimento;
+        $etiqueta->banner_lancamento = $filename;
         $etiqueta->save();
         session()->flash('message', 'Lançamento Inserido com Sucesso');
         $this->reset();
         $this->emit('alert_remove');
         return;
     }
-    public function lista()
-    {
-       echo 'oi';
-    }
+   
 
 
 

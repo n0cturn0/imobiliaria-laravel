@@ -87,35 +87,62 @@
                 <!-- Bootstrap card-->
                 <article class="card card-custom card-corporate">
                   <div class="card-header" id="accordion1-heading-1" role="tab">
-                    <div class="card-title"><a class="card-link" role="button" data-toggle="collapse" href="#accordion1-collapse-1" aria-controls="accordion1-collapse-1" aria-expanded="true"><span>Address</span>
+                    <div class="card-title"><a class="card-link" role="button" data-toggle="collapse" href="#accordion1-collapse-1" aria-controls="accordion1-collapse-1" aria-expanded="true"><span>Endereço</span>
                         <div class="card-arrow"></div></a></div>
                   </div>
                   <div class="collapse show" id="accordion1-collapse-1" role="tabpanel" aria-labelledby="accordion1-heading-1" data-parent="#accordion1">
                     <div class="card-body">
                       <div class="layout-1">
                         <dl class="list-terms-inline">
-                          <dt>Address:</dt>
-                          <dd>Biscayne Blvd</dd>
+                          <dt>Rua:</dt>
+                          <dd>{{$data['informa']->rua}}</dd>
                         </dl>
                         <dl class="list-terms-inline">
-                          <dt>State/County:</dt>
-                          <dd>Florida</dd>
+                          <dt>Estado:</dt>
+                          <dd>{{$data['informa']->estado}}</dd>
                         </dl>
                         <dl class="list-terms-inline">
-                          <dt>City:</dt>
-                          <dd>Miami</dd>
+                          <dt>Cidade:</dt>
+                          <dd>{{$data['informa']->cidade}}</dd>
                         </dl>
                         <dl class="list-terms-inline">
-                          <dt>Zip:</dt>
-                          <dd>8322</dd>
+                          <dt>Bairro:</dt>
+                          <dd>{{$data['informa']->bairro}}</dd>
                         </dl>
                         <dl class="list-terms-inline">
-                          <dt>Country:</dt>
-                          <dd>United States</dd>
+                          <dt>Rua Pavimentada</dt>
+                          <dd> @if ($data['informa']->ruapavimentada == 0) Sim @else Não @endif </dd>
                         </dl>
                         <dl class="list-terms-inline">
-                          <dt>Area:</dt>
-                          <dd>Lake Worth</dd>
+                          <dt>Tipo:</dt>
+                          <dd>
+                            <?php 
+                              switch ($data['informa']->tipo) {
+                                case 0:
+                                  echo "Apartamento";
+                                  break;
+                                case 1:
+                                   echo "Casa Térrea";
+                                  break;
+                                case 2:
+                                   echo "Sobrado";
+                                  break;
+                                case 3:
+                                   echo "Casa de Condomínio";
+                                  break;
+                                case 4:
+                                   echo "Sobrado Condominio";
+                                  break;
+                                case 5:
+                                   echo "Terreno";
+                                default:
+                                  # code...
+                                  break;
+                              }
+                              
+                              ?>
+
+                          </dd>
                         </dl>
                       </div>
                     </div>
@@ -123,7 +150,7 @@
                 </article>
               </div>
               <!-- Bootstrap collapse-->
-              <div class="card-group-custom card-group-corporate" id="accordion2" role="tablist" aria-multiselectable="false">
+              {{-- <div class="card-group-custom card-group-corporate" id="accordion2" role="tablist" aria-multiselectable="false">
                 <!-- Bootstrap card-->
                 <article class="card card-custom card-corporate">
                   <div class="card-header" id="accordion2-heading-1" role="tab">
@@ -147,10 +174,10 @@
                     </div>
                   </div>
                 </article>
-              </div>
+              </div> --}}
               <!-- Bootstrap collapse-->
               
-              <div class="block-group-item">
+              {{-- <div class="block-group-item">
                 <h3>Property Map</h3>
                 <div class="google-map-container mt-20" data-center="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-icon="images/gmap_marker_mini.png" data-icon-active="images/gmap_marker_mini_active.png" data-styles="[{&quot;featureType&quot;:&quot;water&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#e9e9e9&quot;},{&quot;lightness&quot;:17}]},{&quot;featureType&quot;:&quot;landscape&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#f5f5f5&quot;},{&quot;lightness&quot;:20}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#ffffff&quot;},{&quot;lightness&quot;:17}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;geometry.stroke&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#ffffff&quot;},{&quot;lightness&quot;:29},{&quot;weight&quot;:0.2}]},{&quot;featureType&quot;:&quot;road.arterial&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#ffffff&quot;},{&quot;lightness&quot;:18}]},{&quot;featureType&quot;:&quot;road.local&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#ffffff&quot;},{&quot;lightness&quot;:16}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#f5f5f5&quot;},{&quot;lightness&quot;:21}]},{&quot;featureType&quot;:&quot;poi.park&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#dedede&quot;},{&quot;lightness&quot;:21}]},{&quot;elementType&quot;:&quot;labels.text.stroke&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;},{&quot;color&quot;:&quot;#ffffff&quot;},{&quot;lightness&quot;:16}]},{&quot;elementType&quot;:&quot;labels.text.fill&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:36},{&quot;color&quot;:&quot;#333333&quot;},{&quot;lightness&quot;:40}]},{&quot;elementType&quot;:&quot;labels.icon&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;transit&quot;,&quot;elementType&quot;:&quot;geometry&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#f2f2f2&quot;},{&quot;lightness&quot;:19}]},{&quot;featureType&quot;:&quot;administrative&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#fefefe&quot;},{&quot;lightness&quot;:20}]},{&quot;featureType&quot;:&quot;administrative&quot;,&quot;elementType&quot;:&quot;geometry.stroke&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#fefefe&quot;},{&quot;lightness&quot;:17},{&quot;weight&quot;:1.2}]}]" data-zoom="5">
                   <div class="google-map google-map-1"></div>
@@ -158,9 +185,9 @@
                     <li data-location="9870 St Vincent Place, Glasgow" data-description="9870 St Vincent Place, Glasgow, DC 45 Fr 45."></li>
                   </ul>
                 </div>
-              </div>
+              </div> --}}
               <!-- Post Share and Links-->
-              <div class="blog-post-solo-footer mt-20">
+              {{-- <div class="blog-post-solo-footer mt-20">
                 <div class="blog-post-solo-footer-left">
                   <ul class="blog-post-solo-footer-list">
                     <li><span class="icon mdi mdi-clock"></span><a href="#">February 10, 2021</a></li>
@@ -179,7 +206,7 @@
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> --}}
               
               
             </div>
