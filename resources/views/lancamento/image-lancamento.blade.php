@@ -17,13 +17,14 @@
         <div class="container">
           <div class="row row-50">
             <div class="col-lg-7 col-xl-8">
+              
               <!-- Slick Carousel-->
               <div class="slick-slider-1">
                
             
                
                 <div class="slick-slider-price"><h3>R$ {{$data['informa']->valor}}</h3></div>
-
+                
                 
                 <div class="slick-slider carousel-parent" id="parent-carousel" data-arrows="true" data-loop="true" data-dots="false" data-swipe="true" data-fade="true" data-items="1" data-child="#child-carousel" data-for="#child-carousel">
                  @foreach ($data['fotos'] as $item)
@@ -47,9 +48,13 @@
                 </div>
                 <div class="slick-slider carousel-child" id="child-carousel" data-arrows="true" data-loop="true" data-dots="false" data-swipe="true" data-items="1" data-sm-items="3" data-md-items="4" data-lg-items="4" data-xl-items="5" data-slide-to-scroll="1" data-for="#parent-carousel">
                   @foreach ($data['fotos'] as $item)
+                 
                   <div>
-                    <div class="slick-slide-inner" style="background-image: url({{asset('storage/lancamentos/'.$item->foto_name)}});"><div class="button button-sm button-primary">Apagar</div></div>
+                
+                   <div class="slick-slide-inner" style="background-image: url({{asset('storage/lancamentos/'.$item->foto_name)}});"></div>
+                    
                   </div>
+                  
                   @endforeach
                   {{-- <div>
                     <div class="slick-slide-inner" style="background-image: url(images/single-property-2-763x443.jpg);"></div>
@@ -149,6 +154,9 @@
                       </div>
                     </div>
                   </div>
+                  <div class="button button-primary button-circle button-shadow" style="min-width: 180px">Editar informações</div>
+                  <div class="button button-circle button-default-outline button-shadow" style="min-width: 180px">Editar imagens</div>
+
                 </article>
               </div>
               <!-- Bootstrap collapse-->
