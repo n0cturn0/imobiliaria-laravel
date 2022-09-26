@@ -23,6 +23,7 @@ Route::post('/upload', [\App\Http\Controllers\LancamentosController::class,'uplo
 Route::post('/atualiza-lancamento', [\App\Http\Controllers\LancamentosController::class,'atualizalancamento'])->name('atualiza-lancamento');
 
 Route::get('/lancamento-editarinformacao/{id}', [\App\Http\Controllers\LancamentosController::class,'editarlancamento'])->name('lancamento-editarinformacao');
+Route::get('/lancamento-editarimagen/{id}', [\App\Http\Controllers\LancamentosController::class,'editarimagem'])->name('lancamento-editarinagem');
 
 Route::get('/', function () {
     return view('welcome');

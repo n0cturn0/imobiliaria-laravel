@@ -266,7 +266,7 @@
               
              
               <div class="col-12">
-                <button class="button button-secondary" type="submit">Cadastrar Imóvel</button>
+                <button class="button button-secondary" type="submit">Atualiza Imóvel</button>
               </div>
             </div>
           </form>

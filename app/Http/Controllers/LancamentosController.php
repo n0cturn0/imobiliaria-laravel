@@ -190,6 +190,15 @@ class LancamentosController extends Controller
         
     }
 
+    public function editarimagem($id = NULL)
+    {
+       
+       
+        $fotos = DB::table('lancamentos_fotos')->where('id_lancamento', '=', $id)->get();
+        $etiqueta =  DB::table('lancamentos_etiqueta')->where('id', '=', $id)->first();
+        return view('lancamento.edit-image',['fotos' => $fotos],['etiqueta' => $etiqueta]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
