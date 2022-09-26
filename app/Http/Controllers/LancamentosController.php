@@ -124,7 +124,12 @@ class LancamentosController extends Controller
             
     }
 
-
+    public function editarlancamento($id=NULL)
+    {
+        dd($id);
+        // $lancamento = DB::table('lancamentos')->where('id', '=', $id)->first();
+        // return view('lancamento.editar-lancamento',['lancamento' => $lancamento]);
+    }
 
     /**
      * Store a newly created resource in storage.

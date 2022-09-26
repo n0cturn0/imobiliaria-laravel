@@ -167,6 +167,7 @@
     @yield('lancamentolist')
     @yield('lancamentocriacao')
     @yield('lancamento-image')
+    @yield('lancamento-edita-informacao')
 {{--    <section class="section section-md bg-gray-12">--}}
 {{--        <div class="container">--}}
 {{--            <!-- RD Mailform-->--}}
