@@ -99,6 +99,22 @@ class LancamentosController extends Controller
 
     public function novolancamento(Request $request)
     {
+
+
+        $request->validate([
+            
+            'tipo' => 'required',
+            'lancamento_status' => 'required',
+            'estado' => 'required',
+            'cidade' => 'required',
+            'ruapavimentada' => 'required',
+            'quarto' => 'required',
+            'banheiro' => 'required',
+            'suite' => 'required',
+            'garagem' => 'required',
+              
+            
+        ]);
         $lancamento = new Lancamentos();
         $lancamento->etiqueta_id = $request->input('id');
         $lancamento->nome = $request->input('nome');
@@ -133,6 +149,22 @@ class LancamentosController extends Controller
 
     public function atualizalancamento(Request $request)
     {
+
+        $request->validate([
+            
+            'tipo' => 'required',
+            'lancamento_status' => 'required',
+            'estado' => 'required',
+            'cidade' => 'required',
+            'ruapavimentada' => 'required',
+            'quarto' => 'required',
+            'banheiro' => 'required',
+            'suite' => 'required',
+            'garagem' => 'required',
+
+            
+        ]);
+
         $id = $request->input('id');
         $lancamento = Lancamentos::find($id);
         $lancamento->nome = $request->input('nome');

@@ -30,13 +30,13 @@
 
               <div class="col-12">
                 <div class="form-wrap">
-                  <input class="form-input" value="{{$lancamento}}" id="contact-name" placeholder="Nome do lançamento" type="text" name="nome" data-constraints="@Required">
+                  <input class="form-input" readonly value="{{$lancamento}}" id="contact-name" placeholder="Nome do lançamento" type="text" name="nome" data-constraints="@Required">
                 </div>
               </div>
 
               <div class="col-12">
                 <div class="form-wrap">
-                  <select class="form-input" name="tipo" id="instrumento">
+                  <select class="form-input @error('tipo') is-invalid @enderror" name="tipo">
                     <option value="" disabled selected>Tipo</option>
                     <option value="0">Apartamento</option>
                     <option value="1">Casa Térrea</option>
@@ -46,6 +46,9 @@
                     <option value="5">Terreno</option>
                   </select>
                 </div>
+                @error('tipo')
+                <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
               </div>
 
 
@@ -54,18 +57,21 @@
                <div class="col-12">
                 <div class="form-wrap">
                   {{-- <label>Modalidade</label> --}}
-                  <select class="form-input" name="lancamento_status" id="instrumento">
+                  <select class="form-input @error ('lancamento_status') is-invalid @enderror" name="lancamento_status">
                     <option value=""  selected disabled>Modalidade</option>
                     <option value="0">Na Planta</option>
                     <option value="1">Pronto</option>
                   </select>
                 </div>
+                @error('lancamento_status')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
               </div>
 
                 <div class="col-12">
                 <div class="form-wrap">
                   
-                  <select class="form-input" name="estado" id="instrumento">
+                  <select class="form-input @error ('estado') is-invalid @enderror" name="estado" >
                     <option value="" disabled selected>Selecione um estado</option>
                     <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
                     <option value="AC">Acre</option>
@@ -97,12 +103,18 @@
                     <option value="EX">Estrangeiro</option>
                   </select>
                 </div>
+                @error('estado')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
               </div>
               <div class="col-12">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Cidade" id="contact-name" type="text" name="cidade" required>
+                  <input class="form-input @error('cidade') is-invalid @enderror" placeholder="Cidade"  type="text" name="cidade" value="{{$item->cidade}}" required>
                   
                 </div>
+                @error('cidade')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
               </div>
             
               <div class="col-12">
@@ -133,12 +145,15 @@
              
               <div class="col-12">
                 <div class="form-wrap">
-                  <select class="form-input" name="ruapavimentada" id="instrumento">
+                  <select class="form-input @error ('ruapavimentada') is-invalid @enderror" name="ruapavimentada" >
                     <option value="" disabled selected>Rua Pavimentada?</option>
                     <option value="0">Sim</option>
                     <option value="1">Não</option>
                   </select>
                 </div>
+                @error('ruapavimentada')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
               </div>
 
             
@@ -150,7 +165,7 @@
               <div class="col-12">
                 <div class="form-wrap">
                   <label class="form-label"></label>
-                  <select class="form-input" name="quarto">
+                  <select class="form-input @error ('quarto') is-invalid @enderror" name="quarto">
                     <option value="" disabled selected>Quantos quartos</option>
                     <option value="1">01</option>
                   <option value="2">02</option>
@@ -159,6 +174,9 @@
                   <option value="5">05</option>
                   </select>
                 </div>
+                @error('quarto')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
               </div>
 
 
@@ -168,8 +186,8 @@
               
               <div class="col-12">
                 <div class="form-wrap">
-                  {{-- <label class="form-label" for="contact-email">Quantos banheiros?</label> --}}
-                  <select class="form-input" name="banheiro" id="instrumento">
+                  
+                  <select class="form-input @error ('banheiro') is-invalid @enderror" name="banheiro">
                     <option value="" disabled selected>Quantos banheiros?</option>
                     <option value="1">01</option>
                   <option value="2">02</option>
@@ -178,11 +196,17 @@
                   <option value="5">05</option>
                   </select>
                 </div>
+
+                @error('banheiro')  
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
               </div>
-              <div class="col-12">
+
+
+             <div class="col-12">
                 <div class="form-wrap">
                   {{-- <label class="form-label" for="contact-email">Quantas suítes?</label> --}}
-                  <select class="form-input" name="suite" id="instrumento">
+                  <select class="form-input @error ('suite') is-invalide @enderror" name="suite">
                     <option value="" disabled selected>Quantas suítes?</option>
                     <option value="1">01</option>
                     <option value="2">02</option>
@@ -191,11 +215,14 @@
                     <option value="5">05</option>
                   </select>
                 </div>
+                @error('suite')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
               </div>
               <div class="col-12">
                 <div class="form-wrap">
                   {{-- <label class="form-label" for="contact-email">Quantas vagas na garagem</label> --}}
-                  <select class="form-input" name="garagem" id="instrumento">
+                  <select class="form-input @error ('garagem') is-invalid @enderror" name="garagem" >
                     <option value="" disabled selected>Quantas vagas na garagem?</option>
                     <option value="1">01</option>
                     <option value="2">02</option>
@@ -204,6 +231,9 @@
                     <option value="5">05</option>
                   </select>
                 </div>
+                @error('garagem')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
               </div>
               
 
