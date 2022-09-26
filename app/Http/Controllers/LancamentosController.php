@@ -199,6 +199,14 @@ class LancamentosController extends Controller
         return view('lancamento.edit-image',['fotos' => $fotos],['etiqueta' => $etiqueta]);
     }
 
+    public function apagarimagem($id=NULL)
+    {
+        if ($deleted = DB::table('lancamentos_fotos')->where('id', $id)->delete())
+        {
+            return redirect()->back();
+        }
+    }
+
     /**
      * Store a newly created resource in storage.
      *

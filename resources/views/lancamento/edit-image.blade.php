@@ -24,7 +24,7 @@
               <div class="product-modern-overlay"></div>
             </div>
             <div class="product-modern-caption">
-              <h5 class="product-modern-title">401 Biscayne Boulevard, Miami</h5>
+              <h5 class="product-modern-title">  <a href="{{url('lancamento-apagarimagem/'.$item->id)}}" class="button button-sm button-primary">Apagar imagem</a></h5>
             </div></a>
         </div>
         @endforeach
