@@ -8,15 +8,18 @@
         <div class="col-md-9 col-lg-7 col-xl-5">
           <h3 class="font-weight-medium">Lançamento </h3>
           <!-- RD Mailform-->
-          <form class="rd-form rd-mailform" data-form-output="form-output-global"  method="post" action="{{url('novo-lancamento')}}">
+          <form class="rd-form rd-mailform" data-form-output="form-output-global"  method="post" action="{{url('atualiza-lancamento')}}">
            @csrf
           
             <div class="row row-20">
+           @foreach ($lancamento as $item)
+               
            
-                 <input type="hidden" name="id" value="{{$id}}">
+                 <input type="hidden" name="id" value="{{$item->id}}">
+                 <input type="hidden" name="etiqueta" value="{{$item->etiqueta_id}}">
             
               
-              
+             
               {{-- <div class="col-12">
                 <div class="form-wrap">
                   <label class="form-label" for="contact-email">Selecione o estado</label>
@@ -30,7 +33,7 @@
 
               <div class="col-12">
                 <div class="form-wrap">
-                  <input class="form-input" value="{{$lancamento}}" id="contact-name" placeholder="Nome do lançamento" type="text" name="nome" data-constraints="@Required">
+                  <input class="form-input" readonly value="{{$item->nome}}" id="contact-name" placeholder="Nome do lançamento" type="text" name="nome" data-constraints="@Required">
                 </div>
               </div>
 
@@ -100,32 +103,32 @@
               </div>
               <div class="col-12">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Cidade" id="contact-name" type="text" name="cidade" required>
+                  <input class="form-input" placeholder="Cidade"  type="text" name="cidade" value="{{$item->cidade}}" required>
                   
                 </div>
               </div>
             
               <div class="col-12">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Bairro" id="contact-name" type="text" name="bairro" required>
+                  <input class="form-input" placeholder="Bairro"  type="text" value="{{$item->bairro}}" name="bairro" required>
                   
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Rua" id="contact-name" type="text" name="rua" required>
+                  <input class="form-input"   type="text" value="{{$item->rua}}" name="rua" required>
                 
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Número" id="contact-name" type="text" name="numero" required>
+                  <input class="form-input" placeholder="Número"  value="{{$item->numero}}" type="text" name="numero" required>
                  
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Cep" id="contact-name" type="text" name="cep" data-constraints="@Required">
+                  <input class="form-input" placeholder="Cep"  type="text" name="cep" data-constraints="@Required">
                   
                 </div>
               </div>
@@ -209,14 +212,14 @@
 
               <div class="col-4">
                 <div class="form-wrap">
-                  <input class="form-input" placeholder="Mts Construídos" id="contact-name" type="text" name="mtsconst" required>
+                  <input class="form-input" placeholder="Mts Construídos" value={{$item->metrosconst}} id="contact-name" type="text" name="mtsconst" required>
                  
                 </div>
               </div>
 
               <div class="col-4">
                 <div class="form-wrap">
-                  <input class="form-input form-control" placeholder="Valor"  type="text" name="valor" onkeypress="$(this).mask('R$ #.##0,00', {reverse: true});">
+                  <input class="form-input form-control" placeholder="Valor" value="{{$item->valor}}" type="text" name="valor" onkeypress="$(this).mask('R$ #.##0,00', {reverse: true});">
                  
                 </div>
               </div>
@@ -224,10 +227,10 @@
               <div class="col-12">
                 <div class="form-wrap">
                  
-                  <textarea placeholder="Texto com outras informações do imóvel" class="form-input" id="contact-message" name="descricao" data-constraints="@Required"></textarea>
+                  <textarea placeholder="Texto com outras informações do imóvel" class="form-input" id="contact-message" name="descricao" data-constraints="@Required">{{$item->descricao}}</textarea>
                 </div>
               </div>
-            
+              @endforeach
 
              
               

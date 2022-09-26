@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="pt-br">
-@livewireStyles
+
 <head>
     <title></title>
     <meta name="format-detection" content="telephone=no">

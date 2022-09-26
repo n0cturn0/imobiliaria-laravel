@@ -20,6 +20,8 @@ Route::get('/lancamento-list', [\App\Http\Controllers\LancamentosController::cla
 Route::get('/lancamento-novo/{id}', [\App\Http\Controllers\LancamentosController::class,'crialancamento'])->name('lancamento-novo');
 Route::post('/novo-lancamento', [\App\Http\Controllers\LancamentosController::class,'novolancamento'])->name('novo-lancamento');
 Route::post('/upload', [\App\Http\Controllers\LancamentosController::class,'upload'])->name('upload');
+Route::post('/atualiza-lancamento', [\App\Http\Controllers\LancamentosController::class,'atualizalancamento'])->name('atualiza-lancamento');
+
 Route::get('/lancamento-editarinformacao/{id}', [\App\Http\Controllers\LancamentosController::class,'editarlancamento'])->name('lancamento-editarinformacao');
 
 Route::get('/', function () {

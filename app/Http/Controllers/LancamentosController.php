@@ -126,9 +126,36 @@ class LancamentosController extends Controller
 
     public function editarlancamento($id=NULL)
     {
-        dd($id);
-        // $lancamento = DB::table('lancamentos')->where('id', '=', $id)->first();
-        // return view('lancamento.editar-lancamento',['lancamento' => $lancamento]);
+       
+        $lancamento = DB::table('lancamentos')->where('etiqueta_id', '=', $id)->get();
+        return view('lancamento.edita-informacao',['lancamento' => $lancamento]);
+    }
+
+    public function atualizalancamento(Request $request)
+    {
+        $id = $request->input('id');
+        $lancamento = Lancamentos::find($id);
+        $lancamento->nome = $request->input('nome');
+        $lancamento->lancamento_status = $request->input('lancamento_status');
+        $lancamento->estado = $request->input('estado');
+        $lancamento->cidade = $request->input('cidade');
+        $lancamento->bairro = $request->input('bairro');
+        $lancamento->rua = $request->input('rua');
+        $lancamento->numero = $request->input('numero');
+        $lancamento->ruapavimentada = $request->input('ruapavimentada');
+        $lancamento->tipo = $request->input('tipo');
+        $lancamento->quarto = $request->input('quarto');
+        $lancamento->banheiro = $request->input('banheiro');
+        $lancamento->suite = $request->input('suite');
+        $lancamento->garagem = $request->input('garagem');
+        $lancamento->metrosconst = $request->input('mtsconst');
+        $lancamento->valor = $request->input('valor');
+        $lancamento->descricao = $request->input('descricao');
+
+        if ($lancamento->save()){
+            return redirect()->route('lancamento-novo', ['id' => $request->input('etiqueta')]);
+            }
+        
     }
 
     /**
