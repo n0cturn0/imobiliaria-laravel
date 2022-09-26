@@ -27,6 +27,7 @@
               <h5 class="product-modern-title">  <a href="{{url('lancamento-apagarimagem/'.$item->id)}}" class="button button-sm button-primary">Apagar imagem</a></h5>
             </div></a>
         </div>
+       
         @endforeach
         
         
@@ -34,5 +35,8 @@
        
       </div>
     </div>
+    
+
+    <a href="{{url('lancamento-novo/'.$etiqueta->id)}}" class="button button-circle button-default-outline button-shadow" style="min-width: 180px">Voltar</a>
   </section>
   @endsection
