@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LancamentoImageModel;
 use App\Models\Lancamentos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -193,25 +194,17 @@ class LancamentosController extends Controller
     }
     }
 
-    public function destacarimagem($id=NULL)
+    public function destacarimagem($id)
     {
-
-    // $destaque = DB::table('lancamentos_fotos')
-    // ->where('id', '=', $id)
-    // ->where('destaque', '!=', 1);
-    // if ($destaque)
-    // {
-    //     DB::table('lancamentos_fotos')
-    //     ->where('id', '=', $id)
-    //     ->update(['destaque' => 1]);
-    //     return redirect()->back();    
-    // } else {
-    //     DB::table('lancamentos_fotos')
-    //     ->where('id', '=', $id)
-    //     ->update(['destaque' => 0]);
-    //     return redirect()->back();
-    // }
-   
+    $fotos =  DB::table('lancamentos_fotos')->where('id', '=', $id)->first();
+    if ($fotos->destaque == 0)
+    {
+    DB::table('lancamentos_fotos')->where('id', $id)->update(['destaque' => 1]);
+    return redirect()->back();
+    }else{
+    DB::table('lancamentos_fotos')->where('id', $id)->update(['destaque' => 0]);
+    return redirect()->back();
+    }
     }
 
     /**

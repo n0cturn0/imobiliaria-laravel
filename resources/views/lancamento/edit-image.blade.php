@@ -17,7 +17,8 @@
             
        
         <div class="col-sm-6 col-md-4 isotope-item" data-filter="for-sale">
-          <a href="{{url('lancamento-destacarimagen/'.$item->id)}}">   <span  class="icon box-modern-icon fl-bigmug-line-circular220"></span> </a>
+          @if($item->destaque == 1) {{'Destaque'}} @endif
+          <a href="{{url('lancamento-destacarimagen/'.$item->id)}}">   <span  class="icon box-modern-icon fl-bigmug-line-circular220"></span>  </a>
           <!-- Product Modern--><div class="product-modern" href="#">
             <div class="product-modern-media">
               <figure class="product-modern-figure"><img class="product-modern-image" src="{{asset('storage/lancamentos/'.$item->foto_name)}}" alt="" width="370" height="230"/>

@@ -48,7 +48,8 @@ class CreateLancamentosTable extends Migration
             $table->integer('id_lancamento');
             $table->text('foto_name');
             $table->text('foto_descricao')->nullable();
-            $table->integer('destaque')->comment('0 = Sim 1 = não')->nullable();
+            $table->integer('destaque')->comment('0 = Sim 1 = não')->default('0');
+            $table->timestamps();
 
         });
     }
