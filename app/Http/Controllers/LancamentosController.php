@@ -99,112 +99,119 @@ class LancamentosController extends Controller
 
     public function novolancamento(Request $request)
     {
-
-
-        $request->validate([
-            
-            'tipo' => 'required',
-            'lancamento_status' => 'required',
-            'estado' => 'required',
-            'cidade' => 'required',
-            'ruapavimentada' => 'required',
-            'quarto' => 'required',
-            'banheiro' => 'required',
-            'suite' => 'required',
-            'garagem' => 'required',
-              
-            
-        ]);
-        $lancamento = new Lancamentos();
-        $lancamento->etiqueta_id = $request->input('id');
-        $lancamento->nome = $request->input('nome');
-        $lancamento->lancamento_status = $request->input('lancamento_status');
-        $lancamento->estado = $request->input('estado');
-        $lancamento->cidade = $request->input('cidade');
-        $lancamento->bairro = $request->input('bairro');
-        $lancamento->rua = $request->input('rua');
-        $lancamento->numero = $request->input('numero');
-        $lancamento->ruapavimentada = $request->input('ruapavimentada');
-        $lancamento->tipo = $request->input('tipo');
-        $lancamento->quarto = $request->input('quarto');
-        $lancamento->banheiro = $request->input('banheiro');
-        $lancamento->suite = $request->input('suite');
-        $lancamento->garagem = $request->input('garagem');
-        $lancamento->metrosconst = $request->input('mtsconst');
-        $lancamento->valor = $request->input('valor');
-        $lancamento->descricao = $request->input('descricao');
-
-        if ($lancamento->save()){
-        return redirect()->back();
-        }
-            
+    $request->validate([  
+    'tipo' => 'required',
+    'lancamento_status' => 'required',
+    'estado' => 'required',
+    'cidade' => 'required',
+    'ruapavimentada' => 'required',
+    'quarto' => 'required',
+    'banheiro' => 'required',
+    'suite' => 'required',
+    'garagem' => 'required',
+    ]);
+    $lancamento = new Lancamentos();
+    $lancamento->etiqueta_id = $request->input('id');
+    $lancamento->nome = $request->input('nome');
+    $lancamento->lancamento_status = $request->input('lancamento_status');
+    $lancamento->estado = $request->input('estado');
+    $lancamento->cidade = $request->input('cidade');
+    $lancamento->bairro = $request->input('bairro');
+    $lancamento->rua = $request->input('rua');
+    $lancamento->numero = $request->input('numero');
+    $lancamento->ruapavimentada = $request->input('ruapavimentada');
+    $lancamento->tipo = $request->input('tipo');
+    $lancamento->quarto = $request->input('quarto');
+    $lancamento->banheiro = $request->input('banheiro');
+    $lancamento->suite = $request->input('suite');
+    $lancamento->garagem = $request->input('garagem');
+    $lancamento->metrosconst = $request->input('mtsconst');
+    $lancamento->valor = $request->input('valor');
+    $lancamento->descricao = $request->input('descricao');
+    if ($lancamento->save()){
+    return redirect()->back();
+    }     
     }
 
     public function editarlancamento($id=NULL)
     {
-       
-        $lancamento = DB::table('lancamentos')->where('etiqueta_id', '=', $id)->get();
-        return view('lancamento.edita-informacao',['lancamento' => $lancamento]);
+    $lancamento = DB::table('lancamentos')->where('etiqueta_id', '=', $id)->get();
+    return view('lancamento.edita-informacao',['lancamento' => $lancamento]);
     }
 
     public function atualizalancamento(Request $request)
     {
+    $request->validate([
+    'tipo' => 'required',
+    'lancamento_status' => 'required',
+    'estado' => 'required',
+    'cidade' => 'required',
+    'ruapavimentada' => 'required',
+    'quarto' => 'required',
+    'banheiro' => 'required',
+    'suite' => 'required',
+    'garagem' => 'required',
+    ]);
 
-        $request->validate([
-            
-            'tipo' => 'required',
-            'lancamento_status' => 'required',
-            'estado' => 'required',
-            'cidade' => 'required',
-            'ruapavimentada' => 'required',
-            'quarto' => 'required',
-            'banheiro' => 'required',
-            'suite' => 'required',
-            'garagem' => 'required',
+    $id = $request->input('id');
+    $lancamento = Lancamentos::find($id);
+    $lancamento->nome = $request->input('nome');
+    $lancamento->lancamento_status = $request->input('lancamento_status');
+    $lancamento->estado = $request->input('estado');
+    $lancamento->cidade = $request->input('cidade');
+    $lancamento->bairro = $request->input('bairro');
+    $lancamento->rua = $request->input('rua');
+    $lancamento->numero = $request->input('numero');
+    $lancamento->ruapavimentada = $request->input('ruapavimentada');
+    $lancamento->tipo = $request->input('tipo');
+    $lancamento->quarto = $request->input('quarto');
+    $lancamento->banheiro = $request->input('banheiro');
+    $lancamento->suite = $request->input('suite');
+    $lancamento->garagem = $request->input('garagem');
+    $lancamento->metrosconst = $request->input('mtsconst');
+    $lancamento->valor = $request->input('valor');
+    $lancamento->descricao = $request->input('descricao');
 
-            
-        ]);
-
-        $id = $request->input('id');
-        $lancamento = Lancamentos::find($id);
-        $lancamento->nome = $request->input('nome');
-        $lancamento->lancamento_status = $request->input('lancamento_status');
-        $lancamento->estado = $request->input('estado');
-        $lancamento->cidade = $request->input('cidade');
-        $lancamento->bairro = $request->input('bairro');
-        $lancamento->rua = $request->input('rua');
-        $lancamento->numero = $request->input('numero');
-        $lancamento->ruapavimentada = $request->input('ruapavimentada');
-        $lancamento->tipo = $request->input('tipo');
-        $lancamento->quarto = $request->input('quarto');
-        $lancamento->banheiro = $request->input('banheiro');
-        $lancamento->suite = $request->input('suite');
-        $lancamento->garagem = $request->input('garagem');
-        $lancamento->metrosconst = $request->input('mtsconst');
-        $lancamento->valor = $request->input('valor');
-        $lancamento->descricao = $request->input('descricao');
-
-        if ($lancamento->save()){
-            return redirect()->route('lancamento-novo', ['id' => $request->input('etiqueta')]);
-            }
+    if ($lancamento->save()){
+    return redirect()->route('lancamento-novo', ['id' => $request->input('etiqueta')]);
+    }
         
     }
 
     public function editarimagem($id = NULL)
     {
-       
-       
-        $fotos = DB::table('lancamentos_fotos')->where('id_lancamento', '=', $id)->get();
-        $etiqueta =  DB::table('lancamentos_etiqueta')->where('id', '=', $id)->first();
-        return view('lancamento.edit-image',['fotos' => $fotos],['etiqueta' => $etiqueta]);
+    $fotos = DB::table('lancamentos_fotos')->where('id_lancamento', '=', $id)->get();
+    $etiqueta =  DB::table('lancamentos_etiqueta')->where('id', '=', $id)->first();
+    return view('lancamento.edit-image',['fotos' => $fotos],['etiqueta' => $etiqueta]);
     }
 
     public function apagarimagem($id=NULL)
     {
-        if ($deleted = DB::table('lancamentos_fotos')->where('id', $id)->delete())
-        {
-            return redirect()->back();
-        }
+    if ($deleted = DB::table('lancamentos_fotos')->where('id', $id)->delete())
+    {
+    return redirect()->back();
+    }
+    }
+
+    public function destacarimagem($id=NULL)
+    {
+
+    // $destaque = DB::table('lancamentos_fotos')
+    // ->where('id', '=', $id)
+    // ->where('destaque', '!=', 1);
+    // if ($destaque)
+    // {
+    //     DB::table('lancamentos_fotos')
+    //     ->where('id', '=', $id)
+    //     ->update(['destaque' => 1]);
+    //     return redirect()->back();    
+    // } else {
+    //     DB::table('lancamentos_fotos')
+    //     ->where('id', '=', $id)
+    //     ->update(['destaque' => 0]);
+    //     return redirect()->back();
+    // }
+   
     }
 
     /**

@@ -109,7 +109,7 @@
               </div>
               <div class="col-12">
                 <div class="form-wrap">
-                  <input class="form-input @error('cidade') is-invalid @enderror" placeholder="Cidade"  type="text" name="cidade" value="{{$item->cidade}}" required>
+                  <input class="form-input @error('cidade') is-invalid @enderror" placeholder="Cidade"  type="text" name="cidade"  required>
                   
                 </div>
                 @error('cidade')

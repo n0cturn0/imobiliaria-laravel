@@ -17,15 +17,17 @@
             
        
         <div class="col-sm-6 col-md-4 isotope-item" data-filter="for-sale">
-          <!-- Product Modern--><a class="product-modern" href="single-property.html">
+          <a href="{{url('lancamento-destacarimagen/'.$item->id)}}">   <span  class="icon box-modern-icon fl-bigmug-line-circular220"></span> </a>
+          <!-- Product Modern--><div class="product-modern" href="#">
             <div class="product-modern-media">
               <figure class="product-modern-figure"><img class="product-modern-image" src="{{asset('storage/lancamentos/'.$item->foto_name)}}" alt="" width="370" height="230"/>
               </figure>
               <div class="product-modern-overlay"></div>
             </div>
             <div class="product-modern-caption">
-              <h5 class="product-modern-title">  <a href="{{url('lancamento-apagarimagem/'.$item->id)}}" class="button button-sm button-primary">Apagar imagem</a></h5>
-            </div></a>
+              <a href="{{url('lancamento-apagarimagem/'.$item->id)}}">  <span  class="icon box-modern-icon fl-bigmug-line-recycling10"></span></a>
+                
+            </div></div>
         </div>
        
         @endforeach

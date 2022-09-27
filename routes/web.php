@@ -25,6 +25,7 @@ Route::post('/atualiza-lancamento', [\App\Http\Controllers\LancamentosController
 Route::get('/lancamento-editarinformacao/{id}', [\App\Http\Controllers\LancamentosController::class,'editarlancamento'])->name('lancamento-editarinformacao');
 Route::get('/lancamento-editarimagen/{id}', [\App\Http\Controllers\LancamentosController::class,'editarimagem'])->name('lancamento-editarinagem');
 Route::get('/lancamento-apagarimagem/{id}', [\App\Http\Controllers\LancamentosController::class,'apagarimagem'])->name('lancamento-apagarimagem');
+Route::get('/lancamento-destacarimagen/{id}', [\App\Http\Controllers\LancamentosController::class,'destacarimagem'])->name('lancamento-destacarimagen');
 Route::get('/', function () {
     return view('welcome');
 });
