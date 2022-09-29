@@ -153,7 +153,6 @@ class LancamentosController extends Controller
     'suite' => 'required',
     'garagem' => 'required',
     ]);
-
     $id = $request->input('id');
     $lancamento = Lancamentos::find($id);
     $lancamento->nome = $request->input('nome');
@@ -172,11 +171,9 @@ class LancamentosController extends Controller
     $lancamento->metrosconst = $request->input('mtsconst');
     $lancamento->valor = $request->input('valor');
     $lancamento->descricao = $request->input('descricao');
-
     if ($lancamento->save()){
     return redirect()->route('lancamento-novo', ['id' => $request->input('etiqueta')]);
-    }
-        
+    }   
     }
 
     public function editarimagem($id = NULL)

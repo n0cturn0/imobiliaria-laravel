@@ -95,16 +95,14 @@
                             <div class="rd-range-outer">
                                 <p class="rd-range-caption">Preço (R$)</p>
                                 <!-- RD Range-->
-                                <div class="slider-area">
-                                    @include('slider')
-                                </div>
-                                {{-- <div class="rd-range" data-min="50" data-max="10000" data-start="[50, 10000]" data-step="10" data-tooltip="true" data-min-diff="100"></div> --}}
+                                
+                                <div class="rd-range" data-min="50" data-max="10000" data-start="[50, 10000]" data-step="10" data-tooltip="true" data-min-diff="100"></div>
                               
                             </div>
                             <div class="rd-range-outer">
-                                {{-- <p class="rd-range-caption">Área Construída</p>
+                                <p class="rd-range-caption">Área Construída</p>
                                 <!-- RD Range-->
-                                <div class="rd-range" data-min="70" data-max="20000" data-start="[70, 20000]" data-step="10" data-tooltip="true" data-min-diff="100"></div> --}}
+                                <div class="rd-range" data-min="70" data-max="20000" data-start="[70, 20000]" data-step="10" data-tooltip="true" data-min-diff="100"></div>
                             </div>
                             <div class="layout-5">
                                 <div class="layout-5-item layout-5-item_primary">
@@ -162,16 +160,7 @@
     <!-- Featured Properties-->
     <section class="section section-lg bg-gray-12">
         <div class="container">
-            {{-- SEARCH --}}
-        @include('search_result')
-            {{-- END SEARCH --}}
-
-
-
-
-
-
-            {{-- <div class="layout-4">
+            <div class="layout-4">
                 <h2 class="heading-decoration-1"><span class="heading-inner">Ajudamos você a a realizar o seu sonho!!</span></h2>
 
             </div>
@@ -285,7 +274,7 @@
                     </article>
                 </div>
                 <div class="col-12 text-center"><a class="button button-primary" href="properties-grid.html">Ver todas nossos imóveis</a></div>
-            </div> --}}
+            </div>
         </div>
     </section>
     <!-- Counters-->
@@ -387,44 +376,13 @@
         /*hasTooltip change after update input hidden*/
         
            
-            // $('.rd-range__wrap').click(function(){
-            //     alert('oi');
-            //     var value = $(this).find('.rd-range__value').val();
-            //     $(this).find('.rd-range__tooltip').text(value);
-            // });
+            $('.rd-range__wrap').click(function(){
+                alert('oi');
+                var value = $(this).find('.rd-range__value').val();
+                $(this).find('.rd-range__tooltip').text(value);
+            });
         
     </script>
-
-<script>
-    $(document).ready(function(e){
-       $('.range_slider').on('change',function(){
-           let left_value = $('#input_left').val();
-           let right_value = $('#input_right').val();
-           // alert(left_value+right_value);
-           $.ajax({
-               url:"{{ route('index') }}",
-               method:"GET",
-               data:{left_value:left_value, right_value:right_value},
-               success:function(res){
-                  $('.search-result').html(res);
-               }
-           });
-       });
-
-       $('#sort_by').on('change',function(){
-           let sort_by = $('#sort_by').val();
-           $.ajax({
-               url:"{{ route('sort.by') }}",
-               method:"GET",
-               data:{sort_by:sort_by},
-               success:function(res){
-                   $('.search-result').html(res);
-               }
-           });
-       });
-    })
- </script>
-    
 @endsection
 
 

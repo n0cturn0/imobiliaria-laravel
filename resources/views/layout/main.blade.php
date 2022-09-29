@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 <head>
+    :
+    {{-- range --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    {{-- end range --}}
     <title>@yield('title')</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
@@ -11,6 +16,9 @@
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900%7CRoboto:300,400,500,700,900">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    {{-- Range Css --}}
+    <link rel="stylesheet" href="{{ asset('css/range.css') }}">
+    {{-- End Range Css --}}
 
     <link rel="stylesheet" href="{{ asset('css/style.css?ver=1.2') }}">
     <link rel="stylesheet" href="{{asset('css/fonts.css')}}">
@@ -210,11 +218,18 @@
 <div class="snackbars" id="form-output-global"></div>
 <!-- Javascript-->
 @livewireScripts
+<script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
 <script src="{{ asset('js/core.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 <script src="{{ asset('js/3ts2ksMwXvKRuG480KNifJ2_JNM.js')}}"></script>
 <script>
     document.addEventListener("livewire:load", function(event) { window.livewire.hook('afterDomUpdate', () => { setTimeout(function() { $('#alert').fadeOut('fast'); }, 300); }); });
 </script>
+{{-- Range js --}}
+<script src="{{ asset('js/range.js') }}"></script>
+{{-- Range Js end --}}
 </body>
 </html>
