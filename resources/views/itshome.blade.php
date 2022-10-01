@@ -4,11 +4,9 @@
         <div class="container">
             <!-- Owl Carousel-->
             <div class="owl-carousel owl-carousel-stretch" data-items="1" data-sm-items="2" data-md-items="4" data-dots="true" data-nav="false" data-stage-padding="1" data-loop="false" data-margin="30" data-autoplay="true" data-autoplay-speed="3000" data-mouse-drag="false">
-                <a class="link-corporate" href="#"><img src="storage/lancamentos/MX25IR0TgH2YJlk87RwVfumjMLi6aWIxq6Zlr0Vn.jpg" alt="" width="183" height="44"/></a>
-                <a class="link-corporate" href="#"><img src="images/brand-2-118x82.png" alt="" width="118" height="82"/></a>
-                <a class="link-corporate" href="#"><img src="images/brand-3-137x39.png" alt="" width="137" height="39"/></a>
-                <a class="link-corporate" href="#"><img src="images/brand-4-133x77.png" alt="" width="133" height="77"/></a>
-                <a class="link-corporate" href="#"><img src="images/brand-5-145x35.png" alt="" width="145" height="35"/></a>
+               @foreach ($data['lancamentos'] as $item)
+                <a class="link-corporate" href="#"><img src="storage/banner/{{$item->banner_lancamento}}" alt="" width="183" height="44"/></a>
+                @endforeach
             </div>
         </div>
     </section>
@@ -25,11 +23,11 @@
                             <div class="row row-x-20 row-20">
                                 <div class="col-sm-6 col-lg-12 col-xl-6">
                                     <div class="form-wrap form-wrap-validation">
-                                        <select class="form-input select-filter" name="search-property-location" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Escolha onde buscar" data-minimum-results-for-search="Infinity" data-constraints="@Required">
+                                        <select class="form-input select-filter" name="search-property-location" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Escolha a cidade" data-minimum-results-for-search="Infinity" data-constraints="@Required">
                                             <option label="placeholder"></option>
-                                            <option value="2">Campo Grande</option>
-                                            <option value="3">Rio de Janeiro</option>
-                    
+                                            @foreach ($data['cidades'] as $item)
+                                            <option value="{{$item->cidade}}">{{$item->cidade}}</option>
+                                            @endforeach
                                         </select><span class="select-arrow"></span>
                                     </div>
                                 </div>
@@ -37,8 +35,11 @@
                                     <div class="form-wrap form-wrap-validation">
                                         <select class="form-input select-filter" name="search-property-type" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Bairro" data-minimum-results-for-search="Infinity" data-constraints="@Required">
                                             <option label="placeholder"></option>
-                                            <option value="2">Parati</option>
-                                            <option value="3">Centro</option>
+                                            @foreach ($data['bairro'] as $item)
+                                            <option value="{{$item->bairro}}">{{$item->bairro}}</option>
+                                            @endforeach
+                                           
+                                            
             
                                         </select><span class="select-arrow"></span>
                                     </div>
@@ -47,8 +48,12 @@
                                     <div class="form-wrap form-wrap-validation">
                                         <select class="form-input select-filter" name="search-property-status" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Tipo do imóvel" data-minimum-results-for-search="Infinity" data-constraints="@Required">
                                             <option label="placeholder"></option>
-                                            <option value="2">For Sale</option>
-                                            <option value="3">For Rent</option>
+                                            <option value="0">Apartamento</option>
+                                            <option value="1">Casa Térrea</option>
+                                            <option value="2">Sobrado</option>
+                                            <option value="3">Casa Condomínio</option>
+                                            <option value="4">Sobrado Condomínio</option>
+                                            <option value="5">Terreno</option>
                                         </select><span class="select-arrow"></span>
                                     </div>
                                 </div>
@@ -138,19 +143,33 @@
             <div class="cell-xl-6_sm height-fill">
                 <div class="box-2">
                     <!-- Owl Carousel-->
-                    <div class="owl-carousel" data-items="1" data-sm-items="2" data-lg-items="1" data-xl-items="2" data-dots="false" data-nav="false" data-nav-custom="#owl-outer-nav" data-loop="true" data-margin="30" data-autoplay="true" data-autoplay-speed="3500" data-stage-padding="0" data-mouse-drag="false"><a class="product-corporate context-dark" href="single-property.html" style="background-image: url(images/real-estate-1-1-474x577.jpg);">
+                    <div class="owl-carousel" data-items="1" data-sm-items="2" data-lg-items="1" data-xl-items="2" data-dots="false" data-nav="false" data-nav-custom="#owl-outer-nav" data-loop="true" data-margin="30" data-autoplay="true" data-autoplay-speed="3500" data-stage-padding="0" data-mouse-drag="false">
+                        @foreach ($data['destaques'] as $item)
+
+                        <a class="product-corporate context-dark" href="single-property.html" style="background-image: url(storage/lancamentos/{{$item->foto_name}});">
+                            <div class="product-corporate-inner">
+                                <div class="product-corporate-caption">
+                                    <h3 class="product-corporate-title">{{$item->cidade}}, {{$item->bairro}}</h3>
+                                    <h4 class="product-corporate-info">{{$item->suite}} Suíte(s) -  {{$item->garagem}} Vaga(s) de Garagem</h4>
+                                    <h4 class="product-corporate-info">{{$item->banheiro}} Banheiro(s) - {{$item->quarto}} Quarto(s)</h4>
+                                </div>
+                            </div></a>
+                            @endforeach
+                        {{-- <a class="product-corporate context-dark" href="single-property.html" style="background-image: url(images/real-estate-1-1-474x577.jpg);">
                             <div class="product-corporate-inner">
                                 <div class="product-corporate-caption">
                                     <h3 class="product-corporate-title">401 Biscayne Boulevard, Miami</h3>
                                     <h4 class="product-corporate-info">3 bedrooms, $240\day</h4>
                                 </div>
-                            </div></a><a class="product-corporate context-dark" href="single-property.html" style="background-image: url(images/real-estate-1-2-474x577.jpg);">
+                            </div></a> --}}
+                            {{-- <a class="product-corporate context-dark" href="single-property.html" style="background-image: url(images/real-estate-1-2-474x577.jpg);">
                             <div class="product-corporate-inner">
                                 <div class="product-corporate-caption">
                                     <h3 class="product-corporate-title">3895 NW 107th Ave, Doral</h3>
                                     <h4 class="product-corporate-info">2 bedrooms, $130\day</h4>
                                 </div>
-                            </div></a><a class="product-corporate context-dark" href="single-property.html" style="background-image: url(images/real-estate-1-3-474x577.jpg);">
+                            </div></a>
+                            <a class="product-corporate context-dark" href="single-property.html" style="background-image: url(images/real-estate-1-3-474x577.jpg);">
                             <div class="product-corporate-inner">
                                 <div class="product-corporate-caption">
                                     <h3 class="product-corporate-title">3782 Broadway St, San Francisco</h3>
@@ -162,7 +181,8 @@
                                     <h3 class="product-corporate-title">9021 Charter Oak Ln, San Diego</h3>
                                     <h4 class="product-corporate-info">1 bedroom, $210\day</h4>
                                 </div>
-                            </div></a></div>
+                            </div></a> --}}
+                        </div>
                     <div class="box-2-footer">
                         <div class="box-2-footer-inner">
                             <h3>Nossos Destaques</h3>

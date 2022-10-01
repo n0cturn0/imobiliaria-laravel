@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/index', [\App\Http\Controllers\PrincipalController::class,'index'])->name('index');
+Route::get('/destaques', [\App\Http\Controllers\PrincipalController::class,'destaque'])->name('destaques');
 Route::get('/dashboard', [\App\Http\Controllers\ControllerDashboard::class,'index'])->name('dashboard');
 Route::get('/lancamento-create', [\App\Http\Controllers\LancamentosController::class,'create'])->name('lancamento-create');
 Route::get('/lancamento-list', [\App\Http\Controllers\LancamentosController::class,'list'])->name('lancamento-list');
