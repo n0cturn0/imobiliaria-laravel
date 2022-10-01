@@ -3,7 +3,13 @@
     <section class="section section-lg bg-default">
         <div class="container">
             <!-- Owl Carousel-->
-            <div class="owl-carousel owl-carousel-stretch" data-items="1" data-sm-items="2" data-md-items="4" data-dots="true" data-nav="false" data-stage-padding="1" data-loop="false" data-margin="30" data-autoplay="true" data-autoplay-speed="3000" data-mouse-drag="false"><a class="link-corporate" href="#"><img src="images/brand-1-183x44.png" alt="" width="183" height="44"/></a><a class="link-corporate" href="#"><img src="images/brand-2-118x82.png" alt="" width="118" height="82"/></a><a class="link-corporate" href="#"><img src="images/brand-3-137x39.png" alt="" width="137" height="39"/></a><a class="link-corporate" href="#"><img src="images/brand-4-133x77.png" alt="" width="133" height="77"/></a><a class="link-corporate" href="#"><img src="images/brand-5-145x35.png" alt="" width="145" height="35"/></a></div>
+            <div class="owl-carousel owl-carousel-stretch" data-items="1" data-sm-items="2" data-md-items="4" data-dots="true" data-nav="false" data-stage-padding="1" data-loop="false" data-margin="30" data-autoplay="true" data-autoplay-speed="3000" data-mouse-drag="false">
+                <a class="link-corporate" href="#"><img src="storage/lancamentos/MX25IR0TgH2YJlk87RwVfumjMLi6aWIxq6Zlr0Vn.jpg" alt="" width="183" height="44"/></a>
+                <a class="link-corporate" href="#"><img src="images/brand-2-118x82.png" alt="" width="118" height="82"/></a>
+                <a class="link-corporate" href="#"><img src="images/brand-3-137x39.png" alt="" width="137" height="39"/></a>
+                <a class="link-corporate" href="#"><img src="images/brand-4-133x77.png" alt="" width="133" height="77"/></a>
+                <a class="link-corporate" href="#"><img src="images/brand-5-145x35.png" alt="" width="145" height="35"/></a>
+            </div>
         </div>
     </section>
 
@@ -21,30 +27,25 @@
                                     <div class="form-wrap form-wrap-validation">
                                         <select class="form-input select-filter" name="search-property-location" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Escolha onde buscar" data-minimum-results-for-search="Infinity" data-constraints="@Required">
                                             <option label="placeholder"></option>
-                                            <option value="2">Alaska</option>
-                                            <option value="3">Arizona</option>
-                                            <option value="4">Arkansas</option>
-                                            <option value="5">California</option>
-                                            <option value="6">Colorado</option>
-                                            <option value="7">Connecticut</option>
-                                            <option value="8">Delaware</option>
-                                            <option value="9">Florida</option>
+                                            <option value="2">Campo Grande</option>
+                                            <option value="3">Rio de Janeiro</option>
+                    
                                         </select><span class="select-arrow"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-wrap form-wrap-validation">
-                                        <select class="form-input select-filter" name="search-property-type" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Tipo do imóvel" data-minimum-results-for-search="Infinity" data-constraints="@Required">
+                                        <select class="form-input select-filter" name="search-property-type" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Bairro" data-minimum-results-for-search="Infinity" data-constraints="@Required">
                                             <option label="placeholder"></option>
-                                            <option value="2">Apartment</option>
-                                            <option value="3">House</option>
-                                            <option value="4">Lot</option>
+                                            <option value="2">Parati</option>
+                                            <option value="3">Centro</option>
+            
                                         </select><span class="select-arrow"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-lg-6 col-xl-4">
                                     <div class="form-wrap form-wrap-validation">
-                                        <select class="form-input select-filter" name="search-property-status" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Escolha . . ." data-minimum-results-for-search="Infinity" data-constraints="@Required">
+                                        <select class="form-input select-filter" name="search-property-status" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Tipo do imóvel" data-minimum-results-for-search="Infinity" data-constraints="@Required">
                                             <option label="placeholder"></option>
                                             <option value="2">For Sale</option>
                                             <option value="3">For Rent</option>
@@ -83,6 +84,26 @@
                                         </select>
                                     </div>
                                 </div>
+
+                                
+                                {{-- <div class="col-sm-4 col-lg-6 col-xl-4">
+                                    <div class="form-wrap form-wrap-validation"> 
+                                        <div class="form-wrap">
+                                            <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
+                                            <label class="form-label" for="contact-name"></label>
+                                          </div>
+                                    </div> 
+                                </div>
+
+                                <div class="col-sm-4 col-lg-6 col-xl-4">
+                                    <div class="form-wrap form-wrap-validation"> 
+                                        <div class="form-wrap">
+                                            <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
+                                            <label class="form-label" for="contact-name">Valor Final</label>
+                                          </div>
+                                    </div> 
+                                </div> --}}
+
                             </div>
                             {{-- gear slider range value to php 
                                 https://viblo.asia/p/20-css-javascript-price-range-slider-examples-XL6lAv1m5ek
@@ -92,20 +113,18 @@
                                 https://www.codexworld.com/price-range-slider-jquery-ajax-php-mysql/
                                 https://www.youtube.com/watch?v=xHfqRYRAgZw&t=915&ab_channel=WebJourney
                                 --}}
-                            <div class="rd-range-outer">
+                            {{-- <div class="rd-range-outer">
                                 <p class="rd-range-caption">Preço (R$)</p>
                                 <!-- RD Range-->
-                                <div class="slider-area">
-                                    @include('slider')
-                                </div>
-                                {{-- <div class="rd-range" data-min="50" data-max="10000" data-start="[50, 10000]" data-step="10" data-tooltip="true" data-min-diff="100"></div> --}}
+                                
+                                <div class="rd-range" data-min="50" data-max="10000" data-start="[50, 10000]" data-step="10" data-tooltip="true" data-min-diff="100"></div>
                               
-                            </div>
-                            <div class="rd-range-outer">
-                                {{-- <p class="rd-range-caption">Área Construída</p>
+                            </div> --}}
+                            {{-- <div class="rd-range-outer">
+                                <p class="rd-range-caption">Área Construída</p>
                                 <!-- RD Range-->
-                                <div class="rd-range" data-min="70" data-max="20000" data-start="[70, 20000]" data-step="10" data-tooltip="true" data-min-diff="100"></div> --}}
-                            </div>
+                                <div class="rd-range" data-min="70" data-max="20000" data-start="[70, 20000]" data-step="10" data-tooltip="true" data-min-diff="100"></div>
+                            </div> --}}
                             <div class="layout-5">
                                 <div class="layout-5-item layout-5-item_primary">
 
@@ -162,16 +181,7 @@
     <!-- Featured Properties-->
     <section class="section section-lg bg-gray-12">
         <div class="container">
-            {{-- SEARCH --}}
-        @include('search_result')
-            {{-- END SEARCH --}}
-
-
-
-
-
-
-            {{-- <div class="layout-4">
+            <div class="layout-4">
                 <h2 class="heading-decoration-1"><span class="heading-inner">Ajudamos você a a realizar o seu sonho!!</span></h2>
 
             </div>
@@ -285,7 +295,7 @@
                     </article>
                 </div>
                 <div class="col-12 text-center"><a class="button button-primary" href="properties-grid.html">Ver todas nossos imóveis</a></div>
-            </div> --}}
+            </div>
         </div>
     </section>
     <!-- Counters-->
@@ -383,47 +393,6 @@
         </div>
     </section>
     <!-- Page footer-->
-    <script>
-        /*hasTooltip change after update input hidden*/
-        
-           
-            // $('.rd-range__wrap').click(function(){
-            //     alert('oi');
-            //     var value = $(this).find('.rd-range__value').val();
-            //     $(this).find('.rd-range__tooltip').text(value);
-            // });
-        
-    </script>
-
-<script>
-    $(document).ready(function(e){
-       $('.range_slider').on('change',function(){
-           let left_value = $('#input_left').val();
-           let right_value = $('#input_right').val();
-           // alert(left_value+right_value);
-           $.ajax({
-               url:"{{ route('index') }}",
-               method:"GET",
-               data:{left_value:left_value, right_value:right_value},
-               success:function(res){
-                  $('.search-result').html(res);
-               }
-           });
-       });
-
-       $('#sort_by').on('change',function(){
-           let sort_by = $('#sort_by').val();
-           $.ajax({
-               url:"{{ route('sort.by') }}",
-               method:"GET",
-               data:{sort_by:sort_by},
-               success:function(res){
-                   $('.search-result').html(res);
-               }
-           });
-       });
-    })
- </script>
     
 @endsection
 

@@ -26,6 +26,9 @@ Route::get('/lancamento-editarinformacao/{id}', [\App\Http\Controllers\Lancament
 Route::get('/lancamento-editarimagen/{id}', [\App\Http\Controllers\LancamentosController::class,'editarimagem'])->name('lancamento-editarinagem');
 Route::get('/lancamento-apagarimagem/{id}', [\App\Http\Controllers\LancamentosController::class,'apagarimagem'])->name('lancamento-apagarimagem');
 Route::get('/lancamento-destacarimagen/{id}', [\App\Http\Controllers\LancamentosController::class,'destacarimagem'])->name('lancamento-destacarimagen');
+Route::get('/search-product', [\App\Http\Controllers\PrincipalController::class,'search_products'])->name('search.products');
+Route::get('/sort-by', [\App\Http\Controllers\PrincipalController::class,'sort_by'])->name('sort.by');
+
 Route::get('/', function () {
     return view('welcome');
 });

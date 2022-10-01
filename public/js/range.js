@@ -1,12 +1,12 @@
 
-const input_left = document.getElementById("input_left");
-const input_right = document.getElementById("input_right");
+var  input_left = document.getElementById("input_left");
+var input_right = document.getElementById("input_right");
 
-const thumb_left = document.querySelector(".slider > .thumb.left");
-const thumb_right = document.querySelector(".slider > .thumb.right");
-const range = document.querySelector(".slider > .range");
+var thumb_left = document.querySelector(".slider > .thumb.left");
+var thumb_right = document.querySelector(".slider > .thumb.right");
+var range = document.querySelector(".slider > .range");
 
-const set_left_value = () => {
+var set_left_value = () => {
     const _this = input_left;
     const [min, max] = [parseInt(_this.min), parseInt(_this.max)];
 
@@ -17,7 +17,7 @@ const set_left_value = () => {
     range.style.left = percent + "%";
 };
 
-const set_right_value = () => {
+var set_right_value = () => {
     const _this = input_right;
     const [min, max] = [parseInt(_this.min), parseInt(_this.max)];
 

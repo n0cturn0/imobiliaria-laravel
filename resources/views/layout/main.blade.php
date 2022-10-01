@@ -4,14 +4,14 @@
     :
     {{-- range --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     {{-- end range --}}
     <title>@yield('title')</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    @livewireStyles
+  
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900%7CRoboto:300,400,500,700,900">
@@ -217,19 +217,20 @@
 <!-- Global Mailform Output -->
 <div class="snackbars" id="form-output-global"></div>
 <!-- Javascript-->
-@livewireScripts
-<script
+
+{{-- <script
   src="https://code.jquery.com/jquery-3.6.1.js"
   integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> --}}
+  <script src="{{ asset('js/range.js') }}"></script>
 <script src="{{ asset('js/core.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 <script src="{{ asset('js/3ts2ksMwXvKRuG480KNifJ2_JNM.js')}}"></script>
-<script>
+{{-- <script>
     document.addEventListener("livewire:load", function(event) { window.livewire.hook('afterDomUpdate', () => { setTimeout(function() { $('#alert').fadeOut('fast'); }, 300); }); });
-</script>
+</script> --}}
 {{-- Range js --}}
-<script src="{{ asset('js/range.js') }}"></script>
+
 {{-- Range Js end --}}
 </body>
 </html>
