@@ -35,10 +35,8 @@ class LancamentosController extends Controller
 
     public function list()
     {
-        $etiquetas = DB::table('lancamentos_etiqueta')->distinct()->get();
-        return view('lancamento.list' , ['etiquetas' => $etiquetas]);
-
-
+    $etiquetas = DB::table('lancamentos_etiqueta')->distinct()->get();
+    return view('lancamento.list' , ['etiquetas' => $etiquetas]);
     }
 
     public function crialancamento($id=NULL)

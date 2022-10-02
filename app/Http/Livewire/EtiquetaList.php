@@ -11,8 +11,7 @@ class EtiquetaList extends Component
 
     public function render()
     {
-
-        return view('livewire.etiqueta-list' , ['etiquetas' => $etiquetas = DB::table('lancamentos_etiqueta')->distinct()->get()]);
+    return view('livewire.etiqueta-list' , ['etiquetas' => $etiquetas = DB::table('lancamentos_etiqueta')->distinct()->get()]);
     }
 
     protected $listeners = ['deleteConfirmed' => 'deleteAppointment'];
