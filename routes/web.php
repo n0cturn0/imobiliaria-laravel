@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/search-product', [\App\Http\Controllers\PrincipalController::class,'search_products'])->name('search.products');
 Route::get('/index', [\App\Http\Controllers\PrincipalController::class,'index'])->name('index');
 Route::get('/destaques', [\App\Http\Controllers\PrincipalController::class,'destaque'])->name('destaques');
 Route::get('/dashboard', [\App\Http\Controllers\ControllerDashboard::class,'index'])->name('dashboard');
+// Lancamentos
 Route::get('/lancamento-create', [\App\Http\Controllers\LancamentosController::class,'create'])->name('lancamento-create');
 Route::get('/lancamento-list', [\App\Http\Controllers\LancamentosController::class,'list'])->name('lancamento-list');
 Route::get('/lancamento-novo/{id}', [\App\Http\Controllers\LancamentosController::class,'crialancamento'])->name('lancamento-novo');
@@ -27,8 +28,10 @@ Route::get('/lancamento-editarinformacao/{id}', [\App\Http\Controllers\Lancament
 Route::get('/lancamento-editarimagen/{id}', [\App\Http\Controllers\LancamentosController::class,'editarimagem'])->name('lancamento-editarinagem');
 Route::get('/lancamento-apagarimagem/{id}', [\App\Http\Controllers\LancamentosController::class,'apagarimagem'])->name('lancamento-apagarimagem');
 Route::get('/lancamento-destacarimagen/{id}', [\App\Http\Controllers\LancamentosController::class,'destacarimagem'])->name('lancamento-destacarimagen');
-Route::get('/search-product', [\App\Http\Controllers\PrincipalController::class,'search_products'])->name('search.products');
-Route::get('/sort-by', [\App\Http\Controllers\PrincipalController::class,'sort_by'])->name('sort.by');
+
+// Corretores
+Route::get('/create-corretor', [\App\Http\Controllers\CorretorController::class,'create'])->name('create-corretor');
+
 
 Route::get('/', function () {
     return view('welcome');
