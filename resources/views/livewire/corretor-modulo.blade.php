@@ -47,14 +47,9 @@
                                         @error('telefonecorretor') <span class="error">{{ $message }}</span> @enderror
                                     </div>
     
-    
-    
-    
-    
+
                                 <div class="col-12">
-    
                                     <button class="button button-secondary" type="submit">Cadastrar Corretor</button>
-    
                                 </div>
                             </div>
                         </form>
