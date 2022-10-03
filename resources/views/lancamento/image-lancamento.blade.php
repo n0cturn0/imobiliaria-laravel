@@ -35,16 +35,7 @@
                  
                   <div class="item"><img src="{{asset('images/imagem_indisponivel.png')}}" alt="" width="763" height="443"/>
                   </div>
-                  {{-- <div class="item"><img src="images/single-property-2-763x443.jpg" alt="" width="763" height="443"/>
-                  </div>
-                  <div class="item"><img src="images/single-property-3-763x443.jpg" alt="" width="763" height="443"/>
-                  </div>
-                  <div class="item"><img src="images/single-property-4-763x443.jpg" alt="" width="763" height="443"/>
-                  </div>
-                  <div class="item"><img src="images/single-property-5-763x443.jpg" alt="" width="763" height="443"/>
-                  </div>
-                  <div class="item"><img src="images/single-property-6-763x443.jpg" alt="" width="763" height="443"/>
-                  </div> --}}
+                 
                 </div>
                 <div class="slick-slider carousel-child" id="child-carousel" data-arrows="true" data-loop="true" data-dots="false" data-swipe="true" data-items="1" data-sm-items="3" data-md-items="4" data-lg-items="4" data-xl-items="5" data-slide-to-scroll="1" data-for="#parent-carousel">
                   @foreach ($data['fotos'] as $item)

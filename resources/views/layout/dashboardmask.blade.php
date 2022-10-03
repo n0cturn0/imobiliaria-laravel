@@ -170,7 +170,6 @@
     @yield('lancamento-edita-informacao')
     @yield('lancamento-edita-images')
     @yield('corretor-create')
-    @yield('corretores-list')
 {{--    <section class="section section-md bg-gray-12">--}}
 {{--        <div class="container">--}}
 {{--            <!-- RD Mailform-->--}}
@@ -231,33 +230,20 @@
 </footer>
 </div>
 <!-- PANEL-->
-<script src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+
+
+
 <script src="{{ asset('js/core.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 {{-- <script src="{{ asset('js/3ts2ksMwXvKRuG480KNifJ2_JNM.js')}}"></script> --}}
 
 
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
 
 
-<script>
-    window.addEventListener('show-delete-confirmation', event => {
-    Swal.fire({
-      title: 'Você tem certeza?',
-      text: "Impossível restaurar depois de apagado!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Sim, deletar esse empreendimento!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Livewire.emit('deleteConfirmed')
-      }
-    })
-    })
-</script>
 <script>
     $(document).ready(function(){
       $('.date').mask('00/00/0000');

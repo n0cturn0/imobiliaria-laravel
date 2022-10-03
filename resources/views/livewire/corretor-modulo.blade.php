@@ -1,3 +1,4 @@
+
 <div>
     <div>
         <section class="section section-lg bg-default text-center">
@@ -12,7 +13,7 @@
                                 @if(session()->has('message'))
                                 <div class="alert alert-success">
                                     <button type="button" class="close" data-dismiss="alert">×</button>
-                                    {{ session('message') }}
+                                    {{ session('message') }}<br><a href="{{route('corretores-list')}}">Clique para ir ver os corretores cadastrados.</a>
                                 </div>
                                 @endif
     

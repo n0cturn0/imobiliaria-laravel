@@ -10,4 +10,10 @@ class CorretorController extends Controller
     {
         return view('corretor.create');
     }
+
+    public function list()
+    {
+        return view('corretor.corretores-list');
+    }
+
 }

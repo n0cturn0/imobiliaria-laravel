@@ -31,6 +31,7 @@ Route::get('/lancamento-destacarimagen/{id}', [\App\Http\Controllers\Lancamentos
 
 // Corretores
 Route::get('/create-corretor', [\App\Http\Controllers\CorretorController::class,'create'])->name('create-corretor');
+Route::get('/corretores-list', [\App\Http\Controllers\CorretorController::class,'list'])->name('corretores-list');
 
 
 Route::get('/', function () {
