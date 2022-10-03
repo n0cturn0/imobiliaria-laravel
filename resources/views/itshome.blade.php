@@ -329,37 +329,38 @@
         <div class="container">
             <h2 class="heading-decoration-1"><span class="heading-inner">Nossos Agentes!</span></h2>
             <div class="row row-30">
+                
+                   
+                <?php 
+                  if(empty($data['corretores'])){
+                    echo "Nenhum corretor cadastrado";
+                  } else { ?>
+                    @foreach ($data['corretores'] as $item)
+               
                 <div class="col-sm-6 col-lg-3">
-                    <!-- Block Agent--><a class="block-agent" href="agent-single-page.html"><img src="images/agents-01-540x460.jpg" alt="" width="540" height="460"/>
+                 
+                    <!-- Block Agent--><a class="block-agent" href="agent-single-page.html"><img src="storage/corretor/{{$item->corretor_foto}}" alt="" width="540" height="460"/>
                         <div class="block-agent-body">
-                            <h3 class="block-agent-title">Michael Rutter</h3>
-                            <p>Certified Real Estate Broker</p>
+                            <h3 class="block-agent-title">{{$item->corretor_nome}}</h3>
+                            
+                            <p> <img width="91" height="31" src="{{asset('images/zap.jpg')}}"> <br> {{$item->telefone}}</p>
                         </div></a>
                 </div>
-                <div class="col-sm-6 col-lg-3">
-                    <!-- Block Agent--><a class="block-agent" href="agent-single-page.html"><img src="images/agents-02-540x460.jpg" alt="" width="540" height="460"/>
-                        <div class="block-agent-body">
-                            <h3 class="block-agent-title">Janet Richmond</h3>
-                            <p>Residential Real Estate Broker</p>
-                        </div></a>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <!-- Block Agent--><a class="block-agent" href="agent-single-page.html"><img src="images/agents-03-540x460.jpg" alt="" width="540" height="460"/>
-                        <div class="block-agent-body">
-                            <h3 class="block-agent-title">Sam Wilson</h3>
-                            <p>Real Estate Broker</p>
-                        </div></a>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <!-- Block Agent--><a class="block-agent" href="agent-single-page.html"><img src="images/agents-04-540x460.jpg" alt="" width="540" height="460"/>
-                        <div class="block-agent-body">
-                            <h3 class="block-agent-title">Mary Peterson</h3>
-                            <p>Real Estate Broker</p>
-                        </div></a>
-                </div>
+               
+                @endforeach
+             <?php     }
+                    ?>
+                
+              
+                
+               
+                    
+                    
+               
             </div>
         </div>
     </section>
+
     <!-- FAQ-->
 
     <!-- Latest Blog Posts-->

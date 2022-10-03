@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 <head>
-    :
-    {{-- range --}}
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    {{-- end range --}}
     <title>@yield('title')</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
   
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    {{-- <link rel="icon" href="images/favicon.ico" type="image/x-icon"> --}}
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900%7CRoboto:300,400,500,700,900">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-    {{-- Range Css --}}
-    <link rel="stylesheet" href="{{ asset('css/range.css') }}">
-    {{-- End Range Css --}}
+   
 
     <link rel="stylesheet" href="{{ asset('css/style.css?ver=1.2') }}">
     <link rel="stylesheet" href="{{asset('css/fonts.css')}}">
@@ -167,7 +160,7 @@
                             </button>
                             <!-- RD Navbar Brand-->
                             <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark"
-                                                                                                 src="{{ asset('images/logo-default-121x61.png')}}"
+                                                                                                 src="{{ asset('images/logo-its.png')}}"
                                                                                                  alt="" width="121"
                                                                                                  height="61"
                                                                                                  srcset="images/logo-default-242x122.png 2x"/><img

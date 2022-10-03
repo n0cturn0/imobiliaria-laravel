@@ -23,12 +23,17 @@ class PrincipalController extends Controller
         if(count($cidade) == 0){
             $cidade ="Sem cidade para exibir";
         }
+        $corretores = DB::table('corretor')->get();
+        if (count($corretores) == 0) {
+            $corretores = '';
+        }
            
         $data = [
             'lancamentos' => $lancamentos,
             'destaques' => $destaque,
             'bairro' => $bairro,
-            'cidades' => $cidade
+            'cidades' => $cidade,
+            'corretores' => $corretores
             
         ];
          return view('itshome',['data'=>$data]);
