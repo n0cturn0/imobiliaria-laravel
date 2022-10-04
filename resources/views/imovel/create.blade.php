@@ -15,26 +15,17 @@
            @csrf
           
             <div class="row row-20">
-                @if(session()->has('message'))
-                <div class="alert alert-success">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    {{ session('message') }}
-                </div>
+            @if(session()->has('message'))
+            <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            {{ session('message') }}
+            </div>
             @endif
                 
             
               
               
-              {{-- <div class="col-12">
-                <div class="form-wrap">
-                  <label class="form-label" for="contact-email">Selecione o estado</label>
-                  <select class="form-input" name="estado" id="instrumento">
-                    <option value="trp"></option>
-                    <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
-                    <option value="Indefinido">...</option>
-                  </select>
-                </div>
-              </div> --}}
+              
 
               <div class="col-12">
                 <div class="form-wrap">
