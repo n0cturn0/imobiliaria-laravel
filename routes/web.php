@@ -33,7 +33,9 @@ Route::get('/lancamento-destacarimagen/{id}', [\App\Http\Controllers\Lancamentos
 Route::get('/create-corretor', [\App\Http\Controllers\CorretorController::class,'create'])->name('create-corretor');
 Route::get('/corretores-list', [\App\Http\Controllers\CorretorController::class,'list'])->name('corretores-list');
 Route::get('/apaga-corretor/{id}', [\App\Http\Controllers\CorretorController::class,'apagar'])->name('apaga-corretor');
-
+// Imoveis
+Route::get('/create-imovel', [\App\Http\Controllers\ImovelController::class,'create'])->name('create-imovel');
+Route::post('/insere-imovel', [\App\Http\Controllers\ImovelController::class,'save'])->name('insere-imovel');
 Route::get('/', function () {
     return view('welcome');
 });

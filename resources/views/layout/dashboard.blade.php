@@ -179,6 +179,7 @@
     @yield('lancamento-edita-images')
     @yield('corretor-create')
     @yield('corretores-list')
+    @yield('create-imovel')
 {{--    <section class="section section-md bg-gray-12">--}}
 {{--        <div class="container">--}}
 {{--            <!-- RD Mailform-->--}}
