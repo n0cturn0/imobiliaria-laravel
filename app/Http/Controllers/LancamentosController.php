@@ -79,7 +79,7 @@ class LancamentosController extends Controller
       
     }
 
-
+    
     public function upload(Request $request)
     {
         $validated = $request->validate(['arquivo.*' =>'required|mimes:jpeg,png,jpg,gif']);

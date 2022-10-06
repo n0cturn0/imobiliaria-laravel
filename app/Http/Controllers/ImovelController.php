@@ -54,5 +54,10 @@ class ImovelController extends Controller
         return redirect()->back();
         } 
     }
+
+    public function listar()
+    {
+        return view('imovel.list');
+    }
     
 }

@@ -1,7 +1,7 @@
 @extends('layout.dashboard')
 @section('create-imovel')
-@extends('layout.dashboard')
-@section('lancamentocriacao')
+
+
 
 <title>Cadastrando Lançamento</title>
 <section class="section section-lg bg-default text-center">
@@ -23,10 +23,6 @@
             @endif
                 
             
-              
-              
-              
-
               <div class="col-12">
                 <div class="form-wrap">
                   <input class="form-input"   placeholder="Título para o imóvel" type="text" name="titulo" data-constraints="@Required">
@@ -265,7 +261,7 @@
     </div>
   </section>
   <script>$('.valor').mask('#.##0,00', {reverse: true});</script>
-@endsection
+
 
 
 @endsection
