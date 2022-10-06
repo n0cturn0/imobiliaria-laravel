@@ -139,6 +139,10 @@
                                       </ul>
                                 </li>
                                 <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Imóveis</a>
+                                    <ul class="rd-menu rd-navbar-dropdown">
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{url('create-imovel')}}">Cadastrar Imóvel</a></li>
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{url('imoveis-list')}}">Listar Imóveis</a></li>
+                                      </ul>
                                 </li>
                                 <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Agentes / Corretores</a>
                                     <ul class="rd-menu rd-navbar-dropdown">
