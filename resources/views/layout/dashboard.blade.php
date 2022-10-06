@@ -138,13 +138,13 @@
                                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{url('lancamento-list')}}">Listar Corretores</a></li>
                                       </ul>
                                 </li>
-                                <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Imóveis</a>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('list-imovel')}}">Imóveis</a>
                                     <ul class="rd-menu rd-navbar-dropdown">
                                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{url('create-imovel')}}">Cadastrar Imóvel</a></li>
                                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{url('list-imovel')}}">Listar Imóveis</a></li>
                                       </ul>
                                 </li>
-                                <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Agentes / Corretores</a>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('corretores-list')}}">Agentes / Corretores</a>
                                     <ul class="rd-menu rd-navbar-dropdown">
                                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{url('create-corretor')}}">Cadastrar Corretor</a></li>
                                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{url('corretores-list')}}">Listar Corretores</a></li>

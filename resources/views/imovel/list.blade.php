@@ -7,38 +7,23 @@
       <table class="table-custom table-custom-primary">
         <thead>
           <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
-            <th>Column 3</th>
-            <th>Column 4</th>
+            <th>Título do Imóvel</th>
+            <th>Estado</th>
+            <th>Cidade</th>
+            <th>Bairro</th>
           </tr>
         </thead>
         <tbody>
+            @foreach ($imovel as $item)
+                
+           
           <tr>
-            <td>Item #1</td>
-            <td>Description</td>
-            <td>Subtotal</td>
-            <td>$3.00</td>
+            <td>{{$item->titulo}}</td>
+            <td>{{$item->estado}}</td>
+            <td>{{$item->cidade}}</td>
+            <td>{{$item->bairro}}</td>
           </tr>
-          <tr>
-            <td>Item #2</td>
-            <td>Description</td>
-            <td>Discount</td>
-            <td>$3.00</td>
-          </tr>
-          <tr>
-            <td>Item #3</td>
-            <td>Description</td>
-            <td>Shipping</td>
-            <td>$3.00</td>
-          </tr>
-          <tr>
-            <td>Item #4</td>
-            <td>Description</td>
-            <td>Tax</td>
-            <td>$4.00</td>
-          </tr>
-        </tbody>
+          @endforeach
         <tfoot>
           <tr>
             <td>All Items</td>

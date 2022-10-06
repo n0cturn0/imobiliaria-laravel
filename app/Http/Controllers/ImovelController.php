@@ -57,7 +57,8 @@ class ImovelController extends Controller
 
     public function listar()
     {
-        return view('imovel.list');
+        $imovel = ImovelModel::all();
+        return view('imovel.list', ['imovel' => $imovel]);
     }
     
 }
