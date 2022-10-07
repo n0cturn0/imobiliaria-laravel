@@ -93,5 +93,45 @@ class ImovelController extends Controller
     $imovel = DB::table('imovel')->where('id', '=', $id)->get();
     return view('imovel.edita-informacao',['lancamento' => $imovel]);
     }
+
+
+    public function atualizaimovel(Request $request)
+    {
+    $request->validate([
+    'tipo' => 'required',
+    'lancamento_status' => 'required',
+    'estado' => 'required',
+    'cidade' => 'required',
+    'ruapavimentada' => 'required',
+    'quarto' => 'required',
+    'banheiro' => 'required',
+    'suite' => 'required',
+    'garagem' => 'required',
+    ]);
+    $id = $request->input('id');
+    
+    $imovel = ImovelModel::find($id);
+    
+    $imovel->titulo = $request->input('nome');
+    $imovel->tipo = $request->input('tipo');
+    $imovel->lancamento_status = $request->input('lancamento_status');
+    $imovel->estado = $request->input('estado');
+    $imovel->cidade = $request->input('cidade');
+    $imovel->bairro = $request->input('bairro');
+    $imovel->rua = $request->input('rua');
+    $imovel->numero = $request->input('numero');
+    //$imovel->cep = $request->input('cep');
+    $imovel->ruapavimentada = $request->input('ruapavimentada');
+    $imovel->quarto = $request->input('quarto');
+    $imovel->banheiro = $request->input('banheiro');
+    $imovel->suite = $request->input('suite');
+    $imovel->garagem = $request->input('garagem');
+    $imovel->valor = $request->input('valor');
+    $imovel->descricao = $request->input('descricao');
+    $imovel->metrosconst = $request->input('mtsconst');
+    if ($imovel->save()){
+    return redirect()->route('imovel-novo', ['id' => $request->input('id')]);
+    }   
+    }
     
 }

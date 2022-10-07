@@ -37,9 +37,10 @@ Route::get('/apaga-corretor/{id}', [\App\Http\Controllers\CorretorController::cl
 Route::get('/create-imovel', [\App\Http\Controllers\ImovelController::class,'create'])->name('create-imovel');
 Route::post('/insere-imovel', [\App\Http\Controllers\ImovelController::class,'save'])->name('insere-imovel');
 Route::get('/list-imovel', [\App\Http\Controllers\ImovelController::class,'listar'])->name('list-imovel');
-Route::get('/imovel-novo/{id}', [\App\Http\Controllers\ImovelController::class,'imovelimages'])->name('list-imovel');
+Route::get('/imovel-novo/{id}', [\App\Http\Controllers\ImovelController::class,'imovelimages'])->name('imovel-novo');
 Route::post('/uploadimovel', [\App\Http\Controllers\ImovelController::class,'uploadimovel'])->name('uploadimovel');
 Route::get('/imovel-editar/{id}', [\App\Http\Controllers\ImovelController::class,'editarimovel'])->name('imovel-editar');
+Route::post('/atualiza-imovel', [\App\Http\Controllers\ImovelController::class,'atualizaimovel'])->name('atualiza-imovel');
 Route::get('/', function () {
     return view('welcome');
 });

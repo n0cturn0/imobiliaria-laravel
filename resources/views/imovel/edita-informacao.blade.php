@@ -6,7 +6,7 @@
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col-md-9 col-lg-7 col-xl-5">
-          <h3 class="font-weight-medium">Lançamento </h3>
+          <h3 class="font-weight-medium">Imóvel </h3>
           <!-- RD Mailform-->
           <form class="rd-form rd-mailform" data-form-output="form-output-global"  method="post" action="{{url('atualiza-imovel')}}">
            @csrf
