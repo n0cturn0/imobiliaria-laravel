@@ -38,6 +38,7 @@ Route::get('/create-imovel', [\App\Http\Controllers\ImovelController::class,'cre
 Route::post('/insere-imovel', [\App\Http\Controllers\ImovelController::class,'save'])->name('insere-imovel');
 Route::get('/list-imovel', [\App\Http\Controllers\ImovelController::class,'listar'])->name('list-imovel');
 Route::get('/imovel-novo/{id}', [\App\Http\Controllers\ImovelController::class,'imovelimages'])->name('list-imovel');
+Route::post('/uploadimovel', [\App\Http\Controllers\ImovelController::class,'uploadimovel'])->name('uploadimovel');
 Route::get('/', function () {
     return view('welcome');
 });

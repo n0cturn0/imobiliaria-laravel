@@ -7,7 +7,8 @@
             <h2>
             <li class="active">@foreach ($imovel as $item)
                 {{$item->titulo}}
-            @endforeach</li></h2>
+                @endforeach
+            </li></h2>
           </ul>
         </div>
        
@@ -26,9 +27,9 @@
                 <div class="slick-slider-price"><h3>R$ {{$item->valor}}</h3></div>
                 
                 
-                {{-- <div class="slick-slider carousel-parent" id="parent-carousel" data-arrows="true" data-loop="true" data-dots="false" data-swipe="true" data-fade="true" data-items="1" data-child="#child-carousel" data-for="#child-carousel">
-                 @foreach ($data['fotos'] as $item)
-                 <div class="item"><img src="{{asset('storage/lancamentos/'.$item->foto_name)}}" alt="" width="763" height="443"/>
+                <div class="slick-slider carousel-parent" id="parent-carousel" data-arrows="true" data-loop="true" data-dots="false" data-swipe="true" data-fade="true" data-items="1" data-child="#child-carousel" data-for="#child-carousel">
+                 @foreach ($fotos as $item)
+                 <div class="item"><img src="{{asset('storage/fotos/'.$item->foto_name)}}" alt="" width="763" height="443"/>
                  
                  </div>
                  @endforeach
@@ -36,34 +37,25 @@
                   <div class="item"><img src="{{asset('images/imagem_indisponivel.png')}}" alt="" width="763" height="443"/>
                   </div>
                  
-                </div> --}}
+                </div>
                 <div class="slick-slider carousel-child" id="child-carousel" data-arrows="true" data-loop="true" data-dots="false" data-swipe="true" data-items="1" data-sm-items="3" data-md-items="4" data-lg-items="4" data-xl-items="5" data-slide-to-scroll="1" data-for="#parent-carousel">
-                  {{-- @foreach ($data['fotos'] as $item) --}}
+                    @if(empty($fotos))
+                        {{'Nenhuma foto cadastrada'}}
+                    
+                    @else
+                    @foreach ($fotos as $item)
                  
                   <div>
                 
-                   {{-- <div class="slick-slide-inner" style="background-image: url({{asset('storage/lancamentos/'.$item->foto_name)}});"></div> --}}
+                   <div class="slick-slide-inner" style="background-image: url({{asset('storage/fotos/'.$item->foto_name)}});"></div>
                     
                   </div>
-                  
-                  {{-- @endforeach --}}
-                  {{-- <div>
-                    <div class="slick-slide-inner" style="background-image: url(images/single-property-2-763x443.jpg);"></div>
-                  </div>
-                  <div>
-                    <div class="slick-slide-inner" style="background-image: url(images/single-property-3-763x443.jpg);"></div>
-                  </div>
-                  <div>
-                    <div class="slick-slide-inner" style="background-image: url(images/single-property-4-763x443.jpg);"></div>
-                  </div>
-                  <div>
-                    <div class="slick-slide-inner" style="background-image: url(images/single-property-5-763x443.jpg);"></div>
-                  </div>
-                  <div>
-                    <div class="slick-slide-inner" style="background-image: url(images/single-property-6-763x443.jpg);"></div>
-                  </div> --}}
+                 
+                  @endforeach
+                  @endif
                 </div>
               </div>
+              @foreach ($imovel as $item)
               <div class="features-block">
                 <div class="features-block-inner">
                   <div class="features-block-item">
@@ -79,7 +71,7 @@
                 </div>
               </div>
               <p>{{$item->descricao}}</p>
-             
+              @endforeach
               <!-- Bootstrap collapse-->
               <div class="card-group-custom card-group-corporate" id="accordion1" role="tablist" aria-multiselectable="false">
                 <!-- Bootstrap card-->
@@ -217,10 +209,10 @@
                   <div class="block-info">
                    
                     
-                      <form method="post" action="{{ route('upload')}}" enctype="multipart/form-data">
+                      <form method="post" action="{{ route('uploadimovel')}}" enctype="multipart/form-data">
                       @csrf
                       <div class="form-button">
-                        {{-- <input type="hidden" name="id" value="{{$id}}"> --}}
+                        <input type="hidden" name="id" value="{{$item->id}}">
                         <input type="file" class="button button-block button-secondary @error('arquivo') is-invalid @enderror" required  name="arquivo[]" multiple>
                         {{-- <input type="submit" class="button button-block button-secondary" > --}}
                         <button class="button button-block button-secondary" type="submit">Enviar imagens</button>

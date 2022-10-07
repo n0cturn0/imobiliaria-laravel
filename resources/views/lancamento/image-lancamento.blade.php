@@ -27,7 +27,8 @@
                 
                 
                 <div class="slick-slider carousel-parent" id="parent-carousel" data-arrows="true" data-loop="true" data-dots="false" data-swipe="true" data-fade="true" data-items="1" data-child="#child-carousel" data-for="#child-carousel">
-                 @foreach ($data['fotos'] as $item)
+                  
+                  @foreach ($data['fotos'] as $item)
                  <div class="item"><img src="{{asset('storage/lancamentos/'.$item->foto_name)}}" alt="" width="763" height="443"/>
                  
                  </div>

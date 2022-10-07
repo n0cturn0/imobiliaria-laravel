@@ -65,7 +65,26 @@ class ImovelController extends Controller
     public function imovelimages($id=NULL)
     {
         $imovel  = DB::table('imovel')->where('id', '=', $id)->get();
-        return view('imovel.image-imovel', ['imovel' => $imovel]);
+        $fotos = DB::table('imovel_fotos')->where('id_lancamento', '=', $id)->get();
+        return view('imovel.image-imovel', ['imovel' => $imovel], ['fotos' => $fotos]);
+    }
+
+
+    public function uploadimovel(Request $request)
+    {
+        
+        $validated = $request->validate(['arquivo.*' =>'required|mimes:jpeg,png,jpg,gif']);
+       
+        for($i=0; $i < count($request->allFiles()['arquivo']); $i++){
+            $file = $request->file()['arquivo'][$i];
+            $filename = $file->hashName();
+            $file->storeAs('public/fotos', $filename);
+            DB::table('imovel_fotos')->insert([
+                'id_lancamento'     => $request->id,
+                'foto_name'         =>  $filename
+            ]);
+        }
+        return redirect()->back()->with('message',"Imagem enviada com sucesso");
     }
     
 }
