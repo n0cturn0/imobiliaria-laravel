@@ -137,8 +137,8 @@
                       </div>
                     </div>
                   </div>
-                  {{-- <a href="{{url('lancamento-editarinformacao/'.$data['informa']->etiqueta_id)}}" class="button button-primary button-circle button-shadow" style="min-width: 180px">Editar informações</a>
-                  <a href="{{url('lancamento-editarimagen/'.$data['informa']->etiqueta_id)}}" class="button button-circle button-default-outline button-shadow" style="min-width: 180px">Editar imagens</a> --}}
+                  <a href="{{url('imovel-editar/'.$item->id)}}" class="button button-primary button-circle button-shadow" style="min-width: 180px">Editar informações</a>
+                  <a href="{{url('lancamento-editarimagen/')}}" class="button button-circle button-default-outline button-shadow" style="min-width: 180px">Editar imagens</a>
 
                 </article>
               </div>

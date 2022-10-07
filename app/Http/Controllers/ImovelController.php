@@ -86,5 +86,12 @@ class ImovelController extends Controller
         }
         return redirect()->back()->with('message',"Imagem enviada com sucesso");
     }
+
+
+    public function editarimovel($id=NULL)
+    {
+    $imovel = DB::table('imovel')->where('id', '=', $id)->get();
+    return view('imovel.edita-informacao',['lancamento' => $imovel]);
+    }
     
 }

@@ -39,6 +39,7 @@ Route::post('/insere-imovel', [\App\Http\Controllers\ImovelController::class,'sa
 Route::get('/list-imovel', [\App\Http\Controllers\ImovelController::class,'listar'])->name('list-imovel');
 Route::get('/imovel-novo/{id}', [\App\Http\Controllers\ImovelController::class,'imovelimages'])->name('list-imovel');
 Route::post('/uploadimovel', [\App\Http\Controllers\ImovelController::class,'uploadimovel'])->name('uploadimovel');
+Route::get('/imovel-editar/{id}', [\App\Http\Controllers\ImovelController::class,'editarimovel'])->name('imovel-editar');
 Route::get('/', function () {
     return view('welcome');
 });
