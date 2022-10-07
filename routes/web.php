@@ -37,6 +37,7 @@ Route::get('/apaga-corretor/{id}', [\App\Http\Controllers\CorretorController::cl
 Route::get('/create-imovel', [\App\Http\Controllers\ImovelController::class,'create'])->name('create-imovel');
 Route::post('/insere-imovel', [\App\Http\Controllers\ImovelController::class,'save'])->name('insere-imovel');
 Route::get('/list-imovel', [\App\Http\Controllers\ImovelController::class,'listar'])->name('list-imovel');
+Route::get('/imovel-novo/{id}', [\App\Http\Controllers\ImovelController::class,'imovelimages'])->name('list-imovel');
 Route::get('/', function () {
     return view('welcome');
 });

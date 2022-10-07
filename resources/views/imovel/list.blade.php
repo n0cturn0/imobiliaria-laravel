@@ -2,8 +2,9 @@
 @section('imoveis-list')
 <div class="container">
    
-   
+    
     <div class="table-custom-responsive">
+      
       <table class="table-custom table-custom-primary">
         <thead>
           <tr>
@@ -18,7 +19,7 @@
                 
            
           <tr>
-            <td>{{$item->titulo}}</td>
+          <td><a href="{{url('imovel-novo/'.$item->id)}}">{{$item->titulo}}</a></td>
             <td>{{$item->estado}}</td>
             <td>{{$item->cidade}}</td>
             <td>{{$item->bairro}}</td>

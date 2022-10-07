@@ -185,6 +185,7 @@
     @yield('corretores-list')
     @yield('create-imovel')
     @yield('imoveis-list')
+    @yield('imovel-image')
 {{--    <section class="section section-md bg-gray-12">--}}
 {{--        <div class="container">--}}
 {{--            <!-- RD Mailform-->--}}

@@ -8,6 +8,7 @@ use PhpParser\Node\Stmt\TryCatch;
 use Illuminate\Support\Facades\Redirect ;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\DB;
 
 
 class ImovelController extends Controller
@@ -59,6 +60,12 @@ class ImovelController extends Controller
     {
         $imovel = ImovelModel::all();
         return view('imovel.list', ['imovel' => $imovel]);
+    }
+
+    public function imovelimages($id=NULL)
+    {
+        $imovel  = DB::table('imovel')->where('id', '=', $id)->get();
+        return view('imovel.image-imovel', ['imovel' => $imovel]);
     }
     
 }
