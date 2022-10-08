@@ -41,6 +41,9 @@ Route::get('/imovel-novo/{id}', [\App\Http\Controllers\ImovelController::class,'
 Route::post('/uploadimovel', [\App\Http\Controllers\ImovelController::class,'uploadimovel'])->name('uploadimovel');
 Route::get('/imovel-editar/{id}', [\App\Http\Controllers\ImovelController::class,'editarimovel'])->name('imovel-editar');
 Route::post('/atualiza-imovel', [\App\Http\Controllers\ImovelController::class,'atualizaimovel'])->name('atualiza-imovel');
+Route::get('/imovel-editarimagen/{id}', [\App\Http\Controllers\ImovelController::class,'editarimovelimagem'])->name('imovel-editarimagen');
+Route::get('/imovel-destacar/{id}', [\App\Http\Controllers\ImovelController::class,'destacar'])->name('imovel-destacar');
+Route::get('/imovel-apagar/{id}', [\App\Http\Controllers\ImovelController::class,'apagarimovel'])->name('imovel-apagar');
 Route::get('/', function () {
     return view('welcome');
 });

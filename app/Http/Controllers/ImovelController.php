@@ -133,5 +133,33 @@ class ImovelController extends Controller
     return redirect()->route('imovel-novo', ['id' => $request->input('id')]);
     }   
     }
+
+    public function editarimovelimagem($id = NULL)
+    {
+    $fotos = DB::table('imovel_fotos')->where('id_lancamento', '=', $id)->get();
+    $etiqueta =  DB::table('imovel')->where('id', '=', $id)->first();
+    return view('imovel.edit-image',['fotos' => $fotos],['etiqueta' => $etiqueta]);
+    }
+
+    public function destacar($id)
+    {
+    $fotos =  DB::table('imovel_fotos')->where('id', '=', $id)->first();
+    if ($fotos->destaque == 0)
+    {
+    DB::table('imovel_fotos')->where('id', $id)->update(['destaque' => 1]);
+    return redirect()->back();
+    }else{
+    DB::table('imovel_fotos')->where('id', $id)->update(['destaque' => 0]);
+    return redirect()->back();
+    }
+    }
+
+    public function apagarimovel($id=NULL)
+    {
+    if ($deleted = DB::table('imovel_fotos')->where('id', $id)->delete())
+    {
+    return redirect()->back();
+    }
+    }
     
 }
