@@ -7,13 +7,13 @@
       <!-- Isotope Filters-->
       <div class="isotope-filters isotope-filters-line">
         <ul class="isotope-filters-list" id="isotope-filters">
-          <li><a class="active"><h2>{{$etiqueta->titulo}}<h2></a></li>
+          <li><a class="active"><h2>{{$data['etiqueta']->titulo}}<h2></a></li>
        
         </ul>
       </div>
       <!-- Isotope Content-->
       <div class="isotope row row-50" data-isotope-layout="fitRows">
-        @foreach ($fotos as $item)
+        @foreach ($data['fotos'] as $item)
             
        
         <div class="col-sm-6 col-md-4 isotope-item" data-filter="for-sale">
@@ -40,6 +40,6 @@
     </div>
     
 
-    <a href="{{url('lancamento-novo/'.$etiqueta->id)}}" class="button button-circle button-default-outline button-shadow" style="min-width: 180px">Voltar</a>
+    <a href="{{url('imovel-novo/'.$data['id'])}}" class="button button-circle button-default-outline button-shadow" style="min-width: 180px">Voltar</a>
   </section>
   @endsection

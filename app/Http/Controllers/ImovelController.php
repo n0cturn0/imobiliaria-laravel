@@ -138,7 +138,13 @@ class ImovelController extends Controller
     {
     $fotos = DB::table('imovel_fotos')->where('id_lancamento', '=', $id)->get();
     $etiqueta =  DB::table('imovel')->where('id', '=', $id)->first();
-    return view('imovel.edit-image',['fotos' => $fotos],['etiqueta' => $etiqueta]);
+
+    $data = [
+        'fotos' => $fotos,
+        'etiqueta' => $etiqueta,
+        'id'   => $id
+    ];
+    return view('imovel.edit-image',['data' => $data]);
     }
 
     public function destacar($id)
