@@ -206,25 +206,34 @@
 
             </div>
             <div class="row row-50">
+                @foreach ($data['imoveis'] as $item)
+                    
+                
                 <div class="col-md-6 col-lg-4">
                     <!-- Product Classic-->
                     <article class="product-classic">
                         <div class="product-classic-media">
-                            <div class="owl-carousel" data-items="1" data-nav="true" data-stage-padding="0" data-loop="false" data-margin="0" data-mouse-drag="false"><img src="images/featured-properties-01-480x287.jpg" alt="" width="480" height="287"/><img src="images/featured-properties-02-480x287.jpg" alt="" width="480" height="287"/><img src="images/featured-properties-03-480x287.jpg" alt="" width="480" height="287"/><img src="images/featured-properties-04-480x287.jpg" alt="" width="480" height="287"/>
+                            <div class="owl-carousel" data-items="1" data-nav="true" data-stage-padding="0" data-loop="false" data-margin="0" data-mouse-drag="false">
+                                <img src="storage/fotos/{{$item->foto_name}}" alt="" width="480" height="287"/>
+                                {{-- <img src="images/featured-properties-02-480x287.jpg" alt="" width="480" height="287"/>
+                                <img src="images/featured-properties-03-480x287.jpg" alt="" width="480" height="287"/>
+                                <img src="images/featured-properties-04-480x287.jpg" alt="" width="480" height="287"/> --}}
                             </div>
-                            <div class="product-classic-price"><span>$5000\mo</span></div>
+                            <div class="product-classic-price"><span>R$ {{$item->valor}}</span></div>
                         </div>
-                        <h4 class="product-classic-title"><a href="single-property.html">401 Biscayne Boulevard, Miami</a></h4>
+                        <h4 class="product-classic-title"><a href="single-property.html">{{$item->estado}}, {{$item->cidade}}</a></h4>
                         <div class="product-classic-divider"></div>
                         <ul class="product-classic-list">
-                            <li><span class="icon mdi mdi-vector-square"></span><span>480 Sq Ft</span></li>
-                            <li><span class="icon hotel-icon-10"></span><span>2 Bathrooms</span></li>
-                            <li><span class="icon hotel-icon-05"></span><span>2 Bedrooms</span></li>
-                            <li><span class="icon hotel-icon-26"></span><span>1 Garage</span></li>
+                            <li><span class="icon mdi mdi-vector-square"></span><span>{{$item->metrosconst}} Metros Contruído</span></li>
+                            <li><span class="icon hotel-icon-10"></span><span>{{$item->banheiro}} Banheiro(s)</span></li>
+                            <li><span class="icon hotel-icon-05"></span><span>{{$item->quarto}} Quarto (s)</span></li>
+                            <li><span class="icon hotel-icon-05"></span><span>{{$item->suite}} Suíte (s)</span></li>
+                            <li><span class="icon hotel-icon-26"></span><span>{{$item->garagem}} Vaga (s) Garagem</span></li>
                         </ul>
                     </article>
                 </div>
-                <div class="col-md-6 col-lg-4">
+                @endforeach
+                {{-- <div class="col-md-6 col-lg-4">
                     <!-- Product Classic-->
                     <article class="product-classic">
                         <div class="product-classic-media">
@@ -241,8 +250,8 @@
                             <li><span class="icon hotel-icon-26"></span><span>1 Garage</span></li>
                         </ul>
                     </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
+                </div> --}}
+                {{-- <div class="col-md-6 col-lg-4">
                     <!-- Product Classic-->
                     <article class="product-classic">
                         <div class="product-classic-media">
@@ -259,8 +268,8 @@
                             <li><span class="icon hotel-icon-26"></span><span>2 Garages</span></li>
                         </ul>
                     </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
+                </div> --}}
+                {{-- <div class="col-md-6 col-lg-4">
                     <!-- Product Classic-->
                     <article class="product-classic">
                         <div class="product-classic-media">
@@ -277,8 +286,8 @@
                             <li><span class="icon hotel-icon-26"></span><span>1 Garage</span></li>
                         </ul>
                     </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
+                </div> --}}
+                {{-- <div class="col-md-6 col-lg-4">
                     <!-- Product Classic-->
                     <article class="product-classic">
                         <div class="product-classic-media">
@@ -295,8 +304,8 @@
                             <li><span class="icon hotel-icon-26"></span><span>1 Garage</span></li>
                         </ul>
                     </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
+                </div> --}}
+                {{-- <div class="col-md-6 col-lg-4">
                     <!-- Product Classic-->
                     <article class="product-classic">
                         <div class="product-classic-media">
@@ -313,7 +322,7 @@
                             <li><span class="icon hotel-icon-26"></span><span>2 Garages</span></li>
                         </ul>
                     </article>
-                </div>
+                </div> --}}
                 <div class="col-12 text-center"><a class="button button-primary" href="properties-grid.html">Ver todas nossos imóveis</a></div>
             </div>
         </div>
@@ -331,25 +340,18 @@
             <div class="row row-30">
                 
                    
-                <?php 
-                  if(empty($data['corretores'])){
-                    echo "Nenhum corretor cadastrado";
-                  } else { ?>
-                    @foreach ($data['corretores'] as $item)
-               
-                <div class="col-sm-6 col-lg-3">
-                 
-                    <!-- Block Agent--><a class="block-agent" href="agent-single-page.html"><img src="storage/corretor/{{$item->corretor_foto}}" alt="" width="540" height="460"/>
-                        <div class="block-agent-body">
-                            <h3 class="block-agent-title">{{$item->corretor_nome}}</h3>
-                            
-                            <p> <img width="91" height="31" src="{{asset('images/zap.jpg')}}"> <br> {{$item->telefone}}</p>
-                        </div></a>
+                <?php if(empty($data['corretores'])){  echo "Nenhum corretor cadastrado";} else { ?>
+                @foreach ($data['corretores'] as $item)
+               <div class="col-sm-6 col-lg-3">
+                <!-- Block Agent--><a class="block-agent" href="agent-single-page.html"><img src="storage/corretor/{{$item->corretor_foto}}" alt="" width="540" height="460"/>
+                <div class="block-agent-body">
+                    <h3 class="block-agent-title">{{$item->corretor_nome}}</h3>
+                    
+                    <p> <img width="91" height="31" src="{{asset('images/zap.jpg')}}"> <br> {{$item->telefone}}</p>
+                </div></a>
                 </div>
-               
                 @endforeach
-             <?php     }
-                    ?>
+             <?php } ?>
                 
               
                 
