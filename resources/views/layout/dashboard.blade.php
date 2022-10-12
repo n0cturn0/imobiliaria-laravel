@@ -135,7 +135,7 @@
                                 <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('lancamento-list') }}">Lançamentos</a>
                                     <ul class="rd-menu rd-navbar-dropdown">
                                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{url('lancamento-create')}}">Cadastrar Lancamento</a></li>
-                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{url('lancamento-list')}}">Listar Corretores</a></li>
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{url('lancamento-list')}}">Listar Lançamentos</a></li>
                                       </ul>
                                 </li>
                                 <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('list-imovel')}}">Imóveis</a>
