@@ -86,5 +86,15 @@ class PrincipalController extends Controller
 
     }
 
+    public function single($id=NULL)
+    {
+        $lancamento = DB::select('select * from lancamentos inner join lancamentos_fotos ON lancamentos.id = lancamentos_fotos.id_lancamento where lancamentos.id = ?',[$id]);
+        $data = [
+            'lancamento' => $lancamento
+        
+        ];
+        return view('single',['data'=>$data]);
+    }
+
     
 }

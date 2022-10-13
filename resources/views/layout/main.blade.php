@@ -189,6 +189,7 @@
 
 
 @yield('itshome')
+@yield('single')
 
     <footer class="section footer-classic context-dark bg-gray-21">
         <div class="container">
@@ -215,7 +216,7 @@
   src="https://code.jquery.com/jquery-3.6.1.js"
   integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
   crossorigin="anonymous"></script> --}}
-  <script src="{{ asset('js/range.js') }}"></script>
+  {{-- <script src="{{ asset('js/range.js') }}"></script> --}}
 <script src="{{ asset('js/core.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 <script src="{{ asset('js/3ts2ksMwXvKRuG480KNifJ2_JNM.js')}}"></script>

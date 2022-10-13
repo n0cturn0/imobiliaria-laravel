@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/search-product', [\App\Http\Controllers\PrincipalController::class,'search_products'])->name('search.products');
 Route::get('/index', [\App\Http\Controllers\PrincipalController::class,'index'])->name('index');
+Route::get('/single/{id}', [\App\Http\Controllers\PrincipalController::class,'single'])->name('single');
 Route::get('/destaques', [\App\Http\Controllers\PrincipalController::class,'destaque'])->name('destaques');
 Route::get('/dashboard', [\App\Http\Controllers\ControllerDashboard::class,'index'])->name('dashboard');
 // Lancamentos
