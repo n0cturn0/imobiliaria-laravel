@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('single')
+@section('detalhada')
 <section class="breadcrumbs-custom bg-image context-dark" data-opacity="37" style="background-image: url(images/breadcrumbs-bg-06-1922x427.jpg);">
     <div class="container">
       <h2 class="breadcrumbs-custom-title">401 Biscayne Boulevard, Miami</h2>
@@ -23,9 +23,12 @@
           <div class="slick-slider-1">
             <div class="slick-slider-price">$5000\mo</div>
             <div class="slick-slider carousel-parent" id="parent-carousel" data-arrows="true" data-loop="true" data-dots="false" data-swipe="true" data-fade="true" data-items="1" data-child="#child-carousel" data-for="#child-carousel">
-              <div class="item"><img src="images/single-property-1-763x443.jpg" alt="" width="763" height="443"/>
-              </div>
-              <div class="item"><img src="images/single-property-2-763x443.jpg" alt="" width="763" height="443"/>
+                @foreach ($data['lancamento'] as $item)
+                <div class="item"><img src="{{asset('storage/lancamentos/'.$item->foto_name)}}" alt="" width="763" height="443"/>
+                </div>  
+                @endforeach
+                
+              {{-- <div class="item"><img src="images/single-property-2-763x443.jpg" alt="" width="763" height="443"/>
               </div>
               <div class="item"><img src="images/single-property-3-763x443.jpg" alt="" width="763" height="443"/>
               </div>
@@ -34,13 +37,15 @@
               <div class="item"><img src="images/single-property-5-763x443.jpg" alt="" width="763" height="443"/>
               </div>
               <div class="item"><img src="images/single-property-6-763x443.jpg" alt="" width="763" height="443"/>
-              </div>
+              </div> --}}
             </div>
             <div class="slick-slider carousel-child" id="child-carousel" data-arrows="true" data-loop="true" data-dots="false" data-swipe="true" data-items="1" data-sm-items="3" data-md-items="4" data-lg-items="4" data-xl-items="5" data-slide-to-scroll="1" data-for="#parent-carousel">
-              <div>
-                <div class="slick-slide-inner" style="background-image: url(images/single-property-1-763x443.jpg);"></div>
+                @foreach ($data['lancamento'] as $item)
+                <div>
+                <div class="slick-slide-inner" style="background-image: url({{asset('storage/lancamentos/'.$item->foto_name)}});"></div>
               </div>
-              <div>
+              @endforeach
+              {{-- <div>
                 <div class="slick-slide-inner" style="background-image: url(images/single-property-2-763x443.jpg);"></div>
               </div>
               <div>
@@ -54,7 +59,7 @@
               </div>
               <div>
                 <div class="slick-slide-inner" style="background-image: url(images/single-property-6-763x443.jpg);"></div>
-              </div>
+              </div> --}}
             </div>
           </div>
           <div class="features-block">
@@ -195,5 +200,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> 
 @endsection

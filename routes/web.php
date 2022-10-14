@@ -12,9 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Single Imovel
+Route::get('/detalhada/{id}', [\App\Http\Controllers\DetalhadaController::class,'index'])->name('detalhada');
+
+
 Route::get('/search-product', [\App\Http\Controllers\PrincipalController::class,'search_products'])->name('search.products');
 Route::get('/index', [\App\Http\Controllers\PrincipalController::class,'index'])->name('index');
-Route::get('/single/{id}', [\App\Http\Controllers\PrincipalController::class,'single'])->name('single');
 Route::get('/destaques', [\App\Http\Controllers\PrincipalController::class,'destaque'])->name('destaques');
 Route::get('/dashboard', [\App\Http\Controllers\ControllerDashboard::class,'index'])->name('dashboard');
 // Lancamentos
