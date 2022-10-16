@@ -171,10 +171,8 @@
                     <article class="product-classic">
                         <div class="product-classic-media">
                             <div class="owl-carousel" data-items="1" data-nav="true" data-stage-padding="0" data-loop="false" data-margin="0" data-mouse-drag="false">
-                                <img src="storage/fotos/{{$item->foto_name}}" alt="" width="480" height="287"/>
-                                {{-- <img src="images/featured-properties-02-480x287.jpg" alt="" width="480" height="287"/>
-                                <img src="images/featured-properties-03-480x287.jpg" alt="" width="480" height="287"/>
-                                <img src="images/featured-properties-04-480x287.jpg" alt="" width="480" height="287"/> --}}
+                            <a href="{{url('imoveldetalha/'.$item->id)}}">    <img src="storage/fotos/{{$item->foto_name}}" alt="" width="480" height="287"/> </a>
+                             
                             </div>
                             <div class="product-classic-price"><span>R$ {{$item->valor}}</span></div>
                         </div>
