@@ -9,8 +9,10 @@ class DetalhadaController extends Controller
     public function index($id=NULL)
     {
         $lancamento = DB::select('select * from lancamentos inner join lancamentos_fotos ON lancamentos.id = lancamentos_fotos.id_lancamento where lancamentos.id = ?',[$id]);
+        $titulo = DB::table('lancamentos')->where('etiqueta_id', '=', $id)->first();
         $data = [
-            'lancamento' => $lancamento
+            'lancamento' => $lancamento,
+            'titulo' => $titulo
         
         ];
          return view('detalhada' , ['data'=>$data]);

@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//LOGIN E USERS
+Route::get('/painel', [\App\Http\Controllers\UsersController::class,'index'])->name('painel');
+Route::post('/autentica', [\App\Http\Controllers\UsersController::class,'auth'])->name('autentica');
 //Single Imovel
 Route::get('/detalhada/{id}', [\App\Http\Controllers\DetalhadaController::class,'index'])->name('detalhada');
 

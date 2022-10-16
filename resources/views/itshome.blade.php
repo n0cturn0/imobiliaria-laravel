@@ -5,7 +5,7 @@
             <!-- Owl Carousel-->
             <div class="owl-carousel owl-carousel-stretch" data-items="1" data-sm-items="2" data-md-items="4" data-dots="true" data-nav="false" data-stage-padding="1" data-loop="false" data-margin="30" data-autoplay="true" data-autoplay-speed="3000" data-mouse-drag="false">
                @foreach ($data['lancamentos'] as $item)
-                <a class="link-corporate" href="#"><img src="storage/banner/{{$item->banner_lancamento}}" alt="" width="192" height="54"/></a>
+                <a href="{{url('detalhada/'.$item->id)}}" class="link-corporate" href="#"><img src="storage/banner/{{$item->banner_lancamento}}" alt="" width="192" height="54"/></a>
                 @endforeach
             </div>
         </div>
@@ -91,23 +91,6 @@
                                 </div>
 
                                 
-                                {{-- <div class="col-sm-4 col-lg-6 col-xl-4">
-                                    <div class="form-wrap form-wrap-validation"> 
-                                        <div class="form-wrap">
-                                            <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
-                                            <label class="form-label" for="contact-name"></label>
-                                          </div>
-                                    </div> 
-                                </div>
-
-                                <div class="col-sm-4 col-lg-6 col-xl-4">
-                                    <div class="form-wrap form-wrap-validation"> 
-                                        <div class="form-wrap">
-                                            <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
-                                            <label class="form-label" for="contact-name">Valor Final</label>
-                                          </div>
-                                    </div> 
-                                </div> --}}
 
                             </div>
                             {{-- gear slider range value to php 
@@ -155,33 +138,7 @@
                                 </div>
                             </div></a>
                             @endforeach
-                        {{-- <a class="product-corporate context-dark" href="single-property.html" style="background-image: url(images/real-estate-1-1-474x577.jpg);">
-                            <div class="product-corporate-inner">
-                                <div class="product-corporate-caption">
-                                    <h3 class="product-corporate-title">401 Biscayne Boulevard, Miami</h3>
-                                    <h4 class="product-corporate-info">3 bedrooms, $240\day</h4>
-                                </div>
-                            </div></a> --}}
-                            {{-- <a class="product-corporate context-dark" href="single-property.html" style="background-image: url(images/real-estate-1-2-474x577.jpg);">
-                            <div class="product-corporate-inner">
-                                <div class="product-corporate-caption">
-                                    <h3 class="product-corporate-title">3895 NW 107th Ave, Doral</h3>
-                                    <h4 class="product-corporate-info">2 bedrooms, $130\day</h4>
-                                </div>
-                            </div></a>
-                            <a class="product-corporate context-dark" href="single-property.html" style="background-image: url(images/real-estate-1-3-474x577.jpg);">
-                            <div class="product-corporate-inner">
-                                <div class="product-corporate-caption">
-                                    <h3 class="product-corporate-title">3782 Broadway St, San Francisco</h3>
-                                    <h4 class="product-corporate-info">2 bedrooms, $290\day</h4>
-                                </div>
-                            </div></a><a class="product-corporate context-dark" href="single-property.html" style="background-image: url(images/real-estate-1-4-474x577.jpg);">
-                            <div class="product-corporate-inner">
-                                <div class="product-corporate-caption">
-                                    <h3 class="product-corporate-title">9021 Charter Oak Ln, San Diego</h3>
-                                    <h4 class="product-corporate-info">1 bedroom, $210\day</h4>
-                                </div>
-                            </div></a> --}}
+                       
                         </div>
                     <div class="box-2-footer">
                         <div class="box-2-footer-inner">
