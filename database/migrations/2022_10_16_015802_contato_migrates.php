@@ -17,7 +17,9 @@ class ContatoMigrates extends Migration
             $table->id()->autoIncrement();
             $table->string('nome');
             $table->text('email');
+            $table->text('telefone');
             $table->text('mensagem');
+            $table->integer('id_imovel');
             $table->integer('status')->comment('0 = Ativo 1 = Inativo')->default('0');
             $table->timestamps();
 

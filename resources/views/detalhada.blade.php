@@ -159,16 +159,30 @@
         </div>
         <div class="col-lg-5 col-xl-4">
           <div class="row row-50">
-         
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
              
             </div> 
             <div class="col-md-6 col-lg-12">
               <article class="block-callboard">
                 <div class="block-callboard-body">
                   <h3 class="block-callboard-title">Receber informação</h3>
+                  @if(session('message'))
+                  <div class="alert alert-success">
+                  {{session('message')}}
+                  </div>
+                @endif
                   <!-- RD Mailform-->
                   <form class="rd-form"  method="post" action="{{route('contato')}}">
                     @csrf
+                    <input type="hidden" name="id_lancamento" value="{{$data['titulo']->etiqueta_id}}">
                     <div class="row row-20">
                       <div class="col-12">
                         <div class="form-wrap">
