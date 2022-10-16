@@ -8,6 +8,11 @@ class ContatoController extends Controller
 {
     public function contato(Request $request)
     {
-        dd($request->all());
+        $validated = $request->validate([
+            'email' => 'required',
+            'nome' => 'required',
+            'telefone' => 'required',
+            'mensagem' => 'required|min:10',
+        ]);
     }
 }

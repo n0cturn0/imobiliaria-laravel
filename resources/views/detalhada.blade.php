@@ -172,7 +172,7 @@
                     <div class="row row-20">
                       <div class="col-12">
                         <div class="form-wrap">
-                          <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
+                          <input class="form-input" id="contact-name" type="text" name="nome" data-constraints="@Required">
                           <label class="form-label" for="contact-name">Seu Nome</label>
                         </div>
                       </div>
@@ -184,14 +184,14 @@
                       </div>
                       <div class="col-12">
                         <div class="form-wrap">
-                          <input class="form-input" id="contact-phone" data-mask="(00) 0000-0000" type="text" name="phone" data-constraints="@PhoneNumber">
+                          <input class="form-input" id="contact-phone" data-mask="(00) 00000-0000" type="text" name="telefone" data-constraints="@PhoneNumber">
                           <label class="form-label" for="contact-phone">Telefone</label>
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-wrap">
                           <label class="form-label" for="contact-message">Mensagem</label>
-                          <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
+                          <textarea class="form-input" id="contact-message" name="mensagem" data-constraints="@Required"></textarea>
                         </div>
                       </div>
                       <div class="col-12">
