@@ -167,34 +167,34 @@
                 <div class="block-callboard-body">
                   <h3 class="block-callboard-title">Receber informação</h3>
                   <!-- RD Mailform-->
-                  <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                  <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{route('contato')}}">
                     <div class="row row-20">
                       <div class="col-12">
                         <div class="form-wrap">
                           <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
-                          <label class="form-label" for="contact-name">Your Name</label>
+                          <label class="form-label" for="contact-name">Seu Nome</label>
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-wrap">
                           <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Email @Required">
-                          <label class="form-label" for="contact-email">E-mail</label>
+                          <label class="form-label" for="contact-email">Seu E-mail</label>
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-wrap">
                           <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@PhoneNumber">
-                          <label class="form-label" for="contact-phone">Phone</label>
+                          <label class="form-label" for="contact-phone">Telefone</label>
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-wrap">
-                          <label class="form-label" for="contact-message">Message</label>
+                          <label class="form-label" for="contact-message">Mensagem</label>
                           <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
                         </div>
                       </div>
                       <div class="col-12">
-                        <button class="button button-block button-secondary" type="submit">Send message</button>
+                        <button class="button button-block button-secondary" type="submit">Receber Informação</button>
                       </div>
                     </div>
                   </form>

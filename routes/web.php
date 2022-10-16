@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Contato
+Route::get('/contato', [\App\Http\Controllers\ContatoController::class,'contato'])->name('contato');
 //LOGIN E USERS
 Route::get('/painel', [\App\Http\Controllers\UsersController::class,'index'])->name('painel');
 Route::post('/autentica', [\App\Http\Controllers\UsersController::class,'auth'])->name('autentica');

@@ -13,7 +13,6 @@ class DetalhadaController extends Controller
         $data = [
             'lancamento' => $lancamento,
             'titulo' => $titulo
-        
         ];
          return view('detalhada' , ['data'=>$data]);
        
