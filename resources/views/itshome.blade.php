@@ -129,7 +129,7 @@
                     <div class="owl-carousel" data-items="1" data-sm-items="2" data-lg-items="1" data-xl-items="2" data-dots="false" data-nav="false" data-nav-custom="#owl-outer-nav" data-loop="true" data-margin="30" data-autoplay="true" data-autoplay-speed="3500" data-stage-padding="0" data-mouse-drag="false">
                         @foreach ($data['destaques'] as $item)
 
-                        <a class="product-corporate context-dark" href="single-property.html" style="background-image: url(storage/lancamentos/{{$item->foto_name}});">
+                        <a href="{{url('detalhada/'.$item->id_lancamento)}}" class="product-corporate context-dark" href="single-property.html" style="background-image: url(storage/lancamentos/{{$item->foto_name}});">
                             <div class="product-corporate-inner">
                                 <div class="product-corporate-caption">
                                     <h3 class="product-corporate-title">{{$item->cidade}}, {{$item->bairro}}</h3>
