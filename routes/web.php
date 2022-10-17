@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Busca Lancamento
+Route::post('/busca', [\App\Http\Controllers\BuscaController::class,'busca'])->name('buscalancamento');
 //Contato
 Route::post('/contato', [\App\Http\Controllers\ContatoController::class,'contato'])->name('contato');
 //LOGIN E USERS

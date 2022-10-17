@@ -19,11 +19,12 @@
                 <div class="cell-inner box-1-outer">
                     <div class="box-1">
                         <h2>Faça uma busca da sua nova casa</h2>
-                        <form class="rd-form">
+                        <form class="rd-form" method="POST"  action="{{route('buscalancamento')}}">
+                            @csrf
                             <div class="row row-x-20 row-20">
                                 <div class="col-sm-6 col-lg-12 col-xl-6">
                                     <div class="form-wrap form-wrap-validation">
-                                        <select class="form-input select-filter" name="search-property-location" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Escolha a cidade" data-minimum-results-for-search="Infinity" data-constraints="@Required">
+                                        <select class="form-input select-filter" name="cidade" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Escolha a cidade" data-minimum-results-for-search="Infinity" data-constraints="@Required">
                                             <option label="placeholder"></option>
                                             @foreach ($data['cidades'] as $item)
                                             <option value="{{$item->cidade}}">{{$item->cidade}}</option>
@@ -33,7 +34,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-wrap form-wrap-validation">
-                                        <select class="form-input select-filter" name="search-property-type" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Bairro" data-minimum-results-for-search="Infinity" data-constraints="@Required">
+                                        <select class="form-input select-filter" name="bairro" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Bairro" data-minimum-results-for-search="Infinity" data-constraints="@Required">
                                             <option label="placeholder"></option>
                                             @foreach ($data['bairro'] as $item)
                                             <option value="{{$item->bairro}}">{{$item->bairro}}</option>
@@ -46,7 +47,7 @@
                                 </div>
                                 <div class="col-sm-4 col-lg-6 col-xl-4">
                                     <div class="form-wrap form-wrap-validation">
-                                        <select class="form-input select-filter" name="search-property-status" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Tipo do imóvel" data-minimum-results-for-search="Infinity" data-constraints="@Required">
+                                        <select class="form-input select-filter" name="tipo" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Tipo do imóvel" data-minimum-results-for-search="Infinity" data-constraints="@Required">
                                             <option label="placeholder"></option>
                                             <option value="0">Apartamento</option>
                                             <option value="1">Casa Térrea</option>
@@ -59,33 +60,27 @@
                                 </div>
                                 <div class="col-sm-4 col-lg-6 col-xl-4">
                                     <div class="form-wrap form-wrap-validation">
-                                        <select class="form-input select-filter" name="search-property-bathrooms" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Banheiros" data-minimum-results-for-search="Infinity" data-constraints="@Required">
+                                        <select class="form-input select-filter" name="banheiro" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Banheiros" data-minimum-results-for-search="Infinity" data-constraints="@Required">
                                             <option label="placeholder"></option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
+                                         
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-lg-6 col-xl-4">
                                     <div class="form-wrap form-wrap-validation">
-                                        <select class="form-input select-filter" name="search-property-bedrooms" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Quartos" data-minimum-results-for-search="Infinity" data-constraints="@Required">
+                                        <select class="form-input select-filter" name="quarto" data-style="modern" data-class="select-dropdown-context-dark" data-placeholder="Quartos" data-minimum-results-for-search="Infinity" data-constraints="@Required">
                                             <option label="placeholder"></option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
+                                           
                                         </select>
                                     </div>
                                 </div>
@@ -117,7 +112,10 @@
                                 <div class="layout-5-item layout-5-item_primary">
 
                                 </div>
-                                <div class="layout-5-item"><a class="button button-secondary-outline" href="search-results-2.html" style="min-width: 150px;">Encontrar minha casa</a></div>
+                                <div class="layout-5-item">
+                                    <button class="button button-secondary-outline" type="submit">Encontrar minha casa</button>
+                                   
+                                   </div>
                             </div>
                         </form>
                     </div>
