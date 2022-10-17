@@ -23,7 +23,9 @@ class BuscaController extends Controller
                             // ->orWhere('banheiro', 'like', '%'.$banheiro.'%')
                             // ->orWhere('quarto', 'like', '%'.$quarto.'%')
                             ->get();
-                            dd($lancamento);
+                            
+
+        return view('list-lancamento');
                          
     }
 

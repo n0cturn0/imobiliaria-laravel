@@ -190,6 +190,7 @@
 
 @yield('itshome')
 @yield('detalhada')
+@yield('lista-lancamento')
 
     <footer class="section footer-classic context-dark bg-gray-21">
         <div class="container">
