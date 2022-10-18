@@ -51,14 +51,14 @@
                             <li>
                                 <div class="block-inline unit unit-spacing-xs align-items-center">
                                     <div class="unit-left"><span class="icon text-middle mdi mdi-phone"></span></div>
-                                    <div class="unit-body"><a href="tel:#">67 991302726</a></div>
+                                    <div class="unit-body"><a href="https://wa.me/5567992809899?text=Ol%C3%A1%20Estou%20enviando%20essa%20mensagem%20atrav%C3%A9s%20do%20site">67 99280-9899</a></div>
                                 </div>
                             </li>
                             <li>
                                 <div class="block-inline unit unit-spacing-xs align-items-center">
                                     <div class="unit-left"><span class="icon text-middle mdi mdi-email-outline"></span>
                                     </div>
-                                    <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
+                                    <div class="unit-body"><a href="mailto:#">contato@itshomeimobiliaria.com.br</a></div>
                                 </div>
                             </li>
                         </ul>
