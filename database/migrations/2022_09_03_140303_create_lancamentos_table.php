@@ -22,6 +22,7 @@ class CreateLancamentosTable extends Migration
         });
         Schema::create('lancamentos', function (Blueprint $table) {
             $table->id()->autoIncrement();
+            $table->integer('id_empreeendimento');
             $table->integer('etiqueta_id');
             $table->timestamps();
             $table->text('nome');
