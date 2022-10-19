@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-md-9 col-lg-7 col-xl-5">
-                    <h3 class="font-weight-medium">Informação do Empreendimento</h3>
+                    <h3 class="font-weight-medium">Informação do Lançamento</h3>
                     <!-- RD Mailform-->
                     <form method="POST" class="rd-form" wire:submit.prevent="save">
                         <div class="row row-20">
