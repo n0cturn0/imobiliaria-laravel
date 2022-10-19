@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Empreeendimento
+Route::get('/empreendimento-create', [\App\Http\Controllers\EmpreedimentoController::class,'index'])->name('empreendimento-create');
+Route::get('/empreendimento-list', [\App\Http\Controllers\EmpreedimentoController::class,'list'])->name('empreendimento-list');
+Route::get('/apagarempreendimento/{id}', [\App\Http\Controllers\EmpreedimentoController::class,'apagarempreendimento'])->name('apagarempreendimento');
 //Busca Lancamento
 Route::post('/busca', [\App\Http\Controllers\BuscaController::class,'busca'])->name('buscalancamento');
 //Contato

@@ -138,6 +138,12 @@
                                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{url('lancamento-list')}}">Listar Lançamentos</a></li>
                                       </ul>
                                 </li>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="">Empreendimento</a>
+                                    <ul class="rd-menu rd-navbar-dropdown">
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href={{url('empreendimento-create')}}>Cadastrar Empreendimento</a></li>
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{url('empreendimento-list')}}">Listar Empreendimentos</a></li>
+                                      </ul>
+                                </li>
                                 <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('list-imovel')}}">Imóveis</a>
                                     <ul class="rd-menu rd-navbar-dropdown">
                                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{url('create-imovel')}}">Cadastrar Imóvel</a></li>
@@ -186,6 +192,8 @@
     @yield('create-imovel')
     @yield('imoveis-list')
     @yield('imovel-image')
+    @yield('empreendimento-create')
+
 {{--    <section class="section section-md bg-gray-12">--}}
 {{--        <div class="container">--}}
 {{--            <!-- RD Mailform-->--}}

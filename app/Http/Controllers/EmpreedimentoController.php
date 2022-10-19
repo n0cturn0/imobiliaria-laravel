@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Empreedimento;
 use App\Http\Requests\StoreEmpreedimentoRequest;
 use App\Http\Requests\UpdateEmpreedimentoRequest;
+use Illuminate\Support\Facades\DB;
+
+
 
 class EmpreedimentoController extends Controller
 {
@@ -15,7 +18,7 @@ class EmpreedimentoController extends Controller
      */
     public function index()
     {
-        //
+        return view('empreendimento.create');
     }
 
     /**
@@ -25,7 +28,7 @@ class EmpreedimentoController extends Controller
      */
     public function create()
     {
-        //
+        return view('empreedimento.create');
     }
 
     /**
@@ -37,6 +40,12 @@ class EmpreedimentoController extends Controller
     public function store(StoreEmpreedimentoRequest $request)
     {
         //
+    }
+
+    public function list()
+    {
+    $etiquetas = DB::table('empreedimentos')->distinct()->get();
+    return view('empreendimento.list' , ['etiquetas' => $etiquetas]);
     }
 
     /**
@@ -82,5 +91,13 @@ class EmpreedimentoController extends Controller
     public function destroy(Empreedimento $empreedimento)
     {
         //
+    }
+
+    public function apagarempreendimento($id=NULL)
+    {
+    if ($deleted = DB::table('empreedimentos')->where('id', $id)->delete())
+    {
+    return redirect()->back();
+    }
     }
 }

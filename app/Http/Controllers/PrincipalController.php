@@ -10,7 +10,7 @@ class PrincipalController extends Controller
     public function index()
     {
         //Lancamentos
-        $lancamentos = DB::select('select * from lancamentos_etiqueta');
+        $lancamentos = DB::select('select * from empreedimentos');
         // $lancamentos = DB::select('select lancamentos.id, valor, descricao, cidade, estado, lancamentos_etiqueta.banner_lancamento, lancamentos_etiqueta.nome_lancamento from lancamentos inner join
         // lancamentos_etiqueta  on
         // lancamentos.etiqueta_id = lancamentos_etiqueta.id');
