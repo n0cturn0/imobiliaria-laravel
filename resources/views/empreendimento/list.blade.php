@@ -18,7 +18,7 @@
                         </article> </a>
                         <div class="mt-40">
                         <a href="{{url('apagarempreendimento/'.$etiqueta->id)}}"  class="button button-primary button-circle" style="min-width: 180px">Apagar {{ $etiqueta->nome_empreedimento }}<a><br>
-                            <a href="{{url('adicionarempreendimento/'.$etiqueta->id)}}"  class="button button-danger button-circle" style="min-width: 180px">adicionar Lançamento {{ $etiqueta->nome_empreedimento }}<a>
+                            <a href="{{url('lancamentomebros/'.$etiqueta->id)}}"  class="button button-danger button-circle" style="min-width: 180px">Lançamento de  {{ $etiqueta->nome_empreedimento }}<a>
                         </div>
                 </div>
                 @endforeach

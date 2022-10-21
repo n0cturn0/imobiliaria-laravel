@@ -28,10 +28,24 @@
                                 <div class="form-wrap">
                             <input type="file" class="button button-block button-secondary " required  wire:model="photo">
                             </div>
-                        </div>
+                            </div>
 
                             <div class="col-12">
-                                <button class="button button-secondary" type="submit">Cadastrar Empreendimento</button>
+                                <label><h3>Selecione o Empreendimento </h3></label>
+                                <div class="form-wrap">
+                                    <select wire:model="empreendimento_id"  class="form-input">
+                                      
+                                        <option value="valor1">Selecione um Empreendimento</option>
+                                        @foreach($empreendimento as $item)
+                                        <option value="{{$item->id}}">{{$item->nome_empreedimento}}</option>
+                                       @endforeach
+                                    </select>
+                                </div>
+                                @error('nomedoempreendimento') <span class="error">{{ $message }}</span> @enderror
+                            </div>
+
+                            <div class="col-12">
+                                <button class="button button-secondary" type="submit">Cadastrar Lançamento</button>
                             </div>
                         </div>
                     </form>

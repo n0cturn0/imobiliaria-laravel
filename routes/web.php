@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //Empreeendimento
+Route::get('/lancamentomebros/{id}', [\App\Http\Controllers\EmpreedimentoController::class,'lancamentomebros'])->name('lancamentomebros');
 Route::get('/empreendimento-create', [\App\Http\Controllers\EmpreedimentoController::class,'index'])->name('empreendimento-create');
 Route::get('/empreendimento-list', [\App\Http\Controllers\EmpreedimentoController::class,'list'])->name('empreendimento-list');
 Route::get('/apagarempreendimento/{id}', [\App\Http\Controllers\EmpreedimentoController::class,'apagarempreendimento'])->name('apagarempreendimento');

@@ -6,6 +6,8 @@ use App\Models\Empreedimento;
 use App\Http\Requests\StoreEmpreedimentoRequest;
 use App\Http\Requests\UpdateEmpreedimentoRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+
 
 
 
@@ -57,6 +59,15 @@ class EmpreedimentoController extends Controller
     public function show(Empreedimento $empreedimento)
     {
         //
+    }
+    public function lancamentomebros($id='NULL')
+    {
+
+        $empreedimento =  DB::table('lancamentos_etiqueta')->where('id_empreeendimento', '=', $id)->get();
+        dd($empreedimento->id);
+        // $empreendimento = DB::select('select * from lancamentos_etiqueta inner join lancamentos on
+        // lancamentos.etiqueta_id  = lancamentos_etiqueta.id where lancamentos_etiqueta.id_empreeendimento = ?', [$id]);
+        //  return view('empreendimento.lancamentomebros', ['empreendimento' => $empreendimento]);
     }
 
     /**

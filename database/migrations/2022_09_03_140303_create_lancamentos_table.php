@@ -16,6 +16,7 @@ class CreateLancamentosTable extends Migration
         Schema::create('lancamentos_etiqueta', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->timestamps();
+            $table->integer('id_empreeendimento');
             $table->text('nome_lancamento');
             $table->text('banner_lancamento');
             $table->integer('status')->comment('0 = ativo 1 = desativado');

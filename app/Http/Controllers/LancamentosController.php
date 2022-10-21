@@ -30,6 +30,7 @@ class LancamentosController extends Controller
      */
     public function create()
     {
+        
         return view('lancamento.create');
     }
 
@@ -112,6 +113,7 @@ class LancamentosController extends Controller
     $lancamento = new Lancamentos();
     $lancamento->etiqueta_id = $request->input('id');
     $lancamento->nome = $request->input('nome');
+    $lancamento->id_empreeendimento = 0;
     $lancamento->lancamento_status = $request->input('lancamento_status');
     $lancamento->estado = $request->input('estado');
     $lancamento->cidade = $request->input('cidade');
