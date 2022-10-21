@@ -12,7 +12,7 @@ use Livewire\WithFileUploads;
 class LancamentoCreate extends Component
 {
     use WithFileUploads;
-    public $nomedoempreendimento, $photo;
+    public $nomedoempreendimento, $photo, $empreendimento_id;
 
     protected $rules = [
         'nomedoempreendimento' => 'required|min:2',
@@ -26,7 +26,8 @@ class LancamentoCreate extends Component
 
     public function render()
     {
-        return view('livewire.lancamento-create');
+        $empreendimento = DB::select('select * from empreedimentos');
+        return view('livewire.lancamento-create', ['empreendimento' => $empreendimento]);
     }
 
     public function save()
@@ -43,6 +44,7 @@ class LancamentoCreate extends Component
        
         $etiqueta->nome_lancamento = $this->nomedoempreendimento;
         $etiqueta->banner_lancamento = $filename;
+        $etiqueta->id_empreeendimento = $this->empreendimento_id;
         $etiqueta->save();
         session()->flash('message', 'Lançamento Inserido com Sucesso');
         $this->reset();
