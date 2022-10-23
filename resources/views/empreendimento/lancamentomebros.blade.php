@@ -27,17 +27,17 @@
                       <div class="product-classic-left">
                         <div class="product-classic-media">
                           <div class="owl-carousel" data-items="1" data-nav="true" data-stage-padding="0" data-loop="true" data-margin="0" data-mouse-drag="false">
-                            <img src="{{asset('storage/banner/'.$item->banner_lancamento)}}" alt="" width="480" height="287"/>
+                            <img src="storage/banner/{{$item->banner_lancamento}}" alt="" width="480" height="287"/>
                             
                           </div>
-                          <div class="product-classic-price"><span>Lançamento</span></div>
+                          <div class="product-classic-price"><span>{{$item->nome_lancamento}}</span></div>
                         </div>
                       </div>
                       <div class="product-classic-right">
                         <h4 class="product-classic-title"><a href="single-property.html">401 Biscayne Boulevard, Miami</a></h4>
                         <div class="product-classic-divider"></div>
                         <div class="product-classic-text">
-                          <p>{{$item->descricao}}</p>
+                          <p></p>
                         </div>
                       </div>
                     </div>
