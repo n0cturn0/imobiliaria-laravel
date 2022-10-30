@@ -10,9 +10,18 @@ use PhpParser\Node\Stmt\TryCatch;
 use Illuminate\Support\Facades\Redirect ;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
-
+use Illuminate\Support\Facades\Auth;
 class LancamentosController extends Controller
 {
+
+    public function __construct()
+    {
+        if (Auth::check()) {
+            // The user is logged in...
+        } else {
+            dd('Você não está logado');
+        }
+    }
     /**
      * Display a listing of the resource.
      *
