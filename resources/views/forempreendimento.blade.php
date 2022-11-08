@@ -16,7 +16,7 @@
             
         
         <div class="col-sm-6 col-md-4 isotope-item" data-filter="for-sale">
-          <!-- Product Modern--><a class="product-modern" href="single-property.html">
+          <!-- Product Modern--><a class="product-modern" href="{{url('detalhada/'.$item->id)}}">
             <div class="product-modern-media">
               <figure class="product-modern-figure"><img class="product-modern-image" src="{{asset('storage/banner/'.$item->banner_lancamento)}}" alt="" width="370" height="230"/>
               </figure>
