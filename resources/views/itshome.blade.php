@@ -6,7 +6,7 @@
             <div class="owl-carousel owl-carousel-stretch" data-items="1" data-sm-items="2" data-md-items="4" data-dots="true" data-nav="false" data-stage-padding="1" data-loop="false" data-margin="30" data-autoplay="true" data-autoplay-speed="3000" data-mouse-drag="false">
                @foreach ($data['lancamentos'] as $item)
                 {{-- <a href="{{url('detalhada/'.$item->id)}}" class="link-corporate" href="#"><img src="storage/empreendimento/{{$item->banner_lancamento}}" alt="" width="192" height="54"/></a> --}}
-                <a href="{{url('lancamentomebros/'.$item->id)}}" class="link-corporate" href="#"><img src="storage/empreendimento/{{$item->banner_lancamento}}" alt="" width="192" height="54"/></a>
+                <a href="{{url('for-empreendimento/'.$item->id)}}" class="link-corporate" href="#"><img src="storage/empreendimento/{{$item->banner_lancamento}}" alt="" width="192" height="54"/></a>
                 @endforeach
             </div>
         </div>

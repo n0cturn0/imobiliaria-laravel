@@ -43,6 +43,12 @@ class PrincipalController extends Controller
          // return view('teste',compact('all_products'))->render();
     }
 
+    public function forempreendimento($id=NULL)
+    {
+        $etiqueta = DB::select('select * from lancamentos_etiqueta where id_empreeendimento = ?', [$id]);
+        return view('forempreendimento', ['etiqueta' => $etiqueta]);
+    }
+
 
    
   

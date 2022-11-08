@@ -27,7 +27,8 @@ Route::post('/autentica', [\App\Http\Controllers\UsersController::class,'auth'])
 //Single Imovel
 Route::get('/detalhada/{id}', [\App\Http\Controllers\DetalhadaController::class,'index'])->name('detalhada');
 
-
+//Principal FOR RENT
+Route::get('/for-empreendimento/{id}', [\App\Http\Controllers\PrincipalController::class,'forempreendimento'])->name('for-empreendimento');
 Route::get('/search-product', [\App\Http\Controllers\PrincipalController::class,'search_products'])->name('search.products');
 Route::get('/index', [\App\Http\Controllers\PrincipalController::class,'index'])->name('index');
 Route::get('/destaques', [\App\Http\Controllers\PrincipalController::class,'destaque'])->name('destaques');
