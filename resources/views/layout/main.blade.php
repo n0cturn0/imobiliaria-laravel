@@ -201,7 +201,7 @@
                     </p>
                 </div>
                 <div class="col-sm-6 text-sm-right">
-                    <div class="right-1"><a href="submit-property.html"><span class="icon mdi mdi-plus"></span>Este site foi desenvolvido por Luiz Augusto</a></div>
+                    <div class="right-1"><a href="https://github.com/n0cturn0"><span class="icon mdi mdi-plus"></span>Este site foi desenvolvido por Luiz Augusto</a></div>
                 </div>
             </div>
         </div>
