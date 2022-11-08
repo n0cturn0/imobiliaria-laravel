@@ -17,7 +17,7 @@ class PrincipalController extends Controller
         //Destaques
         $destaque = DB::select('select * from lancamentos 
         inner join lancamentos_fotos  on
-        lancamentos_fotos.id_lancamento  = lancamentos.id where lancamentos_fotos.destaque = 1');
+        lancamentos_fotos.id_lancamento  = lancamentos.etiqueta_id where lancamentos_fotos.destaque = 1 ');
         //Bairros
         $bairro = DB::select('select distinct bairro from lancamentos');
         if(count($bairro) == 0){ $bairro ="Sem bairro para mostrar"; }
