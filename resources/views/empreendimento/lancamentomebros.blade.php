@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('lista-lancamento')
-<section class="section section-md bg-gray-12">
+oi
     <div class="container">
       <div class="row row-50">
         <div class="col-lg-7 col-xl-8">
@@ -16,6 +16,7 @@
                 
               </ul>
             </div>
+            
             @foreach ($empreendimento as $item)
                 
             
@@ -26,8 +27,9 @@
                     <div class="product-classic-inner">
                       <div class="product-classic-left">
                         <div class="product-classic-media">
+                          
                           <div class="owl-carousel" data-items="1" data-nav="true" data-stage-padding="0" data-loop="true" data-margin="0" data-mouse-drag="false">
-                            <img src="storage/banner/{{$item->banner_lancamento}}" alt="" width="480" height="287"/>
+                            <img src="storage/lancamentos/{{$item->foto_name}}" alt="" width="480" height="287"/>
                             
                           </div>
                           <div class="product-classic-price"><span>{{$item->nome_lancamento}}</span></div>

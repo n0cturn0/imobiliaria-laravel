@@ -16,11 +16,11 @@ class LancamentosController extends Controller
 
     public function __construct()
     {
-        if (Auth::check()) {
-            // The user is logged in...
-        } else {
-            dd('Você não está logado');
-        }
+        // if (Auth::check()) {
+        //     // The user is logged in...
+        // } else {
+        //     dd('Você não está logado');
+        // }
     }
     /**
      * Display a listing of the resource.

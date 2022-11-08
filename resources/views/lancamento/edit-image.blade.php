@@ -7,7 +7,7 @@
       <!-- Isotope Filters-->
       <div class="isotope-filters isotope-filters-line">
         <ul class="isotope-filters-list" id="isotope-filters">
-          <li><a class="active"><h2>{{$etiqueta->nome_lancamento}}<h2></a></li>
+          <li><a class="active"><h2><h2></a></li>
        
         </ul>
       </div>
@@ -40,6 +40,6 @@
     </div>
     
 
-    <a href="{{url('lancamento-novo/'.$etiqueta->id)}}" class="button button-circle button-default-outline button-shadow" style="min-width: 180px">Voltar</a>
+    <a href="#" class="button button-circle button-default-outline button-shadow" style="min-width: 180px">Voltar</a>
   </section>
   @endsection

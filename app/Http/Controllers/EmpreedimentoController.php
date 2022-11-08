@@ -62,8 +62,10 @@ class EmpreedimentoController extends Controller
     }
     public function lancamentomebros($id='NULL')
     {
-        
-        $empreedimento =  DB::table('lancamentos_etiqueta')->where('id_empreeendimento', '=', $id)->get();
+        $empreedimento =  DB::select('select * from empreedimentos  
+        inner join lancamentos on lancamentos.etiqueta_id = empreedimentos.id
+        inner join lancamentos_fotos on lancamentos_fotos.id_lancamento = empreedimentos.id = ?', [$id]);
+      
         
       
           return view('empreendimento.lancamentomebros', ['empreendimento' => $empreedimento]);
