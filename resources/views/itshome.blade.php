@@ -297,7 +297,7 @@
                 <?php if(empty($data['corretores'])){  echo "Nenhum corretor cadastrado";} else { ?>
                 @foreach ($data['corretores'] as $item)
                <div class="col-sm-6 col-lg-3">
-                <!-- Block Agent--><a class="block-agent" href="agent-single-page.html"><img src="storage/corretor/{{$item->corretor_foto}}" alt="" width="540" height="460"/>
+                <!-- Block Agent--><a class="block-agent" href=""><img src="storage/corretor/{{$item->corretor_foto}}" alt="" width="540" height="460"/>
                 <div class="block-agent-body">
                     <h3 class="block-agent-title">{{$item->corretor_nome}}</h3>
                     
@@ -343,9 +343,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4 col-xl-3 col-bordered">
                     <h3 class="heading-square font-weight-sbold" data-item=".heading-square-item"><span class="heading-square-item"></span>Oi! Fale Conosco</h3>
-                    <div class="link-with-icon heading-4 text-spacing-150 font-sec" data-item=".icon"><span class="icon icon-1 mdi mdi-phone"></span><a href="tel:#">1-800-700-6200</a></div>
-                    <div class="link-with-icon text-spacing-100" data-item=".icon"><span class="icon icon-2 mdi mdi-email-outline"></span><a href="mailto:#">info@demolink.org</a></div>
-                    <div class="link-with-icon text-spacing-100" data-item=".icon"><span class="icon icon-3 mdi mdi-map-marker"></span><a href="#">3015 Grand Ave, Coconut<br style="line-height: 0"> Grove,Merrick Way, FL 12345</a></div>
+                    <div class="link-with-icon heading-4 text-spacing-150 font-sec" data-item=".icon"><span class="icon icon-1 mdi mdi-phone"></span><a href="tel:#">+55 (67) 99280-9899</a></div>
+                    <div class="link-with-icon text-spacing-100" data-item=".icon"><span class="icon icon-2 mdi mdi-email-outline"></span><a href="mailto:#">contato@itshomeimobiliaris.com.br</a></div>
+                    {{-- <div class="link-with-icon text-spacing-100" data-item=".icon"><span class="icon icon-3 mdi mdi-map-marker"></span><a href="#">3015 Grand Ave, Coconut<br style="line-height: 0"> Grove,Merrick Way, FL 12345</a></div> --}}
                 </div>
                 <div class="col-lg-4">
                     <h3 class="heading-square font-weight-sbold" data-item=".heading-square-item"><span class="heading-square-item"></span>Receba nossa promoções</h3>
@@ -360,10 +360,11 @@
                         </div>
                     </form>
                     <ul class="list-inline-1">
-                        <li><a class="icon fa-facebook" href="#"></a></li>
-                        <li><a class="icon fa-twitter" href="#"></a></li>
+                        <li><a class="icon fa-facebook" href="https://www.facebook.com/itshomeimobiliariaoficial"></a></li>
+                        {{-- <li><a class="icon fa-twitter" href="#"></a></li>
                         <li><a class="icon fa-google-plus" href="#"></a></li>
-                        <li><a class="icon fa-pinterest-p" href="#"></a></li>
+                        <li><a class="icon fa-pinterest-p" href="#"></a></li> --}}
+                        <li><a class="icon fa-instagram" href="https://instagram.com/itshomeimobiliaria"></a></li>
                     </ul>
                 </div>
             </div>
