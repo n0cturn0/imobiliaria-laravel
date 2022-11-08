@@ -12,6 +12,7 @@
             <th>Estado</th>
             <th>Cidade</th>
             <th>Bairro</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -23,14 +24,16 @@
             <td>{{$item->estado}}</td>
             <td>{{$item->cidade}}</td>
             <td>{{$item->bairro}}</td>
+            <td> <a href="{{url('imovel-deletar/'.$item->id)}}" class="button button-sm button-primary" type="submit">Apagar Imóvel</a></td>
           </tr>
           @endforeach
         <tfoot>
           <tr>
-            <td>All Items</td>
-            <td>Description</td>
-            <td>Your Total</td>
-            <td>$13.00</td>
+            <th>Título do Imóvel</th>
+            <th>Estado</th>
+            <th>Cidade</th>
+            <th>Bairro</th>
+            <th></th>
           </tr>
         </tfoot>
       </table>

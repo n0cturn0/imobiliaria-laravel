@@ -167,5 +167,13 @@ class ImovelController extends Controller
     return redirect()->back();
     }
     }
+
+    public function deletarimovel($id=NULL)
+    {
+    if ($deleted = DB::table('imovel')->where('id', $id)->delete())
+    {
+    return redirect()->back();
+    }
+    }
     
 }
