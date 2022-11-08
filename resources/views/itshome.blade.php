@@ -301,7 +301,7 @@
                 <div class="block-agent-body">
                     <h3 class="block-agent-title">{{$item->corretor_nome}}</h3>
                     
-                    <p> <img width="91" height="31" src="{{asset('images/zap.jpg')}}"> <br> {{$item->telefone}}</p>
+                   <a href="https://wa.me/5567992809899?text=Ol%C3%A1%20Estou%20enviando%20essa%20mensagem%20atrav%C3%A9s%20do%20site">" <p> <img width="91" height="31" src="{{asset('images/zap.jpg')}}"> FALE COMIGO! </a>
                 </div></a>
                 </div>
                 @endforeach
