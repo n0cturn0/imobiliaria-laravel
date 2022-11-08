@@ -5,9 +5,9 @@
       <!-- Isotope Filters-->
       <div class="isotope-filters isotope-filters-line">
         <ul class="isotope-filters-list" id="isotope-filters">
-          <li><a class="active" data-isotope-filter="*" href="#">All</a></li>
-          <li><a data-isotope-filter="for-sale" href="#">For Sale</a></li>
-          <li><a data-isotope-filter="for-rent" href="#">For Rent</a></li>
+          {{-- <li><a class="active" data-isotope-filter="*" href="#"></a></li> --}}
+          <li><a data-isotope-filter="for-sale" href="#"><h4>Lançamentos</h4></a></li>
+          {{-- <li><a data-isotope-filter="for-rent" href="#"></a></li> --}}
         </ul>
       </div>
       <!-- Isotope Content-->
