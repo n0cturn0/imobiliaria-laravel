@@ -63,6 +63,7 @@ Route::post('/atualiza-imovel', [\App\Http\Controllers\ImovelController::class,'
 Route::get('/imovel-editarimagen/{id}', [\App\Http\Controllers\ImovelController::class,'editarimovelimagem'])->name('imovel-editarimagen');
 Route::get('/imovel-destacar/{id}', [\App\Http\Controllers\ImovelController::class,'destacar'])->name('imovel-destacar');
 Route::get('/imovel-apagar/{id}', [\App\Http\Controllers\ImovelController::class,'apagarimovel'])->name('imovel-apagar');
+Route::get('/imovel-deletar/{id}', [\App\Http\Controllers\ImovelController::class,'deletarimovel'])->name('imovel-deletar');
 Route::get('/', function () {
     return view('welcome');
 });
