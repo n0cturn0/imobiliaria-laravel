@@ -171,7 +171,7 @@
                         <div class="rd-navbar-nav-wrap">
                             <!-- RD Navbar Nav-->
                             <ul class="rd-navbar-nav">
-                                <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('index')}}">Home</a>
                                 </li>
                                 <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Imóveis</a>
                                 </li>
