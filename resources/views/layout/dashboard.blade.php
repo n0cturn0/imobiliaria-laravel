@@ -193,6 +193,7 @@
     @yield('imoveis-list')
     @yield('imovel-image')
     @yield('empreendimento-create')
+    @yield('lista-lancamento')
 
 {{--    <section class="section section-md bg-gray-12">--}}
 {{--        <div class="container">--}}

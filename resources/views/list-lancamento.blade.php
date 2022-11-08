@@ -23,7 +23,11 @@
                     <div class="product-classic-inner">
                       <div class="product-classic-left">
                         <div class="product-classic-media">
-                          <div class="owl-carousel" data-items="1" data-nav="true" data-stage-padding="0" data-loop="true" data-margin="0" data-mouse-drag="false"><img src="images/featured-properties-13-480x287.jpg" alt="" width="480" height="287"/><img src="images/featured-properties-14-480x287.jpg" alt="" width="480" height="287"/><img src="images/featured-properties-15-480x287.jpg" alt="" width="480" height="287"/><img src="images/featured-properties-16-480x287.jpg" alt="" width="480" height="287"/>
+                          <div class="owl-carousel" data-items="1" data-nav="true" data-stage-padding="0" data-loop="true" data-margin="0" data-mouse-drag="false">
+                            <img src="images/featured-properties-13-480x287.jpg" alt="" width="480" height="287"/>
+                            <img src="images/featured-properties-14-480x287.jpg" alt="" width="480" height="287"/>
+                            <img src="images/featured-properties-15-480x287.jpg" alt="" width="480" height="287"/>
+                            <img src="images/featured-properties-16-480x287.jpg" alt="" width="480" height="287"/>
                           </div>
                           <div class="product-classic-price"><span>$5000\mo</span></div>
                         </div>

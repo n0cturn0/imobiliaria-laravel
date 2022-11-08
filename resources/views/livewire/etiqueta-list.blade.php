@@ -1,3 +1,9 @@
+
+@extends('layout.dashboard')
+@section('lancamentolist')
+   
+
+
 <div>
     <section class="section section-lg bg-default">
         <div class="container">
@@ -31,3 +37,4 @@
     
 
 </div>
+@endsection

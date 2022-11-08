@@ -11,7 +11,8 @@
                @foreach($etiquetas as $etiqueta)
                 <div class="col-md-6 col-lg-4">
                         <!-- Box Modern-->
-                        <a href="{{ url('lancamento-novo/'.$etiqueta->id) }}">     <article class="box-modern"><span  class="icon box-modern-icon fl-bigmug-line-circular220"></span>
+                        {{-- <a href="{{ url('lancamento-novo/'.$etiqueta->id) }}">     <article class="box-modern"><span  class="icon box-modern-icon fl-bigmug-line-circular220"></span> --}}
+                        <a href="#">     <article class="box-modern"><span  class="icon box-modern-icon fl-bigmug-line-circular220"></span>
                         <div class="box-modern-main">
                         <h4 class="box-modern-title">{{ $etiqueta->nome_empreedimento }}</h4>
                         </div>
