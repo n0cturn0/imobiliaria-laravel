@@ -20,7 +20,7 @@ class ContatoMigrates extends Migration
             $table->text('telefone');
             $table->text('mensagem');
             $table->integer('id_imovel');
-            $table->integer('status')->comment('0 = Ativo 1 = Inativo')->default('0');
+            $table->integer('tipo')->comment('0 = Imóvel 1 = Lancamento');
             $table->timestamps();
 
         });
