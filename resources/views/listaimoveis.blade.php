@@ -30,7 +30,7 @@
                             {{-- <img src="{{asset('storage/lancamentos/'.$item->foto_name)}}" alt="" width="480" height="287"/> --}}
                             @foreach ($data['foto'] as $fotos)
                             @if($fotos->id_lancamento == $lanc->id)
-                            <img src="{{asset('storage/lancamentos/'.$fotos->foto_name)}}" alt="" width="480" height="287"/>
+                            <img src="{{asset('storage/fotos/'.$fotos->foto_name)}}" alt="" width="480" height="287"/>
                             @endif
                             @endforeach
                           </div>
@@ -38,7 +38,7 @@
                         </div>
                       </div>
                       <div class="product-classic-right">
-                        <h4 class="product-classic-title"><a href="single-property.html">{{$lanc->nome}}</a></h4>
+                        <h4 class="product-classic-title"><a href="single-property.html">{{$lanc->titulo}}</a></h4>
                         <div class="product-classic-divider"></div>
                         <div class="product-classic-text">
                           <p>{{$lanc->descricao}}</p>

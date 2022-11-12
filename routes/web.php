@@ -28,6 +28,7 @@ Route::post('/autentica', [\App\Http\Controllers\UsersController::class,'auth'])
 //Single Imovel
 Route::get('/detalhada/{id}', [\App\Http\Controllers\DetalhadaController::class,'index'])->name('detalhada');
 Route::get('/list-all', [\App\Http\Controllers\DetalhadaController::class,'lista'])->name('list-all');
+Route::get('/list-all-imovel', [\App\Http\Controllers\DetalhadaController::class,'listaimoveis'])->name('list-all-imovel');
 
 //Principal FOR RENT
 Route::get('/for-empreendimento/{id}', [\App\Http\Controllers\PrincipalController::class,'forempreendimento'])->name('for-empreendimento');

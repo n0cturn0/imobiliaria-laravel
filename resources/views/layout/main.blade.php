@@ -175,6 +175,8 @@
                                 </li>
                                 <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Imóveis</a>
                                 </li>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('list-all')}}">Lançamento</a>
+                                </li>
                                 <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Contato</a>
                                 </li>
                             </ul>

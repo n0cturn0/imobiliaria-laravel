@@ -30,4 +30,16 @@ class DetalhadaController extends Controller
         ];
         return view('listall', ['data' => $data]);
     }
+
+    public function listaimoveis()
+    {
+        $all = DB::select('select * from imovel');
+        $foto = DB::select('select * from imovel_fotos');
+
+        $data = [
+            'lancamento' => $all,
+            'foto'         => $foto
+        ];
+        return view('listaimoveis', ['data' => $data]);
+    }
 }
