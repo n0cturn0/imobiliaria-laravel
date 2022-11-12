@@ -12,7 +12,8 @@ class DetalhadaController extends Controller
         $titulo = DB::table('lancamentos')->where('etiqueta_id', '=', $id)->first();
         $data = [
             'lancamento' => $lancamento,
-            'titulo' => $titulo
+            'titulo' => $titulo,
+            'tipo'         => 0
         ];
          return view('detalhada' , ['data'=>$data]);
        

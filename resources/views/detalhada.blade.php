@@ -182,6 +182,7 @@
                   <!-- RD Mailform-->
                   <form class="rd-form"  method="post" action="{{route('contato')}}">
                     @csrf
+                    <input type="hidden" name="tipo" value="{{$data['tipo']}}" />
                     <input type="hidden" name="id_lancamento" value="{{$data['titulo']->etiqueta_id}}">
                     <div class="row row-20">
                       <div class="col-12">

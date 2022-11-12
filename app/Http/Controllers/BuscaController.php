@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Lancamentos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BuscaController extends Controller
 {
@@ -27,6 +28,12 @@ class BuscaController extends Controller
 
         return view('list-lancamento');
                          
+    }
+
+    public function listLancamento()
+    {
+        $all = DB::select('select * from lancamentos_etiqueta');
+        return view('listall', ['all' => $all]);
     }
 
 }

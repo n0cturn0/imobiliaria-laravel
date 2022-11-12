@@ -10,6 +10,7 @@ class ContatoController extends Controller
 {
     public function contato(Request $request)
     {
+        
         $validated = $request->validate([
             'email' => 'required',
             'nome' => 'required',
@@ -24,6 +25,7 @@ class ContatoController extends Controller
         $contato->telefone = $request->telefone;
         $contato->mensagem = $request->mensagem;
         $contato->id_imovel = $request->id_lancamento;
+        $contato->tipo = $request->tipo;
        
         if($contato->save()){
         return back()->with([

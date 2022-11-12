@@ -13,7 +13,8 @@ class DetalhaImovelController extends Controller
         $titulo = DB::table('imovel')->where('id', '=', $id)->first();
         $data = [
             'lancamento' => $lancamento,
-            'titulo' => $titulo
+            'titulo'     => $titulo,
+            'tipo'         => 1
         ];
          return view('imoveldetalha' , ['data'=>$data]);
        
