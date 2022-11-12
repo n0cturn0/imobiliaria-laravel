@@ -19,7 +19,7 @@ Route::get('/empreendimento-list', [\App\Http\Controllers\EmpreedimentoControlle
 Route::get('/apagarempreendimento/{id}', [\App\Http\Controllers\EmpreedimentoController::class,'apagarempreendimento'])->name('apagarempreendimento');
 //Busca Lancamento
 Route::post('/busca', [\App\Http\Controllers\BuscaController::class,'busca'])->name('buscalancamento');
-Route::post('/listall', [\App\Http\Controllers\BuscaController::class,' listLancamento'])->name('listall');
+Route::get('/listall', [\App\Http\Controllers\BuscaController::class,' listLancamento'])->name('listall');
 //Contato
 Route::post('/contato', [\App\Http\Controllers\ContatoController::class,'contato'])->name('contato');
 //LOGIN E USERS
