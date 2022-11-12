@@ -173,11 +173,11 @@
                             <ul class="rd-navbar-nav">
                                 <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('index')}}">Home</a>
                                 </li>
-                                <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Imóveis</a>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('list-all-imovel')}}">Imóveis</a>
                                 </li>
                                 <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('list-all')}}">Lançamento</a>
                                 </li>
-                                <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Contato</a>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="https://wa.me/5567992809899?text=Ol%C3%A1%20Estou%20enviando%20essa%20mensagem%20atrav%C3%A9s%20do%20site">Contato</a>
                                 </li>
                             </ul>
 

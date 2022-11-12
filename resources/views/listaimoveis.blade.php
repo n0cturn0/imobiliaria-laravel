@@ -5,17 +5,7 @@
       <div class="row row-50">
         <div class="col-lg-7 col-xl-8">
           <div class="row row-30">
-            <div class="col-sm-12">
-              <ul class="block-info-1">
-                <li>
-                  <div class="form-wrap-group-1">
-                    
-                    
-                  </div>
-                </li>
-                
-              </ul>
-            </div>
+           
             @foreach ($data['lancamento'] as $lanc)
                 
            
