@@ -277,7 +277,7 @@
                         </ul>
                     </article>
                 </div> --}}
-                <div class="col-12 text-center"><a class="button button-primary" href="properties-grid.html">Ver todas nossos imóveis</a></div>
+                <div class="col-12 text-center"><a class="button button-primary" href="{{url('listall')}}">Ver todas nossos imóveis</a></div>
             </div>
         </div>
     </section>
