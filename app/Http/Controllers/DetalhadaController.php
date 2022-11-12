@@ -18,4 +18,16 @@ class DetalhadaController extends Controller
          return view('detalhada' , ['data'=>$data]);
        
     }
+
+    public function lista()
+    {
+        $all = DB::select('select * from lancamentos');
+        $foto = DB::select('select * from lancamentos_fotos');
+
+        $data = [
+            'lancamento' => $all,
+            'foto'         => $foto
+        ];
+        return view('listall', ['data' => $data]);
+    }
 }

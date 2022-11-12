@@ -30,11 +30,7 @@ class BuscaController extends Controller
                          
     }
 
-    public function listLancamento()
-    {
-        $all = DB::select('select * from lancamentos_etiqueta');
-        return view('listall', ['all' => $all]);
-    }
+    
 
 }
 

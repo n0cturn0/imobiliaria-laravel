@@ -16,6 +16,9 @@
                 
               </ul>
             </div>
+            @foreach ($data['lancamento'] as $lanc)
+                
+           
             <div class="col-sm-12">
               <div class="row row-50 row-lg-70">
                 <div class="col-12">
@@ -24,33 +27,36 @@
                       <div class="product-classic-left">
                         <div class="product-classic-media">
                           <div class="owl-carousel" data-items="1" data-nav="true" data-stage-padding="0" data-loop="true" data-margin="0" data-mouse-drag="false">
-                            <img src="images/featured-properties-13-480x287.jpg" alt="" width="480" height="287"/>
-                            <img src="images/featured-properties-14-480x287.jpg" alt="" width="480" height="287"/>
-                            <img src="images/featured-properties-15-480x287.jpg" alt="" width="480" height="287"/>
-                            <img src="images/featured-properties-16-480x287.jpg" alt="" width="480" height="287"/>
+                            {{-- <img src="{{asset('storage/lancamentos/'.$item->foto_name)}}" alt="" width="480" height="287"/> --}}
+                            @foreach ($data['foto'] as $fotos)
+                            @if($fotos->id_lancamento == $lanc->id)
+                            <img src="{{asset('storage/lancamentos/'.$fotos->foto_name)}}" alt="" width="480" height="287"/>
+                            @endif
+                            @endforeach
                           </div>
-                          <div class="product-classic-price"><span>$5000\mo</span></div>
+                          <div class="product-classic-price"><span>R$ {{$lanc->valor}}</span></div>
                         </div>
                       </div>
                       <div class="product-classic-right">
-                        <h4 class="product-classic-title"><a href="single-property.html">401 Biscayne Boulevard, Miami</a></h4>
+                        <h4 class="product-classic-title"><a href="single-property.html">{{$lanc->nome}}</a></h4>
                         <div class="product-classic-divider"></div>
                         <div class="product-classic-text">
-                          <p>Choose this property if you are looking for a modern house near the ocean shore. With 2 bathrooms and 2 bedrooms as well as a single garage, it is a perfect option for a small family.</p>
+                          <p>{{$lanc->descricao}}</p>
                         </div>
                       </div>
                     </div>
                     <div class="product-classic-footer">
                       <ul class="product-classic-list">
-                        <li><span class="icon hotel-icon-10"></span><span>2 Bathrooms</span></li>
-                        <li><span class="icon hotel-icon-05"></span><span>2 Bedrooms</span></li>
-                        <li><span class="icon mdi mdi-vector-square"></span><span>480 Sq Ft</span></li>
-                        <li><span class="icon hotel-icon-26"></span><span>1 Garage</span></li>
+                        <li><span class="icon hotel-icon-10"></span><span>{{$lanc->banheiro}} Banheiro(s)</span></li>
+                        <li><span class="icon hotel-icon-05"></span><span>{{$lanc->quarto}} Quarto(s)</span></li>
+                        <li><span class="icon hotel-icon-05"></span><span>{{$lanc->suite}} Suíte(s)</span></li>
+                        <li><span class="icon mdi mdi-vector-square"></span><span>{{$lanc->metrosconst}} Metros Construídos</span></li>
+                        <li><span class="icon hotel-icon-26"></span><span>{{$lanc->garagem}} Vags na garagem</span></li>
                       </ul>
                     </div>
                   </article>
                 </div>
-                
+                @endforeach
               </div>
             </div>
             <div class="col-sm-12">
@@ -59,6 +65,8 @@
                 <li><a href="#">2</a></li>
               </ul>
             </div>
+
+
           </div>
         </div>
         <div class="col-lg-5 col-xl-4">
