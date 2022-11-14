@@ -29,6 +29,9 @@ class PrincipalController extends Controller
         if (count($corretores) == 0) { $corretores = ''; }
         //Imoveis
         $imoveis = DB::select('select *, imovel.valor from imovel_fotos inner join imovel on imovel_fotos.id_lancamento = imovel.id where imovel_fotos.destaque = 1');
+        //Footer
+        $footer_lancamento = DB::select('select * from lancamentos_etiqueta limit 1');
+
 
         $data = [
             'lancamentos' => $lancamentos,
@@ -36,8 +39,8 @@ class PrincipalController extends Controller
             'bairro' => $bairro,
             'cidades' => $cidade,
             'corretores' => $corretores,
-            'imoveis' => $imoveis
-            
+            'imoveis' => $imoveis,
+            'footer_lancamento' => $footer_lancamento,
         ];
          return view('itshome',['data'=>$data]);
          // return view('teste',compact('all_products'))->render();
