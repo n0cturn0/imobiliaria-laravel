@@ -199,7 +199,7 @@
             <div class="row row-10 justify-content-sm-between">
                 <div class="col-sm-6">
                     <!-- Rights-->
-                    <p class="rights"><span>Sistema de apoio para corretores e imbiliárias</span> <span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><a href="privacy-policy.html">Política de privacidade</a>
+                    <p class="rights"><span>Sistema de apoio para corretores e imbiliárias</span> <span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><a href="#">Política de privacidade</a>
                     </p>
                 </div>
                 <div class="col-sm-6 text-sm-right">
