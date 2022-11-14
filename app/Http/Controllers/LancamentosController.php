@@ -16,11 +16,9 @@ class LancamentosController extends Controller
 
     public function __construct()
     {
-        // if (Auth::check()) {
-        //     // The user is logged in...
-        // } else {
-        //     dd('Você não está logado');
-        // }
+        // $this->middleware('auth', ['except' => ['painel']]);
+       $this->middleware('auth');
+      
     }
     /**
      * Display a listing of the resource.

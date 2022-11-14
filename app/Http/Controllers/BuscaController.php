@@ -30,7 +30,9 @@ class BuscaController extends Controller
                          
     }
 
-    
+    public function login(){
+        dd('login');
+    }
 
 }
 

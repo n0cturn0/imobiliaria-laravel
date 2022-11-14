@@ -19,6 +19,7 @@ Route::get('/empreendimento-list', [\App\Http\Controllers\EmpreedimentoControlle
 Route::get('/apagarempreendimento/{id}', [\App\Http\Controllers\EmpreedimentoController::class,'apagarempreendimento'])->name('apagarempreendimento');
 //Busca Lancamento
 Route::post('/busca', [\App\Http\Controllers\BuscaController::class,'busca'])->name('buscalancamento');
+// Route::post('/login', [\App\Http\Controllers\BuscaController::class,'login'])->name('login');
 
 //Contato
 Route::post('/contato', [\App\Http\Controllers\ContatoController::class,'contato'])->name('contato');

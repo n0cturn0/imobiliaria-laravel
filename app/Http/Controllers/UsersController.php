@@ -25,7 +25,8 @@ class UsersController extends Controller
 
 
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-           dd('Logado com sucesso');
+        //    dd('Logado com sucesso');
+        return redirect('lancamento-list');
         } else {
             return redirect()->back()->with('danger', 'Email ou senha incorretos');
         }
