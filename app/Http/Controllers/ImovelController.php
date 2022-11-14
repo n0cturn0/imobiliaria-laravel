@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\DB;
 
 class ImovelController extends Controller
 {
+    public function __construct()
+    { $this->middleware('auth'); }
     public function create()
     {
     return view('imovel.create'); 

@@ -26,6 +26,7 @@ Route::post('/contato', [\App\Http\Controllers\ContatoController::class,'contato
 //LOGIN E USERS
 Route::get('/painel', [\App\Http\Controllers\UsersController::class,'index'])->name('painel');
 Route::post('/autentica', [\App\Http\Controllers\UsersController::class,'auth'])->name('autentica');
+Route::get('/logout', [\App\Http\Controllers\UsersController::class,'logout'])->name('logout');
 //Single Imovel
 Route::get('/detalhada/{id}', [\App\Http\Controllers\DetalhadaController::class,'index'])->name('detalhada');
 Route::get('/list-all', [\App\Http\Controllers\DetalhadaController::class,'lista'])->name('list-all');
@@ -35,6 +36,7 @@ Route::get('/list-all-imovel', [\App\Http\Controllers\DetalhadaController::class
 Route::get('/for-empreendimento/{id}', [\App\Http\Controllers\PrincipalController::class,'forempreendimento'])->name('for-empreendimento');
 Route::get('/search-product', [\App\Http\Controllers\PrincipalController::class,'search_products'])->name('search.products');
 Route::get('/index', [\App\Http\Controllers\PrincipalController::class,'index'])->name('index');
+Route::get('/welcome', [\App\Http\Controllers\PrincipalController::class,'index'])->name('index');
 Route::get('/destaques', [\App\Http\Controllers\PrincipalController::class,'destaque'])->name('destaques');
 Route::get('/dashboard', [\App\Http\Controllers\ControllerDashboard::class,'index'])->name('dashboard');
 // Lancamentos

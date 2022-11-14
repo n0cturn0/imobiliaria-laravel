@@ -31,4 +31,14 @@ class UsersController extends Controller
             return redirect()->back()->with('danger', 'Email ou senha incorretos');
         }
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('painel');
+    }
+
+
+
+
 }
