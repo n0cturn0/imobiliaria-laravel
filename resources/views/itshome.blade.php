@@ -328,12 +328,18 @@
             <div class="row row-40 justify-content-lg-between">
                 <div class="col-md-6 col-lg-4 col-xl-3">
                     <h3 class="heading-square font-weight-sbold" data-item=".heading-square-item"><span class="heading-square-item"></span>Últimos imóveis</h3><a class="post-minimal" href="single-property.html">
-                        <div class="post-minimal-image"><img src="images/post-minimal-01-161x136.jpg" alt="" width="161" height="136"/>
+                       @foreach ($data['footer_lancamento'] as $item)
+                           
+                      
+                        <div class="post-minimal-image">
+                            <img src="{{asset('storage/banner/'.$item->capa)}}" alt="" width="161" height="136"/>
                         </div>
                         <div class="post-minimal-body">
-                            <div class="post-minimal-title"><span> Retail Store Southwest 186th Street</span></div>
-                            <div class="post-minimal-text"><span>From $120/month</span></div>
+                            <div class="post-minimal-title"><span>{{$item->nome_lancamento}}t</span></div>
+                            <div class="post-minimal-text"><span>{{$item->nome_empreedimento}}</span></div>
                         </div></a><a class="post-minimal" href="single-property.html">
+                            @endforeach 
+
                         <div class="post-minimal-image"><img src="images/post-minimal-02-161x136.jpg" alt="" width="161" height="136"/>
                         </div>
                         <div class="post-minimal-body">
