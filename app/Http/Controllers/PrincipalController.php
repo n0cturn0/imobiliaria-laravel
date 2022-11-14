@@ -30,7 +30,7 @@ class PrincipalController extends Controller
         //Imoveis
         $imoveis = DB::select('select *, imovel.valor from imovel_fotos inner join imovel on imovel_fotos.id_lancamento = imovel.id where imovel_fotos.destaque = 1');
         //Footer
-        $footer_lancamento = DB::select('select *, lancamentos_etiqueta.banner_lancamento as capa  from lancamentos_etiqueta inner join empreedimentos ON empreedimentos.id = lancamentos_etiqueta.id_empreeendimento limit 2');
+        $footer_lancamento = DB::select('select *, lancamentos_etiqueta.id as etiquetaid, lancamentos_etiqueta.banner_lancamento as capa  from lancamentos_etiqueta inner join empreedimentos ON empreedimentos.id = lancamentos_etiqueta.id_empreeendimento limit 2');
 
 
         $data = [

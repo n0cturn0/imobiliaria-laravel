@@ -327,25 +327,31 @@
         <div class="container">
             <div class="row row-40 justify-content-lg-between">
                 <div class="col-md-6 col-lg-4 col-xl-3">
-                    <h3 class="heading-square font-weight-sbold" data-item=".heading-square-item"><span class="heading-square-item"></span>Últimos imóveis</h3><a class="post-minimal" href="single-property.html">
-                       @foreach ($data['footer_lancamento'] as $item)
-                           
-                      
-                        <div class="post-minimal-image">
-                            <img src="{{asset('storage/banner/'.$item->capa)}}" alt="" width="161" height="136"/>
+                    <h3 class="heading-square font-weight-sbold" data-item=".heading-square-item">
+                        <span class="heading-square-item"></span>Últimos imóveis</h3>
+                        <?php
+                        if(empty(($data['footer_lancamento'])))    
+                        {
+                        echo 'Nemhum imóvel para exibir';
+                        } else { ?>
+                        @foreach ($data['footer_lancamento'] as $item)      
+                        <a class="post-minimal" href="{{url('detalhada/'.$item->etiquetaid)}}">
+                                     
+                     <div class="post-minimal-image">
+                        <img src="{{asset('storage/banner/'.$item->capa)}}" alt="" width="161" height="136"/>
                         </div>
                         <div class="post-minimal-body">
-                            <div class="post-minimal-title"><span>{{$item->nome_lancamento}}t</span></div>
-                            <div class="post-minimal-text"><span>{{$item->nome_empreedimento}}</span></div>
-                        </div></a><a class="post-minimal" href="single-property.html">
-                            @endforeach 
-
-                        <div class="post-minimal-image"><img src="images/post-minimal-02-161x136.jpg" alt="" width="161" height="136"/>
-                        </div>
-                        <div class="post-minimal-body">
-                            <div class="post-minimal-title"><span> Apartment Building with Subunits</span></div>
-                            <div class="post-minimal-text"><span>From $120/month</span></div>
+                        <div class="post-minimal-title"><span>{{$item->nome_lancamento}}</span></div>
+                        <div class="post-minimal-text"><span>{{$item->nome_empreedimento}}</span></div>
                         </div></a>
+                        @endforeach 
+                        <?php  } ?>
+
+
+
+                       
+
+                        
                 </div>
                 <div class="col-md-6 col-lg-4 col-xl-3 col-bordered">
                     <h3 class="heading-square font-weight-sbold" data-item=".heading-square-item"><span class="heading-square-item"></span>Oi! Fale Conosco</h3>

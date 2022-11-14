@@ -16,7 +16,7 @@ class LancamentosController extends Controller
 
     public function __construct()
     {
-        // $this->middleware('auth', ['except' => ['painel']]);
+       
        $this->middleware('auth');
       
     }
