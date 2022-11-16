@@ -43,6 +43,14 @@ class LancamentosController extends Controller
     return view('lancamento.list' , ['etiquetas' => $etiquetas]);
     }
 
+    public function apagar($id='Null')
+    {
+        if ($deleted = DB::table('lancamentos_etiqueta')->where('id', $id)->delete())
+    {
+    return redirect()->back();
+    }
+    }
+
     public function crialancamento($id=NULL)
     {
                 //Verifica se ja esta configurado
@@ -91,7 +99,7 @@ class LancamentosController extends Controller
         for($i=0; $i < count($request->allFiles()['arquivo']); $i++){
             $file = $request->file()['arquivo'][$i];
             $filename = $file->hashName();
-            $file->storeAs('public/lancamentos', $filename);
+            $file->storeAs('lancamentos', $filename);
             DB::table('lancamentos_fotos')->insert([
                 'id_lancamento'     => $request->id,
                 'foto_name'         =>  $filename

@@ -1,13 +1,14 @@
 <?php
 
-
+namespace App\Models;
 namespace App\Http\Livewire;
-use App\models\LancamentoEtiquetaModel;
+use App\Models\LancamentoEtiquetaModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Illuminate\Http\Request;
 use Livewire\WithFileUploads;
+
 
 class LancamentoCreate extends Component
 {
@@ -37,7 +38,7 @@ class LancamentoCreate extends Component
         ]);
         $file =$this->photo;
         $filename = $file->hashName();
-        $this->photo->store('public/banner');
+        $this->photo->store('banner');
         
        
         $etiqueta = new LancamentoEtiquetaModel;

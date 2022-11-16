@@ -80,7 +80,7 @@ class ImovelController extends Controller
         for($i=0; $i < count($request->allFiles()['arquivo']); $i++){
             $file = $request->file()['arquivo'][$i];
             $filename = $file->hashName();
-            $file->storeAs('public/fotos', $filename);
+            $file->storeAs('fotos', $filename);
             DB::table('imovel_fotos')->insert([
                 'id_lancamento'     => $request->id,
                 'foto_name'         =>  $filename

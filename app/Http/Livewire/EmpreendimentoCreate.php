@@ -33,7 +33,7 @@ class EmpreendimentoCreate extends Component
         ]);
         $file =$this->photo;
         $filename = $file->hashName();
-        $this->photo->store('public/empreendimento');
+        $this->photo->store('empreendimento');
         
        
         $etiqueta = new Empreedimento;

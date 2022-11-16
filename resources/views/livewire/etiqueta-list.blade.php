@@ -18,8 +18,9 @@
                         </div>
                         </article> </a>
                         <div class="mt-40">
-                        <button  wire:click.prevent="remove({{$etiqueta->id}})" class="button button-primary button-circle" style="min-width: 180px">Apagar {{ $etiqueta->nome_lancamento }}</button>
-                        </div>
+                       
+                        <a class="button button-primary button-circle" style="min-width: 180px" href="{{ url('apagar-lance/'.$etiqueta->id) }}">Apagar {{ $etiqueta->nome_lancamento }}</a>  
+                    </div>
                 </div>
                 @endforeach
             </div>

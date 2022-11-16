@@ -163,9 +163,9 @@
                                                                                                  src="{{ asset('images/logo-its.png')}}"
                                                                                                  alt="" width="121"
                                                                                                  height="61"
-                                                                                                 srcset="images/logo-default-242x122.png 2x"/><img
-                                        class="brand-logo-light" src="images/logo-inverse-121x61.png" alt="" width="121"
-                                        height="61" srcset="images/logo-inverse-242x122.png 2x"/></a>
+                                                                                                 srcset="images/logo-its.png 2x"/><img
+                                        class="brand-logo-light" src="images/logo-its.png.png" alt="" width="121"
+                                        height="61" srcset="images/logo-its.png 2x"/></a>
                             </div>
                         </div>
                         <div class="rd-navbar-nav-wrap">

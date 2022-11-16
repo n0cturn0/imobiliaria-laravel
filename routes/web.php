@@ -36,6 +36,7 @@ Route::get('/list-all-imovel', [\App\Http\Controllers\DetalhadaController::class
 Route::get('/for-empreendimento/{id}', [\App\Http\Controllers\PrincipalController::class,'forempreendimento'])->name('for-empreendimento');
 Route::get('/search-product', [\App\Http\Controllers\PrincipalController::class,'search_products'])->name('search.products');
 Route::get('/index', [\App\Http\Controllers\PrincipalController::class,'index'])->name('index');
+Route::get('/', [\App\Http\Controllers\PrincipalController::class,'index'])->name('index');
 Route::get('/welcome', [\App\Http\Controllers\PrincipalController::class,'index'])->name('index');
 Route::get('/destaques', [\App\Http\Controllers\PrincipalController::class,'destaque'])->name('destaques');
 Route::get('/dashboard', [\App\Http\Controllers\ControllerDashboard::class,'index'])->name('dashboard');
@@ -46,6 +47,7 @@ Route::get('/lancamento-novo/{id}', [\App\Http\Controllers\LancamentosController
 Route::post('/novo-lancamento', [\App\Http\Controllers\LancamentosController::class,'novolancamento'])->name('novo-lancamento');
 Route::post('/upload', [\App\Http\Controllers\LancamentosController::class,'upload'])->name('upload');
 Route::post('/atualiza-lancamento', [\App\Http\Controllers\LancamentosController::class,'atualizalancamento'])->name('atualiza-lancamento');
+Route::get('/apagar-lance/{id}', [\App\Http\Controllers\LancamentosController::class,'apagar'])->name('apagar-lance');
 
 Route::get('/lancamento-editarinformacao/{id}', [\App\Http\Controllers\LancamentosController::class,'editarlancamento'])->name('lancamento-editarinformacao');
 Route::get('/lancamento-editarimagen/{id}', [\App\Http\Controllers\LancamentosController::class,'editarimagem'])->name('lancamento-editarinagem');
@@ -57,7 +59,7 @@ Route::get('/create-corretor', [\App\Http\Controllers\CorretorController::class,
 Route::get('/corretores-list', [\App\Http\Controllers\CorretorController::class,'list'])->name('corretores-list');
 Route::get('/apaga-corretor/{id}', [\App\Http\Controllers\CorretorController::class,'apagar'])->name('apaga-corretor');
 //DetalhaImovel
-Route::get('/imoveldetalha/{id}', [\App\Http\Controllers\DetalhaImovelController::class,'index'])->name('detalha-imovel');
+Route::get('/imoveldetalha/{id}', [\App\Http\Controllers\DetalhaImovelController::class,'index'])->name('imoveldetalha');
 // Imoveis
 Route::get('/create-imovel', [\App\Http\Controllers\ImovelController::class,'create'])->name('create-imovel');
 Route::post('/insere-imovel', [\App\Http\Controllers\ImovelController::class,'save'])->name('insere-imovel');
@@ -70,6 +72,4 @@ Route::get('/imovel-editarimagen/{id}', [\App\Http\Controllers\ImovelController:
 Route::get('/imovel-destacar/{id}', [\App\Http\Controllers\ImovelController::class,'destacar'])->name('imovel-destacar');
 Route::get('/imovel-apagar/{id}', [\App\Http\Controllers\ImovelController::class,'apagarimovel'])->name('imovel-apagar');
 Route::get('/imovel-deletar/{id}', [\App\Http\Controllers\ImovelController::class,'deletarimovel'])->name('imovel-deletar');
-Route::get('/', function () {
-    return view('welcome');
-});
+
