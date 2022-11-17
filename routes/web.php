@@ -72,4 +72,5 @@ Route::get('/imovel-editarimagen/{id}', [\App\Http\Controllers\ImovelController:
 Route::get('/imovel-destacar/{id}', [\App\Http\Controllers\ImovelController::class,'destacar'])->name('imovel-destacar');
 Route::get('/imovel-apagar/{id}', [\App\Http\Controllers\ImovelController::class,'apagarimovel'])->name('imovel-apagar');
 Route::get('/imovel-deletar/{id}', [\App\Http\Controllers\ImovelController::class,'deletarimovel'])->name('imovel-deletar');
-
+//Admin- Contato
+Route::get('/prospect', [\App\Http\Controllers\LancamentosController::class,'contatoadmin'])->name('prospect');

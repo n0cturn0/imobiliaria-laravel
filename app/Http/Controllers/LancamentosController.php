@@ -26,6 +26,12 @@ class LancamentosController extends Controller
         //
     }
 
+    public function contatoadmin()
+    {
+       $contato = DB::table('contato')->get();
+       return view('vendas.vendas', compact('contato'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
